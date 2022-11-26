@@ -7,6 +7,7 @@ import ContactUsHeader from './ContactUsHeader'
 import Accordin from '../Accordin'
 import Dropdown from './Dropdown'
 import { useRouter } from 'next/router'
+import NewAccordin from '../Accordin/NewAccordin'
 const navigation = {
   categories: [
     {
@@ -153,20 +154,20 @@ export default function Example() {
                   </div>
                 </Tab.Group>
 
-                <div className="space-y-6 border-t border-gray-200 py-6 px-4">
-                  <Accordin list={aboutusList} close={setOpen} />
+                <div className="space-y-6 border-t border-gray-200 py-3 px-4">
+                  <NewAccordin list={aboutusList} />
                 </div>
-                <div className="space-y-6 border-t border-gray-200 py-6 px-4">
-                  <Accordin list={academicsList} close={setOpen} />
+                <div className="space-y-6 border-t border-gray-200 py-3 px-4">
+                  <NewAccordin list={academicsList} />
                 </div>
-                <div className="space-y-6 border-t border-gray-200 py-6 px-4">
-                  <Accordin list={admissionsList} close={setOpen} />
+                <div className="space-y-6 border-t border-gray-200 py-3 px-4">
+                  <NewAccordin list={admissionsList} />
                 </div>
-                <div className="space-y-6 border-t border-gray-200 py-6 px-4">
-                  <Accordin list={beyondList} close={setOpen} />
+                <div className="space-y-6 border-t border-gray-200 py-3 px-4">
+                  <NewAccordin list={beyondList} />
                 </div>
-                <div className="space-y-6 border-t border-gray-200 py-6 px-4">
-                  <Accordin list={campusList} close={setOpen} />
+                <div className="space-y-6 border-t border-gray-200 py-3 px-4">
+                  <NewAccordin list={campusList} />
                 </div>
               </Dialog.Panel>
             </Transition.Child>
