@@ -13,7 +13,7 @@ import {
   eightData,
   nineData,
   kgData
-} from '@/constants/booksData'
+} from '@/constants/booksDatad'
 import { FaGuitar, FaAward, FaChess, FaUniversity } from 'react-icons/fa'
 
 import { IoMdSchool } from 'react-icons/io'
