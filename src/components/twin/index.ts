@@ -11,6 +11,7 @@ export const FlexCenter = tw.div`flex justify-center items-center `
 
 export const GrayText = tw.p`leading-relaxed text-justify w-2/3 text-[#888] mt-5 text-[1.2rem]`
 export const BlackText = tw.span`leading-relaxed text-justify w-2/3 text-black`
+export const headingBook = tw.h1`text-3xl flex  text-primary font-semibold leading-relaxed`
 
 // append GrayText styles into new component
 export const BlueText = tw(GrayText)`text-primary`

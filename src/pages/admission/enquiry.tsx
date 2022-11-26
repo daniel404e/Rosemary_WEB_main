@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState}from 'react'
 import Heading from '../../components/Heading'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { FlexColCenter } from '@/components/twin'
@@ -11,12 +11,20 @@ const Enquiry = () => {
     otherDetail: '',
     seekAdmisssion: ''
   }
+
   const styles =
     'h-9 mt-1 mr-12  w-full pl-4 text-base  border-[#adadad] border-solid border-[1px] hover:border-[#7C5DFA] focus:outline-none focus:border-[#7C5DFA]'
   return (
     <>
       <Heading first={'Admission'} second={'Enquiry'} third={'Form'} />
       <FlexColCenter className="mt-16">
+
+     
+
+
+
+
+
         <Formik
           enableReinitialize
           initialValues={intialValued}
