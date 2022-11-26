@@ -1,7 +1,7 @@
 import React from 'react'
 import Heading from '../../components/Heading'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
-import { FlexColCenter } from '@/components/twin'
+import { FlexColCenter,InputSet,InputLabel ,SubmitButton} from '@/components/twin'
 
 const Enquiry = () => {
   const intialValued = {
@@ -13,11 +13,13 @@ const Enquiry = () => {
   }
 
   const styles =
-    'h-9 mt-1 mr-12  w-full pl-4 text-base  border-[#adadad] border-solid border-[1px] hover:border-[#7C5DFA] focus:outline-none focus:border-[#7C5DFA]'
+  'block w-full md:w-96 px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
   return (
     <>
       <Heading first={'Admission'} second={'Enquiry'} third={'Form'} />
-      <FlexColCenter className="mt-16">
+      <div className='flex md:flex-row md:justify-around justify-center flex-col-reverse items-center'>
+      <div>
+      <FlexColCenter className="mt-16 ">
         <Formik
           enableReinitialize
           initialValues={intialValued}
@@ -28,10 +30,10 @@ const Enquiry = () => {
         >
           {({ handleChange, handleBlur, handleSubmit }) => (
             <Form onSubmit={handleSubmit}>
-              <div className="flex ">
-                <p className="text-[#333] w-80 py-3 mr-3">
-                  Student&apos;s Name :
-                </p>
+              <InputSet>
+                <InputLabel>
+                  Student&apos;s Name 
+                </InputLabel>
 
                 <Field name="studentName" className={styles} />
 
@@ -40,16 +42,16 @@ const Enquiry = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
-              <div className="flex    items-center">
-                <p className="text-[#333] w-80 py-3 mr-3">
-                  Seeking Admission For:
-                </p>
+              </InputSet>
+              <InputSet>
+                <InputLabel>
+                  Seeking Admission For
+                </InputLabel>
 
                 <select
                   name="seekAdmisssion"
                   className={`${styles} w-full`}
-                  // value={values.color}
+                  
                   onChange={handleChange}
                   onBlur={handleBlur}
                   style={{ display: 'block' }}
@@ -77,12 +79,12 @@ const Enquiry = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
+              </InputSet>
 
-              <div className="flex ">
-                <p className="text-[#333] w-80 py-3 mr-3">
-                  Father&apos;s Name :
-                </p>
+              <InputSet>
+                <InputLabel>
+                  Father&apos;s Name 
+                </InputLabel>
 
                 <Field name="fatherName" className={styles} />
 
@@ -91,9 +93,9 @@ const Enquiry = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
-              <div className="flex ">
-                <p className="text-[#333] w-80 py-3 mr-3">Mobile Number :</p>
+              </InputSet>
+              <InputSet>
+                <InputLabel>Mobile Number </InputLabel>
 
                 <Field name="mobileNumber" className={styles} />
 
@@ -102,11 +104,11 @@ const Enquiry = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
-              <div className="flex ">
-                <p className="text-[#333] w-80 py-3 mr-3">
-                  Any Other Details of Enquiry :
-                </p>
+              </InputSet>
+              <InputSet>
+                <InputLabel>
+                  Any Other Details of Enquiry 
+                </InputLabel>
 
                 <Field name="otherDetail" className={`${styles} h-28`} />
 
@@ -115,20 +117,25 @@ const Enquiry = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
+              </InputSet>
 
               <div className="flex justify-start ml-32 mt-10">
-                <button
+                <SubmitButton
                   type="submit"
-                  className="bg-[#0179b5] mt-3 text-white border-1  py-2 rounded-md border-[#1979c3] px-6 "
+                  
                 >
                   Submit
-                </button>
+                </SubmitButton>
               </div>
             </Form>
           )}
         </Formik>
       </FlexColCenter>
+      </div>
+      <div>
+      <img src='https://tailwindcomponents.com/svg/blank-canvas-animate.svg' className='w-96' alt='image' />
+      </div>
+      </div>
     </>
   )
 }

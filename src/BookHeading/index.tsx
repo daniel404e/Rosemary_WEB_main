@@ -1,15 +1,27 @@
 import React from 'react'
-import { FlexCenter } from '@/components/twin/index'
-const BookHeading = ({ iconeName, title }: any) => {
+import {GrayText} from '@/components/twin/index'
+
+const BookHeading = ({ iconeName, title,bookDetail }: any) => {
   return (
-    <FlexCenter>
-      <h1 className="text-4xl flex my-5 text-primary font-semibold leading-relaxed mr-2">
+    <>
+    <div className='flex flex-col'>
+      <div className='flex '>
+      <h1 className="text-4xl flex  text-primary font-semibold leading-relaxed mr-2">
         {iconeName}
       </h1>
-      <h1 className="text-4xl flex my-5 text-primary font-semibold leading-relaxed">
+      <h1 className="text-4xl flex  text-primary font-semibold leading-relaxed">
         {title}
       </h1>
-    </FlexCenter>
+     
+      </div>
+      
+     {bookDetail.map((data:any)=>{return(<>
+        <GrayText>{data}</GrayText>
+
+      </>)})}
+    </div>
+     
+      </>
   )
 }
 
