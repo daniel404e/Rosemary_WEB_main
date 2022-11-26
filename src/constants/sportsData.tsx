@@ -44,3 +44,6 @@ export const sportsData = [
     ]
   }
 ]
+
+export const headDescription =
+  'We oﬀer a broad and balanced Sports and Physical Education curriculum, to inspire all students to succeed and excel in sport and physical activity and to encourage them to become lifelong participants of a healthy active lifestyle.'

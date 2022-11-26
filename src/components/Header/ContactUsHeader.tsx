@@ -17,7 +17,7 @@ export default function ContactUsHeader() {
                 <span className="inline">rsme@workspace.com</span>
               </p>
             </div>
-            <div className="flex pt-4 md:pt-0">
+            <div className="flex pt-4 md:pt-0 md:pl-2">
               <span className="flex rounded-lg ">
                 <PhoneIcon className="h-6 w-6 text-white" aria-hidden="true" />
               </span>
@@ -27,7 +27,7 @@ export default function ContactUsHeader() {
             </div>
           </div>
           <div className="block md:flex ">
-            <div className="order-3 mt-2 w-full flex-shrink-0 sm:order-2 sm:mt-0 sm:w-auto">
+            <div className="order-3 mt-2 mb-1 md:mb-0 w-full flex-shrink-0 sm:order-2 sm:mt-0 sm:w-auto">
               <a
                 href="#"
                 className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-2 text-sm font-medium text-indigo-600 shadow-sm hover:bg-indigo-50"
