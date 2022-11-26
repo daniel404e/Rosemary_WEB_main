@@ -4,6 +4,14 @@
     "next/core-web-vitals"
   ],
   "rules": {
+   
+    "@typescript-eslint/naming-convention": [
+      "warn",
+      {
+        "selector": "variable",
+        "format": ["camelCase"]
+      }
+    ],
     "prettier/prettier": [
       "error",
       {
@@ -14,15 +22,17 @@
     "eqeqeq": [
       "error"
     ],
+
     "no-alert": [
-      "error"
-    ],
-    "no-empty-function": [
-      "error",
-      {
-        "allow": null
-      }
+      "off"
     ]
+    
+    // "no-empty-function": [
+    //   "error",
+    //   {
+    //     "allow": null
+    //   }
+    // ]
   },
   "overrides": [
     // Configuration for TypeScript files
@@ -64,7 +74,7 @@
         // "unused-imports/no-unused-imports": "error",
         // "@typescript-eslint/consistent-type-imports": "error",
         "unused-imports/no-unused-vars": [
-          "error",
+          "off",
           {
             "argsIgnorePattern": "^_"
           }

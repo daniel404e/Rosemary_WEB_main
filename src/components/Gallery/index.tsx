@@ -22,6 +22,7 @@ const index = () => {
                   <img
                     src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNvbGxlZ2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
                     className="img-fluid"
+                    alt="image"
                   />
                   <div className="tab-text">
                     {/* <h2>Three column 4</h2> */}
@@ -41,6 +42,7 @@ const index = () => {
                   <img
                     src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGNvbGxlZ2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
                     className="img-fluid"
+                    alt="image"
                   />
                   <div className="tab-text">
                     {/* <h2>Three column 4</h2> */}
@@ -60,6 +62,7 @@ const index = () => {
                   <img
                     src="https://images.unsplash.com/photo-1561089489-f13d5e730d72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fGNvbGxlZ2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
                     className="img-fluid"
+                    alt="image"
                   />
                   <div className="tab-text">
                     {/* <h2>Three column 4</h2> */}
@@ -78,6 +81,7 @@ const index = () => {
                   <img
                     src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y29sbGVnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
                     className="img-fluid"
+                    alt="image"
                   />
                   <div className="tab-text">
                     {/* <h2>Three column 4</h2> */}
@@ -96,6 +100,7 @@ const index = () => {
                   <img
                     src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGNvbGxlZ2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
                     className="img-fluid"
+                    alt="image"
                   />
                   <div className="tab-text">
                     {/* <h2>Three column 4</h2> */}
@@ -114,6 +119,7 @@ const index = () => {
                   <img
                     src="https://images.unsplash.com/photo-1501290836517-b22a21c522a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDh8fGNvbGxlZ2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=80"
                     className="img-fluid h-[236px]"
+                    alt="image"
                   />
                   <div className="tab-text">
                     {/* <h2>Three column 4</h2> */}
@@ -132,6 +138,7 @@ const index = () => {
                   <img
                     src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y29sbGVnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
                     className="img-fluid"
+                    alt="image"
                   />
                   <div className="tab-text">
                     {/* <h2>Three column 4</h2> */}
@@ -150,6 +157,7 @@ const index = () => {
                   <img
                     src="https://images.unsplash.com/photo-1561089489-f13d5e730d72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fGNvbGxlZ2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
                     className="img-fluid"
+                    alt="image"
                   />
                   <div className="tab-text">
                     {/* <h2>Three column 4</h2> */}
@@ -168,6 +176,7 @@ const index = () => {
                   <img
                     src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y29sbGVnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
                     className="img-fluid"
+                    alt="image"
                   />
                   <div className="tab-text">
                     {/* <h2>Three column 4</h2> */}

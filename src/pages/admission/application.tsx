@@ -38,14 +38,16 @@ const Application = () => {
           enableReinitialize
           initialValues={intialValued}
           // validationSchema={SinupValdation}
-          onSubmit={(values, actions) => {
+          onSubmit={(values) => {
             alert(JSON.stringify(values, null, 2))
           }}
         >
-          {({ values, handleChange, handleBlur, handleSubmit, errors }) => (
+          {({ handleChange, handleBlur, handleSubmit }) => (
             <Form onSubmit={handleSubmit}>
               <div className="flex ">
-                <p className="text-[#333] w-80 py-3 mr-3">Student's Name :</p>
+                <p className="text-[#333] w-80 py-3 mr-3">
+                  Student&apos;s Name :
+                </p>
 
                 <Field name="studentName" className={styles} />
 
@@ -78,7 +80,7 @@ const Application = () => {
                   className="text-red-600"
                 />
               </div>
-              <div className="flex    items-center">
+              <div className="flex items-center">
                 <p className="text-[#333] w-80 py-3 mr-3">
                   Grade Applying For :
                 </p>

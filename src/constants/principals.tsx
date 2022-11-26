@@ -1,4 +1,4 @@
-export const principals_data = {
+export const principalsData = {
   para1:
     'The pivotal role that education plays in society can never be undermined. In the words of Swami Vivekananda -',
   para2:

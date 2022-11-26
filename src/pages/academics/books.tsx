@@ -1,46 +1,43 @@
 import Heading from '@/components/Heading'
 import React from 'react'
-import {FlexColCenter,FlexCenter} from '@/components/twin/index'
-import {GoTelescope} from 'react-icons/go'
-import {firstBook} from '@/constants/booksData'
+// import { FlexCenter } from '@/components/twin/index'
+import { GoTelescope } from 'react-icons/go'
+import {FaGuitar,FaAward,FaChess,FaUniversity} from 'react-icons/fa'
+import BookDetail from '@/components/BookDetail/index'
+import {IoMdSchool} from 'react-icons/io'
+import {HiBuildingOffice2} from 'react-icons/hi2'
+import {GiEvilTower,GiTrophyCup,GiBlackBook} from 'react-icons/gi'
+import BookHeading from '@/BookHeading'
+import { firstBook,secondBook,threeBook,fourBook,fiveBook,sixBook,sevenBook,eightBook,nineBook,KgBook } from '@/constants/booksData'
 
 const Books = () => {
   return (
     <>
-   <Heading first={"Text"} second={'Books'} third={'Details'}/>
-  
-  <FlexCenter><GoTelescope className='text-4xl flex  text-primary font-semibold leading-relaxed mr-2' /><h1 className='text-4xl flex  text-primary font-semibold leading-relaxed'>First</h1></FlexCenter>
-  {firstBook.map((data,index)=>{return(<>
-<h1 key={index} className='text-4xl animate-bounce my-5 text-secondary font-semibold leading-relaxed ml-28'>{data.title}</h1>
-<div className="grid overflow-hidden items-center text-center lg:grid-cols-5 md:grid-cols-3 grid-cols-1 lg:grid-rows-1 gap-4">
-{data.books.map((bookData)=>{return(<>
+      <Heading first={'Text'} second={'Books'} third={'Details'} />
+      <BookHeading iconeName={<GoTelescope />}   title={"First"}/>
+      <BookDetail bookDetail={firstBook}/>
+      <BookHeading iconeName={<FaGuitar />}   title={"Second"}/>
+      <BookDetail bookDetail={secondBook}/>
+      <BookHeading iconeName={<GiEvilTower />}   title={"Third"}/>
+      <BookDetail bookDetail={threeBook}/>
+      <BookHeading iconeName={<IoMdSchool />}   title={"Four"}/>
+      <BookDetail bookDetail={fourBook}/>
+      <BookHeading iconeName={<FaChess />}   title={"Five"}/>
+      <BookDetail bookDetail={fiveBook}/>
+      <BookHeading iconeName={<FaUniversity />}   title={"Six"}/>
+      <BookDetail bookDetail={sixBook}/>
+      <BookHeading iconeName={<GiTrophyCup />}   title={"Seven"}/>
+      <BookDetail bookDetail={sevenBook}/>
+      <BookHeading iconeName={<HiBuildingOffice2 />}   title={"Eight"}/>
+      <BookDetail bookDetail={eightBook}/>
+      <BookHeading iconeName={<FaAward />}   title={"Nine"}/>
+      <BookDetail bookDetail={nineBook}/>
+      <BookHeading iconeName={<GiBlackBook />}   title={"KG"}/>
+      <BookDetail bookDetail={KgBook}/>
 
-  <div className="h-52 ml-3 my-5 w-36 relative cursor-pointer mb-5">
-<div className="absolute inset-0 bg-white opacity-25 rounded-lg shadow-2xl">
-</div>
-<div className="absolute inset-0 transform  hover:scale-75 transition duration-300">
-  <div className="h-full w-full bg-white  rounded-lg shadow-2xl">
-  <FlexColCenter>
-<FlexCenter>
-<img src='/assest/no-photo.jpg' className='w-40' alt='image' />
-</FlexCenter>
-<FlexCenter>
-
-<h1 className='text-lg text-secondary font-semibold'>{bookData.bookName}</h1>
-  
-</FlexCenter>
-</FlexColCenter>
-  </div>
-</div>
-</div> 
- 
-  </>)})}
-  </div>
-  </>)})}
+      
     </>
   )
 }
 
 export default Books
-
-

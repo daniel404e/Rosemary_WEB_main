@@ -1,5 +1,5 @@
 import { BlackText, BlueText, FlexColCenter, GrayText } from '@/components/twin'
-import { principals_data } from '@/constants/principals'
+import { principalsData } from '@/constants/principals'
 import React from 'react'
 import Heading from '../../components/Heading'
 
@@ -9,15 +9,15 @@ const Principals = () => {
       <Heading first={"Principal's"} second={'Corner'} third={''} />
       <FlexColCenter>
         <GrayText>
-          {principals_data.para1}
-          <BlackText>{principals_data.para2}</BlackText>
+          {principalsData.para1}
+          <BlackText>{principalsData.para2}</BlackText>
         </GrayText>
-        <GrayText>{principals_data.para3}</GrayText>
-        <GrayText>{principals_data.para4}</GrayText>
-        <GrayText>{principals_data.para5}</GrayText>
-        <GrayText>{principals_data.para6}</GrayText>
-        <GrayText>{principals_data.para7}</GrayText>
-        <BlueText>{principals_data.para8}</BlueText>
+        <GrayText>{principalsData.para3}</GrayText>
+        <GrayText>{principalsData.para4}</GrayText>
+        <GrayText>{principalsData.para5}</GrayText>
+        <GrayText>{principalsData.para6}</GrayText>
+        <GrayText>{principalsData.para7}</GrayText>
+        <BlueText>{principalsData.para8}</BlueText>
       </FlexColCenter>
     </>
   )

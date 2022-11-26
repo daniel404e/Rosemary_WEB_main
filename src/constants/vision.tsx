@@ -1,4 +1,4 @@
-export const vision_data = {
+export const visionData = {
   para1: 'From Our Director',
   para2:
     '"Imagination is more important than knowledge. For knowledge is limited to all we now know and understand, while imagination embraces the entire world, and all there ever will be to know and understand. " - Albert Einstein',

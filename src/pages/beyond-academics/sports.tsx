@@ -19,15 +19,18 @@ const Sports = () => {
       <div
       // className="md:ml-44 ml-16 lg:ml-72 mt-10"
       >
-        {sportsData.map((data) => {
+        {sportsData.map((data, index) => {
           return (
             <>
-              <h1 className=" mb-4 mt-4 text-[#463AA1] text-lg font-medium leading-relaxed tracking-tight">
+              <h1
+                key={index}
+                className=" mb-4 mt-4 text-[#463AA1] text-lg font-medium leading-relaxed tracking-tight"
+              >
                 {data.heading}
               </h1>
-              {data.title.map((para) => {
+              {data.title.map((para, id) => {
                 return (
-                  <h5 className="ml-2">
+                  <h5 key={id} className="ml-2">
                     <span className="text-lg mr-2 p-2 font-normal leading-relaxed text-[#463aa1]">
                       {'>'}
                     </span>

@@ -1,4 +1,4 @@
-import React,{useState}from 'react'
+import React from 'react'
 import Heading from '../../components/Heading'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { FlexColCenter } from '@/components/twin'
@@ -18,25 +18,20 @@ const Enquiry = () => {
     <>
       <Heading first={'Admission'} second={'Enquiry'} third={'Form'} />
       <FlexColCenter className="mt-16">
-
-     
-
-
-
-
-
         <Formik
           enableReinitialize
           initialValues={intialValued}
           // validationSchema={SinupValdation}
-          onSubmit={(values, actions) => {
+          onSubmit={(values) => {
             alert(JSON.stringify(values, null, 2))
           }}
         >
-          {({ values, handleChange, handleBlur, handleSubmit, errors }) => (
+          {({ handleChange, handleBlur, handleSubmit }) => (
             <Form onSubmit={handleSubmit}>
               <div className="flex ">
-                <p className="text-[#333] w-80 py-3 mr-3">Student's Name :</p>
+                <p className="text-[#333] w-80 py-3 mr-3">
+                  Student&apos;s Name :
+                </p>
 
                 <Field name="studentName" className={styles} />
 
@@ -85,7 +80,9 @@ const Enquiry = () => {
               </div>
 
               <div className="flex ">
-                <p className="text-[#333] w-80 py-3 mr-3">Father's Name :</p>
+                <p className="text-[#333] w-80 py-3 mr-3">
+                  Father&apos;s Name :
+                </p>
 
                 <Field name="fatherName" className={styles} />
 
