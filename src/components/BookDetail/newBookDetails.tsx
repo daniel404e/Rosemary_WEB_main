@@ -3,7 +3,7 @@ import { FlexColCenter, FlexCenter } from '@/components/twin/index'
 
 const BookDetail = ({ bookDetail }: any) => {
   return (
-    <>
+    <div className="max-w-[1200px] mx-auto">
       {bookDetail.map((data: any, index: number) => {
         return (
           <>
@@ -19,18 +19,11 @@ const BookDetail = ({ bookDetail }: any) => {
               {data.books.map((bookData: any) => {
                 return (
                   <>
-                    <div className="h-52 ml-3 my-5 w-36 relative cursor-pointer mb-5">
-                      <div className="absolute inset-0 bg-gray-100 bg-opacity-60 opacity-25 rounded-lg shadow-2xl"></div>
+                    <div className=" h-16 ml-3 my-5 w-36 relative cursor-pointer mb-5">
+                      <div className="border border-gray-500 absolute inset-0 bg-gray-100 bg-opacity-60 opacity-25 rounded-lg  "></div>
                       <div className="absolute inset-0 transform  hover:scale-75 transition duration-300">
                         <div className="h-full w-full bg-gray-100 bg-opacity-60 border-gray-300 rounded-lg shadow-sm">
                           <FlexColCenter>
-                            <FlexCenter>
-                              <img
-                                src="/assest/no-photo.jpg"
-                                className="w-40"
-                                alt="image"
-                              />
-                            </FlexCenter>
                             <FlexCenter>
                               <h1 className="text-lg text-secondary font-semibold">
                                 {bookData.bookName}
@@ -47,7 +40,7 @@ const BookDetail = ({ bookDetail }: any) => {
           </>
         )
       })}
-    </>
+    </div>
   )
 }
 
