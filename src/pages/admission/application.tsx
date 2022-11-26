@@ -2,7 +2,8 @@ import React from 'react'
 import Heading from '../../components/Heading'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { FlexColCenter } from '@/components/twin'
-
+import {InputSet,InputLabel,SubmitButton} from '@/components/twin/index'
+import {AiOutlineArrowDown} from 'react-icons/ai'
 const Application = () => {
   const intialValued = {
     studentName: '',
@@ -29,10 +30,14 @@ const Application = () => {
     healthIssue: ''
   }
   const styles =
-    'h-9 mt-1 mr-12  w-full pl-4 text-base  border-[#adadad] border-solid border-[1px] hover:border-[#7C5DFA] focus:outline-none focus:border-[#7C5DFA]'
+    'block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
   return (
     <>
       <Heading first={'Admission'} second={'Application'} third={'Form'} />
+    
+   
+    <div className='flex flex-col-reverse items-center '>
+      <div>
       <FlexColCenter className="mt-16">
         <Formik
           enableReinitialize
@@ -44,10 +49,10 @@ const Application = () => {
         >
           {({ handleChange, handleBlur, handleSubmit }) => (
             <Form onSubmit={handleSubmit}>
-              <div className="flex ">
-                <p className="text-[#333] w-80 py-3 mr-3">
-                  Student&apos;s Name :
-                </p>
+              <InputSet>
+                <InputLabel>
+                  Student&apos;s Name 
+                </InputLabel>
 
                 <Field name="studentName" className={styles} />
 
@@ -56,10 +61,10 @@ const Application = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
+              </InputSet>
 
-              <div className="flex ">
-                <p className="text-[#333] w-80 py-3 mr-3">Date of Birth :</p>
+              <InputSet>
+                <InputLabel>Date of Birth </InputLabel>
 
                 <Field name="dateOfBirth" type="date" className={styles} />
 
@@ -68,9 +73,9 @@ const Application = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
-              <div className="flex ">
-                <p className="text-[#333] w-80 py-3 mr-3">age :</p>
+              </InputSet>
+              <InputSet>
+                <InputLabel>age </InputLabel>
 
                 <Field name="age" className={styles} />
 
@@ -79,11 +84,11 @@ const Application = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
-              <div className="flex items-center">
-                <p className="text-[#333] w-80 py-3 mr-3">
-                  Grade Applying For :
-                </p>
+              </InputSet>
+              <InputSet>
+                <InputLabel>
+                  Grade Applying For 
+                </InputLabel>
 
                 <select
                   name="gradeApply"
@@ -116,38 +121,39 @@ const Application = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
-              <div className="flex">
-                <div id="my-radio-group" className="text-[#333] w-52 py-3 mr-3">
+              </InputSet>
+
+              <InputSet>
+                <InputLabel id="my-radio-group" >
                   sex
-                </div>
+                </InputLabel>
                 <div
                   role="group"
-                  className="flex flex-col justify-start"
+                  className="flex "
                   aria-labelledby="my-radio-group"
                 >
-                  <label>
+                  <label className={' mr-5'}>
                     <Field
                       type="radio"
-                      className={'mt-5 mr-3'}
+                      className={' mr-3'}
                       name="sex"
                       value="male"
                     />
                     Male
                   </label>
-                  <label>
+                  <label className={' mr-5'}>
                     <Field
                       type="radio"
-                      className={'mt-5 mr-3'}
+                      className={' mr-3'}
                       name="sex"
                       value="female"
                     />
                     Female
                   </label>
                 </div>
-              </div>
-              <div className="flex ">
-                <p className="text-[#333] w-80 py-3 mr-3">Email :</p>
+              </InputSet>
+              <InputSet>
+                <InputLabel>Email </InputLabel>
 
                 <Field name="email" className={`${styles} `} />
 
@@ -156,20 +162,10 @@ const Application = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
-              <div className="flex ">
-                <p className="text-[#333] w-80 py-3 mr-3">Email :</p>
-
-                <Field name="email" className={`${styles} `} />
-
-                <ErrorMessage
-                  name="email"
-                  component="div"
-                  className="text-red-600"
-                />
-              </div>
-              <div className="flex ">
-                <p className="text-[#333] w-80 py-3 mr-3">Father Name :</p>
+              </InputSet>
+            
+              <InputSet>
+                <InputLabel>Father Name </InputLabel>
 
                 <Field name="fatherName" className={`${styles} `} />
 
@@ -178,11 +174,11 @@ const Application = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
-              <div className="flex ">
-                <p className="text-[#333] w-80 py-3 mr-3">
-                  Father Occupation & Educational Qualification :
-                </p>
+              </InputSet>
+              <InputSet>
+                <InputLabel>
+                  Father Occupation & Educational Qualification 
+                </InputLabel>
 
                 <Field name="fatherOccupation" className={`${styles} `} />
 
@@ -191,11 +187,11 @@ const Application = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
-              <div className="flex ">
-                <p className="text-[#333] w-80 py-3 mr-3">
-                  Father Contact Number :
-                </p>
+              </InputSet>
+              <InputSet>
+                <InputLabel>
+                  Father Contact Number 
+                </InputLabel>
 
                 <Field name="fatherContact" className={`${styles} `} />
 
@@ -204,9 +200,9 @@ const Application = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
-              <div className="flex ">
-                <p className="text-[#333] w-80 py-3 mr-3">Mother Name : </p>
+              </InputSet>
+              <InputSet>
+                <InputLabel>Mother Name  </InputLabel>
 
                 <Field name="motherName" className={`${styles} `} />
 
@@ -215,11 +211,11 @@ const Application = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
-              <div className="flex ">
-                <p className="text-[#333] w-80 py-3 mr-3">
-                  Mother Occupation & Educational Qualification :
-                </p>
+              </InputSet>
+              <InputSet>
+                <InputLabel>
+                  Mother Occupation & Educational Qualification 
+                </InputLabel>
 
                 <Field name="motherOccupation" className={`${styles} `} />
 
@@ -228,11 +224,11 @@ const Application = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
-              <div className="flex ">
-                <p className="text-[#333] w-80 py-3 mr-3">
-                  Mother Contact Number :
-                </p>
+              </InputSet>
+              <InputSet>
+                <InputLabel>
+                  Mother Contact Number 
+                </InputLabel>
 
                 <Field name="motherContact" className={`${styles} `} />
 
@@ -241,11 +237,11 @@ const Application = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
-              <div className="flex ">
-                <p className="text-[#333] w-80 py-3 mr-3">
-                  Residential Address of Parent / Guardian :
-                </p>
+              </InputSet>
+              <InputSet>
+                <InputLabel>
+                  Residential Address of Parent / Guardian 
+                </InputLabel>
 
                 <Field
                   name="residentAddress"
@@ -258,11 +254,11 @@ const Application = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
-              <div className="flex mt-5">
-                <p className="text-[#333] w-80 py-3 mr-3">
-                  Annual income of Parents (in words ) :
-                </p>
+              </InputSet>
+              <InputSet>
+                <InputLabel>
+                  Annual income of Parents (in words ) 
+                </InputLabel>
 
                 <Field
                   name="parentIncome"
@@ -275,13 +271,13 @@ const Application = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
+              </InputSet>
 
-              <div className="flex ">
-                <p className="text-[#333] w-80 py-3 mr-3">
+              <InputSet>
+                <InputLabel>
                   Does the applicant have any brother / sister studying in
-                  RMSE/RMMS? Name, Class & School:
-                </p>
+                  RMSE/RMMS? Name, Class & School
+                </InputLabel>
 
                 <Field
                   name="familyAppliction"
@@ -294,11 +290,11 @@ const Application = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
-              <div className="flex mt-5">
-                <p className="text-[#333] w-80 py-3 mr-3">
-                  Previous School Name & Address :
-                </p>
+              </InputSet>
+              <InputSet>
+                <InputLabel>
+                  Previous School Name & Address 
+                </InputLabel>
 
                 <Field
                   name="perviousSchool"
@@ -311,11 +307,11 @@ const Application = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
-              <div className="flex    items-center">
-                <p className="text-[#333] w-80 py-3 mr-3">
-                  Specify The Board :
-                </p>
+              </InputSet>
+              <InputSet>
+                <InputLabel>
+                  Specify The Board 
+                </InputLabel>
 
                 <select
                   name="boardSpecify"
@@ -343,11 +339,11 @@ const Application = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
-              <div className="flex mt-5">
-                <p className="text-[#333] w-80 py-3 mr-3">
-                  Class Last Studied :
-                </p>
+              </InputSet>
+              <InputSet>
+                <InputLabel>
+                  Class Last Studied 
+                </InputLabel>
 
                 <Field
                   name="lastStudy"
@@ -360,42 +356,42 @@ const Application = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
-              <div className="flex items-center">
-                <div id="my-radio-group" className="text-[#333] w-52 py-3 mr-3">
+              </InputSet>
+              <InputSet>
+                <InputLabel id="my-radio-group" >
                   Reason for Change of School
-                </div>
+                </InputLabel>
                 <div
                   role="group"
-                  className="flex flex-col justify-start"
+                  className="flex"
                   aria-labelledby="my-radio-group"
                 >
-                  <label>
+                  <label className={' mr-5 pb-2'}>
                     <Field
                       type="radio"
-                      className={'mt-5 mr-3'}
+                      className={' mr-3'}
                       name="changeSchool"
-                      value="male"
+                      value="Transfer"
                     />
                     Transfer
                   </label>
-                  <label>
+                  <label className={' mr-5 pb-2'}>
                     <Field
                       type="radio"
-                      className={'mt-5 mr-3'}
+                      className={' mr-3'}
                       name="changeSchool"
-                      value="female"
+                      value="Parent Choice"
                     />
                     Parent Choice
                   </label>
                 </div>
-              </div>
+              </InputSet>
 
-              <div className="flex mt-5">
-                <p className="text-[#333] w-96 py-3 mr-3">
+              <InputSet>
+                <InputLabel>
                   Marks in the Previous Exams-English/Tamil/Maths/Science
-                  Science/Hindi :
-                </p>
+                  Science/Hindi 
+                </InputLabel>
 
                 <Field
                   name="markPerviousExam"
@@ -408,12 +404,12 @@ const Application = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
-              <div className="flex mt-5">
-                <p className="text-[#333] w-80 py-3 mr-3">
+              </InputSet>
+              <InputSet>
+                <InputLabel>
                   Interest in Co Curricular / Extra Curricular Activities
                   (Mention the Activities )
-                </p>
+                </InputLabel>
 
                 <Field
                   name="intrestCurricular"
@@ -426,11 +422,11 @@ const Application = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
-              <div className="flex mt-5">
-                <p className="text-[#333] w-80 py-3 mr-3">
-                  Any specific health issues for special care :
-                </p>
+              </InputSet>
+              <InputSet>
+                <InputLabel>
+                  Any specific health issues for special care
+                </InputLabel>
 
                 <Field
                   name="healthIssue"
@@ -443,32 +439,43 @@ const Application = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
-              <div className="flex justify-start flex-col ml-32 mt-10">
-                <div className="w-96 flex my-5">
+              </InputSet>
+              <InputSet>
                   <Field name="checked" className={'w-5'} type="checkbox" />
-                  <p className="ml-2">
+                  <InputLabel>
                     {' '}
                     I agree that once Fees paid to the School is non refundable.{' '}
-                  </p>
+                  </InputLabel>
 
                   <ErrorMessage
                     name="checked"
                     component="div"
                     className="text-red-600"
                   />
-                </div>
-                <button
+                </InputSet>
+              <InputSet>
+                
+                <SubmitButton
                   type="submit"
-                  className="bg-[#0179b5] mt-3 text-white border-1  py-2 rounded-md border-[#1979c3] px-6 "
+                  
                 >
                   Submit
-                </button>
-              </div>
+                </SubmitButton>
+              </InputSet>
             </Form>
           )}
         </Formik>
       </FlexColCenter>
+      </div>
+      <FlexColCenter>
+        <h1 className='text-primary text-3xl font-bold mt-5'>Application</h1>
+        <h1><AiOutlineArrowDown className='text-secondary text-5xl animate-bounce font-bold mt-5' /></h1>
+        </FlexColCenter>
+      <div >
+
+     <img src={'https://img.freepik.com/free-vector/brain-chemistry-concept-illustration_114360-10136.jpg?w=740&t=st=1669476214~exp=1669476814~hmac=c55c03a15a377bbf0bcd3e48af64aa5cb2b5787498447cce8af98bd2453e5d02'} alt='image' />
+      </div>
+      </div>
     </>
   )
 }
