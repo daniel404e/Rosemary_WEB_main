@@ -3,7 +3,7 @@ import { ScienceStudent } from '../../components/Gallery/ScienceStudent'
 import Heading from '../../components/Heading'
 const Science = () => {
   return (
-    <>
+    <div className="max-w-7xl mx-auto">
       <Heading first={'Composite '} second={' Science '} third={' Lab'} />
       <div className="flex justify-around min-w-full ">
         <div className="w-2/4">
@@ -37,7 +37,7 @@ const Science = () => {
           </p>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

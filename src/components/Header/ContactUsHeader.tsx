@@ -1,6 +1,12 @@
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
+import { useRouter } from 'next/router'
 
 export default function ContactUsHeader() {
+  const router = useRouter()
+
+  const navigateTo = (path: string) => {
+    router.push(path)
+  }
   return (
     <div className="bg-indigo-600">
       <div className="mx-auto max-w-7xl py-3 px-3 sm:px-6 lg:px-8">
@@ -27,21 +33,21 @@ export default function ContactUsHeader() {
             </div>
           </div>
           <div className="block md:flex ">
-            <div className="order-3 mt-2 mb-1 md:mb-0 w-full flex-shrink-0 sm:order-2 sm:mt-0 sm:w-auto">
-              <a
-                href="#"
-                className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-2 text-sm font-medium text-indigo-600 shadow-sm hover:bg-indigo-50"
+            <div className="cursor-pointer order-3 mt-2 mb-1 md:mb-0 w-full flex-shrink-0 sm:order-2 sm:mt-0 sm:w-auto">
+              <div
+                onClick={() => navigateTo('/admission/schedule')}
+                className=" flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-2 text-sm font-medium text-indigo-600 shadow-sm hover:bg-indigo-50"
               >
                 Schedule a Visit
-              </a>
+              </div>
             </div>
-            <div className="order-3 md:ml-2 mt-2 w-full flex-shrink-0 sm:order-2 sm:mt-0 sm:w-auto">
-              <a
-                href="#"
+            <div className="cursor-pointer order-3 md:ml-2 mt-2 w-full flex-shrink-0 sm:order-2 sm:mt-0 sm:w-auto">
+              <div
+                onClick={() => navigateTo('/about-us/payfees')}
                 className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-2 text-sm font-medium text-indigo-600 shadow-sm hover:bg-indigo-50"
               >
                 Pay Fees
-              </a>
+              </div>
             </div>
           </div>
           <div className="order-2 flex-shrink-0 sm:order-3 sm:ml-3">

@@ -44,7 +44,7 @@ export const firstData = [
   'Know Your Aptitude',
   'Goyal'
 ]
-export const secoundData = [
+export const secondData = [
   '1',
   'English',
   'English Cruise',
@@ -142,7 +142,7 @@ export const thirdData = [
   'Know Your Aptitude',
   'Goyal'
 ]
-export const fourData = [
+export const fourthData = [
   '1',
   'English',
   'English Cruise',
@@ -194,7 +194,7 @@ export const fourData = [
   'Know Your Aptitude',
   'Goyal'
 ]
-export const fiveData = [
+export const fifthData = [
   '1',
   'English',
   'English Cruise',
@@ -425,6 +425,30 @@ export const nineData = [
   'Goyal'
 ]
 export const kgData = ['Kreedo Montessori Books Full Set']
+
+export const oneArray = [
+  { name: 'First', list: firstData },
+  { name: 'Second', list: secondData },
+  { name: 'Third', list: thirdData },
+  { name: 'Fourth', list: fourthData },
+  { name: 'Fifth', list: fifthData },
+  { name: 'Sixth', list: sixData },
+  { name: 'Seventh', list: sevenData },
+  { name: 'Eighth', list: eightData },
+  { name: 'Ninth', list: nineData },
+  { name: 'KG', list: kgData }
+]
+
+//   secondData,
+//   thirdData,
+//   fourthData,
+//   fifthData,
+//   sixData,
+//   sevenData,
+//   eightData,
+//   nineData,
+//   kgData
+// ]
 
 // export const firstBook = [
 //   {
@@ -2124,3 +2148,5 @@ export const kgData = ['Kreedo Montessori Books Full Set']
 //     ]
 //   }
 // ]
+
+// export const oneBook = [

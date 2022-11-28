@@ -3,7 +3,6 @@ import Heading from '../../components/Heading'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { FlexColCenter } from '@/components/twin'
 import { InputSet, InputLabel, SubmitButton } from '@/components/twin/index'
-import { AiOutlineArrowDown } from 'react-icons/ai'
 const Application = () => {
   const intialValued = {
     studentName: '',
@@ -32,8 +31,8 @@ const Application = () => {
   const styles =
     'block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
   return (
-    <>
-      <Heading first={'Admission'} second={'Application'} third={'Form'} />
+    <div className="max-w-7xl mx-auto">
+      <Heading first={'Admission'} second={'Application '} third={' Form'} />
 
       <div className="flex flex-col-reverse items-center ">
         <div>
@@ -47,7 +46,7 @@ const Application = () => {
               }}
             >
               {({ handleChange, handleBlur, handleSubmit }) => (
-                <Form onSubmit={handleSubmit}>
+                <Form onSubmit={handleSubmit} className="w-full">
                   <InputSet>
                     <InputLabel>Student&apos;s Name</InputLabel>
 
@@ -271,6 +270,7 @@ const Application = () => {
                     <Field
                       name="familyAppliction"
                       type="textarea"
+                      component="textarea"
                       className={`${styles} h-36`}
                     />
 
@@ -286,6 +286,7 @@ const Application = () => {
                     <Field
                       name="perviousSchool"
                       type="textarea"
+                      component="textarea"
                       className={`${styles} h-24`}
                     />
 
@@ -378,7 +379,7 @@ const Application = () => {
 
                     <Field
                       name="markPerviousExam"
-                      type="textarea"
+                      component="textarea"
                       className={`${styles} h-36`}
                     />
 
@@ -397,6 +398,7 @@ const Application = () => {
                     <Field
                       name="intrestCurricular"
                       type="textarea"
+                      component="textarea"
                       className={`${styles} h-36`}
                     />
 
@@ -414,6 +416,7 @@ const Application = () => {
                     <Field
                       name="healthIssue"
                       type="textarea"
+                      component="textarea"
                       className={`${styles} h-36`}
                     />
 
@@ -425,42 +428,26 @@ const Application = () => {
                   </InputSet>
                   <InputSet>
                     <Field name="checked" className={'w-5'} type="checkbox" />
-                    <InputLabel>
-                      {' '}
-                      I agree that once Fees paid to the School is non
-                      refundable.{' '}
-                    </InputLabel>
-
+                    <span>
+                      <InputLabel>
+                        I agree that once Fees paid to the School is non
+                        refundable.{' '}
+                      </InputLabel>
+                    </span>
                     <ErrorMessage
                       name="checked"
                       component="div"
                       className="text-red-600"
                     />
                   </InputSet>
-                  <InputSet>
-                    <SubmitButton type="submit">Submit</SubmitButton>
-                  </InputSet>
+                  <SubmitButton type="submit">Submit</SubmitButton>
                 </Form>
               )}
             </Formik>
           </FlexColCenter>
         </div>
-        <FlexColCenter>
-          <h1 className="text-primary text-3xl font-bold mt-5">Application</h1>
-          <h1>
-            <AiOutlineArrowDown className="text-secondary text-5xl animate-bounce font-bold mt-5" />
-          </h1>
-        </FlexColCenter>
-        <div>
-          <img
-            src={
-              'https://img.freepik.com/free-vector/brain-chemistry-concept-illustration_114360-10136.jpg?w=740&t=st=1669476214~exp=1669476814~hmac=c55c03a15a377bbf0bcd3e48af64aa5cb2b5787498447cce8af98bd2453e5d02'
-            }
-            alt="image"
-          />
-        </div>
       </div>
-    </>
+    </div>
   )
 }
 

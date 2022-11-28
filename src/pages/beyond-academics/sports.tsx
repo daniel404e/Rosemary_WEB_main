@@ -1,3 +1,4 @@
+import Heading from '@/components/Heading'
 import HeadPara from '@/components/HeadPara'
 import React from 'react'
 import { sportsData, headDescription } from '../../constants/sportsData'
@@ -5,7 +6,8 @@ import { sportsData, headDescription } from '../../constants/sportsData'
 const Sports = () => {
   return (
     <>
-      <HeadPara title={'Sports'} description={headDescription} />
+      <Heading first={'Sport'} second={`'`} third={'s'} />
+      <HeadPara title={'About'} description={headDescription} />
 
       <div className="max-w-7xl mx-auto ">
         <div className="ml-4">

@@ -5,7 +5,7 @@ import Heading from '../../components/Heading'
 
 const Principals = () => {
   return (
-    <>
+    <div className="md:max-w-7xl mx-auto">
       <Heading first={"Principal's"} second={'Corner'} third={''} />
       <FlexColCenter>
         <GrayText>
@@ -19,7 +19,7 @@ const Principals = () => {
         <GrayText>{principalsData.para7}</GrayText>
         <BlueText>{principalsData.para8}</BlueText>
       </FlexColCenter>
-    </>
+    </div>
   )
 }
 

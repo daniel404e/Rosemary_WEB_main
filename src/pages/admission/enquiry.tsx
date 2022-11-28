@@ -20,8 +20,8 @@ const Enquiry = () => {
   const styles =
     'block w-full md:w-96 px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
   return (
-    <>
-      <Heading first={'Admission'} second={'Enquiry'} third={'Form'} />
+    <div className="max-w-7xl mx-auto ">
+      <Heading first={'Admission '} second={'Enquiry '} third={' Form'} />
       <div className="flex md:flex-row md:justify-around justify-center flex-col-reverse items-center">
         <div>
           <FlexColCenter className="mt-16 ">
@@ -106,7 +106,12 @@ const Enquiry = () => {
                   <InputSet>
                     <InputLabel>Any Other Details of Enquiry</InputLabel>
 
-                    <Field name="otherDetail" className={`${styles} h-28`} />
+                    <Field
+                      type={'text-area'}
+                      name="otherDetail"
+                      className={`${styles} h-28`}
+                      component="textarea"
+                    />
 
                     <ErrorMessage
                       name="otherDetail"
@@ -115,9 +120,7 @@ const Enquiry = () => {
                     />
                   </InputSet>
 
-                  <div className="flex justify-start ml-32 mt-10">
-                    <SubmitButton type="submit">Submit</SubmitButton>
-                  </div>
+                  <SubmitButton type="submit">Submit</SubmitButton>
                 </Form>
               )}
             </Formik>
@@ -131,7 +134,7 @@ const Enquiry = () => {
           />
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
