@@ -32,11 +32,14 @@ export const NewFooter = () => {
             </Link>
             <div className="mt-4 lg:max-w-sm">
               <p className="text-sm  text-white">
-                The shri Ram Universal school, is one of the best CBSE schools
-                in Perambur, Chennai, Our phliosophy is to provide child-centric
-                education through unique curriculum , where childern discover
-                their own potential, This holistic approach makes us the best
-                CBSE school in perambur
+                Established in 1981 Rosemary Institutions mark excellenceinall
+                the realms of education. The Sprawling campus located in NGO New
+                Colony, Perumalpuram is Uniquely placed intheheart of the city
+                yet offers a serene environment for schooling. We are founded on
+                the core competencies that are pertinent today and will be
+                relevant for years to come. The Rosemary Education Network
+                strives to create modern citizens who are equipped to take on
+                challenges and primed to make global changes
               </p>
             </div>
           </div>
@@ -48,15 +51,7 @@ export const NewFooter = () => {
               <ul className="mt-2 space-y-2">
                 <li>
                   <Link
-                    href="/"
-                    className="transition-colors duration-300 text-white hover:text-sky-900"
-                  >
-                    Admission Process
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/"
+                    href="/admission/application"
                     className="transition-colors duration-300 text-white hover:text-sky-900"
                   >
                     Application Form
@@ -64,34 +59,18 @@ export const NewFooter = () => {
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/admission/enquiry"
                     className="transition-colors duration-300 text-white hover:text-sky-900"
                   >
-                    E-Brochure
+                    Enquiry Form
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/admission/schedule"
                     className="transition-colors duration-300 text-white hover:text-sky-900"
                   >
                     Shedule a Visit
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/"
-                    className="transition-colors duration-300 text-white hover:text-sky-900"
-                  >
-                    FAQs
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/"
-                    className="transition-colors duration-300 text-white hover:text-sky-900"
-                  >
-                    Blogs
                   </Link>
                 </li>
               </ul>
@@ -103,10 +82,10 @@ export const NewFooter = () => {
               <ul className="mt-2 space-y-2">
                 <li>
                   <Link
-                    href="/"
+                    href="/about-us/philosophy"
                     className="transition-colors duration-300 text-white hover:text-sky-900"
                   >
-                    About RSME
+                    Our Philosophy
                   </Link>
                 </li>
                 <li>
@@ -114,31 +93,15 @@ export const NewFooter = () => {
                     href="/"
                     className="transition-colors duration-300 text-white hover:text-sky-900"
                   >
-                    About SPR India
+                    Home
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/about-us/vision"
                     className="transition-colors duration-300 text-white hover:text-sky-900"
                   >
-                    SHRI Differentiators
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/"
-                    className="transition-colors duration-300 text-white hover:text-sky-900"
-                  >
-                    SHRI Methodology
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/"
-                    className="transition-colors duration-300 text-white hover:text-sky-900"
-                  >
-                    Campus
+                    Vision and Mission
                   </Link>
                 </li>
               </ul>
@@ -151,19 +114,26 @@ export const NewFooter = () => {
               <ul className="mt-2 space-y-2">
                 <li>
                   <p className="transition-colors duration-300 text-sm text-white hover:text-sky-900">
-                    THE SHRI RAM UNIVERSAL SCHOOL CHENNAI SPR GURUKUL TRUST,
-                    Affiliated to CBSE/Affiliation Number : 19314741, New
-                    Farrance Road,
+                    SR. No. 808/2, Issac Nagar, NGO New Colony, Perumalpuram
+                    post, Tirunelveli - 627007, Tamilnadu.
                   </p>
                 </li>
-                <li>
+                <li className="text-white">
+                  Email:
                   <p className="transition-colors duration-300 text-white hover:text-sky-900">
-                    Email: admission@tsuschennai.com
+                    rmseoffice@gmail.com
+                    <br />
+                    rosemaryschoolofexcellence@gmail.com
                   </p>
                 </li>
-                <li>
+                <li className="text-white">
+                  Phone:
                   <p className="transition-colors duration-300 text-white hover:text-sky-900">
-                    Phone:+91 75435 678902
+                    +92 994 3026313,
+                    <br />
+                    +92 994 3026311,
+                    <br />
+                    0462 2901215
                   </p>
                 </li>
               </ul>

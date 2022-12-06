@@ -2,6 +2,98 @@ import Heading from '@/components/Heading'
 import { Space } from '@/components/twin'
 
 export default function KgCorner() {
+  const products = [
+    {
+      id: 1,
+      name: 'Organize Basic Set (Walnut)',
+      price: '$149',
+      rating: 5,
+      reviewCount: 38,
+      imageSrc:
+        'https://e53fdc85c3.clvaw-cdnwnd.com/4e130d1de07e170546cf6e7415c51409/200000782-4b4864b487/450/WhatsApp%20Image%202022-03-05%20at%201.35.02%20PM.jpg?ph=e53fdc85c3',
+
+      imageAlt: 'TODO',
+      href: '#'
+    },
+    {
+      id: 2,
+      name: 'Organize Pen Holder',
+      price: '$15',
+      rating: 5,
+      reviewCount: 18,
+      imageSrc:
+        'https://e53fdc85c3.clvaw-cdnwnd.com/4e130d1de07e170546cf6e7415c51409/200000778-44d4044d42/450/WhatsApp%20Image%202022-03-05%20at%202.03.06%20PM.jpg?ph=e53fdc85c3',
+      imageAlt: 'TODO',
+      href: '#'
+    },
+    {
+      id: 3,
+      name: 'Organize Sticky Note Holder',
+      price: '$15',
+      rating: 5,
+      reviewCount: 14,
+      imageSrc:
+        'https://e53fdc85c3.clvaw-cdnwnd.com/4e130d1de07e170546cf6e7415c51409/200000780-5c0815c082/450/WhatsApp%20Image%202022-03-05%20at%201.53.36%20PM.jpg?ph=e53fdc85c3',
+      imageAlt: 'TODO',
+      href: '#'
+    },
+    {
+      id: 4,
+      name: 'Organize Phone Holder',
+      price: '$15',
+      rating: 4,
+      reviewCount: 21,
+      imageSrc:
+        'https://e53fdc85c3.clvaw-cdnwnd.com/4e130d1de07e170546cf6e7415c51409/200000781-70d7e70d7f/450/IMG20220302114105.jpg?ph=e53fdc85c3',
+      imageAlt: 'TODO',
+      href: '#'
+    },
+    {
+      id: 4,
+      name: 'Organize Phone Holder',
+      price: '$15',
+      rating: 4,
+      reviewCount: 21,
+      imageSrc:
+        'https://e53fdc85c3.clvaw-cdnwnd.com/4e130d1de07e170546cf6e7415c51409/200000779-972ae972af/450/IMG20220303140806.jpg?ph=e53fdc85c3',
+      imageAlt: 'TODO',
+      href: '#'
+    },
+    {
+      id: 4,
+      name: 'Organize Phone Holder',
+      price: '$15',
+      rating: 4,
+      reviewCount: 21,
+      imageSrc:
+        'https://e53fdc85c3.clvaw-cdnwnd.com/4e130d1de07e170546cf6e7415c51409/200000783-87ce587ce6/450/IMG20220301121934.jpg?ph=e53fdc85c3',
+      imageAlt: 'TODO',
+      href: '#'
+    },
+    {
+      id: 4,
+      name: 'Organize Phone Holder',
+      price: '$15',
+      rating: 4,
+      reviewCount: 21,
+      imageSrc:
+        'https://e53fdc85c3.clvaw-cdnwnd.com/4e130d1de07e170546cf6e7415c51409/200000781-70d7e70d7f/450/IMG20220302114105.jpg?ph=e53fdc85c3',
+      imageAlt: 'TODO',
+      href: '#'
+    },
+    {
+      id: 4,
+      name: 'Organize Phone Holder',
+      price: '$15',
+      rating: 4,
+      reviewCount: 21,
+      imageSrc:
+        'https://e53fdc85c3.clvaw-cdnwnd.com/4e130d1de07e170546cf6e7415c51409/200000781-70d7e70d7f/450/IMG20220302114105.jpg?ph=e53fdc85c3',
+      imageAlt: 'TODO',
+      href: '#'
+    }
+    // More products...
+  ]
   return (
     <>
       <Heading first={'KG'} second={'Corner'} third={''} />
@@ -13,7 +105,6 @@ export default function KgCorner() {
               <h1 className="font text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                 LKG Activities
               </h1>
-              <p className="mt-4 text-4xl text-gray-500">- March 2022</p>
             </div>
             <div>
               <div className="mt-10">
@@ -84,6 +175,30 @@ export default function KgCorner() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="mt-10">
+        <div className="max-w-7xl mx-auto overflow-hidden sm:px-6 lg:px-8">
+          <h1 className="font text-2xl font-bold tracking-tight mt-2 text-gray-900 sm:text-2xl">
+            UKG Activities - March 2022
+          </h1>
+
+          <div className="-mx-px border-l border-gray-200 grid grid-cols-2 sm:mx-0 md:grid-cols-3 lg:grid-cols-4">
+            {products.map((product) => (
+              <div
+                key={product.id}
+                className="group relative p-4 border-r border-b border-gray-200 sm:p-6"
+              >
+                <div className="rounded-lg overflow-hidden bg-gray-200 aspect-w-1 aspect-h-1 group-hover:opacity-75">
+                  <img
+                    src={product.imageSrc}
+                    alt={product.imageAlt}
+                    className="w-full h-full object-center object-cover"
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

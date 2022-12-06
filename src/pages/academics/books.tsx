@@ -46,7 +46,7 @@ const Books = () => {
                                 : 'text-gray-900 font-light'
                             }
                           >
-                            {Number(data) > 0 && 'Class No '}
+                            {Number(data) > 0 && ''}
                             {data}
                           </TD>
                         )}

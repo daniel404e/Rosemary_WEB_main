@@ -109,6 +109,10 @@ const Application = () => {
                       <option value="STD 6" label="STD 6"></option>
                       <option value="STD 7" label="STD 7"></option>
                       <option value="STD 8" label="STD 8"></option>
+                      <option value="STD 9" label="STD 9"></option>
+                      <option value="STD 10" label="STD 10"></option>
+                      <option value="STD 11" label="STD 11"></option>
+                      <option value="STD 12" label="STD 12"></option>
                     </select>
                     <ErrorMessage
                       name="gradeApply"

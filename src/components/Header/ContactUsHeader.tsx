@@ -20,7 +20,7 @@ export default function ContactUsHeader() {
                 />
               </span>
               <p className="ml-1 truncate font-medium text-white">
-                <span className="inline">rsme@workspace.com</span>
+                <span className="inline">rmseoffice@gmail.com</span>
               </p>
             </div>
             <div className="flex pt-4 md:pt-0 md:pl-2">
@@ -28,7 +28,7 @@ export default function ContactUsHeader() {
                 <PhoneIcon className="h-6 w-6 text-white" aria-hidden="true" />
               </span>
               <div className="ml-1 truncate font-medium text-white">
-                <span className="inline">+91-123-4567-890</span>
+                <span className="inline">+91 99430 26313</span>
               </div>
             </div>
           </div>

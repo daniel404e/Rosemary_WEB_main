@@ -5,9 +5,10 @@ const index = () => {
       className="wrapper-full tab-container effectTab-header"
       id="style_9"
     >
-      <h1 className=" fontText my-4 text-4xl text-center font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl ">
-        Photo Album
+      <h1 className=" fontText my-4 text-2xl text-center font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-4xl ">
+        A 21st CENTURY INSTITUTION
       </h1>
+      <p className="text-center">ACADEMICS & BEYOND</p>
       <div className="wrapper tab-item">
         <div className="custom-row">
           <div className="column-12 column-xs-12 tab">

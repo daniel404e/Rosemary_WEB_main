@@ -21,7 +21,7 @@ const Schedule = () => {
     'block w-full md:w-96 px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
   return (
     <div className="max-w-7xl mx-auto ">
-      <Heading first={'Schedule '} second={'a '} third={' Visit'} />
+      <Heading first={'Schedule a Visit'} second={''} third={''} />
       <div className="flex md:flex-row md:justify-around justify-center flex-col-reverse items-center">
         <div>
           <img
