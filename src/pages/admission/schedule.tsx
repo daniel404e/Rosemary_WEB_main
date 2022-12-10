@@ -7,6 +7,10 @@ import {
   InputLabel,
   SubmitButton
 } from '@/components/twin'
+import {
+  ArrowLeftCircleIcon,
+  ArrowRightIcon
+} from '@heroicons/react/24/outline'
 
 const Schedule = () => {
   const intialValued = {
@@ -18,7 +22,7 @@ const Schedule = () => {
   }
 
   const styles =
-    'block w-full md:w-96 px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
+    'block w-full md:w-96 px-4 shadow-md  py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
   return (
     <div className="max-w-7xl mx-auto ">
       <Heading first={'Schedule a Visit'} second={''} third={''} />
@@ -122,7 +126,18 @@ const Schedule = () => {
                     />
                   </InputSet>
 
-                  <SubmitButton type="submit">Submit</SubmitButton>
+                  {/* <SubmitButton type="submit">Submit</SubmitButton> */}
+                  <SubmitButton
+                    // add group class
+                    className="group "
+                    onClick={() => handleSubmit()}
+                  >
+                    Submit
+                    <ArrowRightIcon
+                      className="ml-3 -mr-1 h-5 w-5 group-hover:translate-x-2 transition-all ease-in duration-200 "
+                      aria-hidden="true"
+                    />
+                  </SubmitButton>
                 </Form>
               )}
             </Formik>

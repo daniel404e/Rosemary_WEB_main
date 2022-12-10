@@ -3,5 +3,6 @@ export type List = {
   list: {
     name: string
     href: string
+    icon: any
   }[]
 }

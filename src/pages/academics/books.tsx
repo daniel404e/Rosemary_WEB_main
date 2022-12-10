@@ -20,7 +20,7 @@ const Books = () => {
               className="py-2 inline-block min-w-full sm:px-6 lg:px-8"
             >
               <div className="overflow-hidden">
-                <table className="min-w-[400px] w-full shadow  border border-blue-gray-200">
+                <table className="min-w-[400px] w-full shadow  border border-blue-gray-200 ">
                   <thead className="bg-white border-b">
                     <tr className="bg-secondarylight">
                       <TH scope="col">{item.name}</TH>

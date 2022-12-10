@@ -61,10 +61,10 @@ const Curriculum = () => {
         {data.map((value, index) => {
           return (
             <div className="sm:ml-2" key={index}>
-              <h1 className=" mb-4 mt-4 text-primary text-lg font-medium leading-relaxed tracking-tight">
+              <h1 className="  mb-4 mt-4 text-primary text-xl inline-block transition-all ease duration-200 cursor-pointer border-primary border-b-2 font-medium leading-relaxed tracking-tight">
                 {value.title}
               </h1>
-              <h5 key={index} className="ml-2 md:w-3/4 ">
+              <h5 key={index} className="ml-2 md:w-3/4  text-justify">
                 {value.description}
               </h5>
             </div>

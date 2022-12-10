@@ -3,6 +3,7 @@ import Heading from '../../components/Heading'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { FlexColCenter } from '@/components/twin'
 import { InputSet, InputLabel, SubmitButton } from '@/components/twin/index'
+import { ArrowRightIcon } from '@heroicons/react/24/outline'
 const Application = () => {
   const intialValued = {
     studentName: '',
@@ -29,7 +30,7 @@ const Application = () => {
     healthIssue: ''
   }
   const styles =
-    'block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
+    'block w-full px-4 py-3 mb-3 shadow-md leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
   return (
     <div className="max-w-7xl mx-auto">
       <Heading first={'Admission'} second={'Application '} third={' Form'} />
@@ -58,7 +59,6 @@ const Application = () => {
                       className="text-red-600"
                     />
                   </InputSet>
-
                   <InputSet>
                     <InputLabel>Date of Birth </InputLabel>
 
@@ -120,7 +120,6 @@ const Application = () => {
                       className="text-red-600"
                     />
                   </InputSet>
-
                   <InputSet>
                     <InputLabel id="my-radio-group">sex</InputLabel>
                     <div
@@ -159,7 +158,6 @@ const Application = () => {
                       className="text-red-600"
                     />
                   </InputSet>
-
                   <InputSet>
                     <InputLabel>Father Name </InputLabel>
 
@@ -264,7 +262,6 @@ const Application = () => {
                       className="text-red-600"
                     />
                   </InputSet>
-
                   <InputSet>
                     <InputLabel>
                       Does the applicant have any brother / sister studying in
@@ -374,7 +371,6 @@ const Application = () => {
                       </label>
                     </div>
                   </InputSet>
-
                   <InputSet>
                     <InputLabel>
                       Marks in the Previous Exams-English/Tamil/Maths/Science
@@ -444,7 +440,17 @@ const Application = () => {
                       className="text-red-600"
                     />
                   </InputSet>
-                  <SubmitButton type="submit">Submit</SubmitButton>
+                  <SubmitButton
+                    // add group class
+                    className="group "
+                    onClick={() => handleSubmit()}
+                  >
+                    Submit
+                    <ArrowRightIcon
+                      className="ml-3 -mr-1 h-5 w-5 group-hover:translate-x-2 transition-all ease-in duration-200 "
+                      aria-hidden="true"
+                    />
+                  </SubmitButton>{' '}
                 </Form>
               )}
             </Formik>

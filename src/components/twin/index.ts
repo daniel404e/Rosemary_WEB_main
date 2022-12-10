@@ -14,7 +14,7 @@ export const BlackText = tw.span`leading-relaxed text-justify w-2/3 text-black t
 export const headingBook = tw.h1`text-3xl flex  text-primary font-semibold leading-relaxed`
 export const InputSet = tw.div`w-full px-3 mb-6  md:mb-0`
 export const InputLabel = tw.p`block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase`
-export const SubmitButton = tw.button`bg-secondarylight w-[94%] ml-3 mt-3  border-2  py-2 rounded-md border-gray-400 px-6 `
+export const SubmitButton = tw.button` w-[30%] ml-3 mt-3   rounded-md border-gray-400 inline-flex items-center px-6 py-2 border border-transparent shadow-sm text-base font-medium text-center  text-white  bg-indigo-700 `
 // create a new component for Space between two elements
 export const Space = tw.div`h-10`
 export const BlueText = tw(GrayText)`text-primary`

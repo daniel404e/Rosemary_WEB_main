@@ -5,6 +5,7 @@ import Gallery from '../components/Gallery'
 import Classes from '../components/Classes'
 import Head from 'next/head'
 import Quote from '../components/Content/Quote'
+import NewClasses from '@/components/Classes/NewClasses'
 export default function Home() {
   return (
     <>
@@ -26,7 +27,8 @@ export default function Home() {
       <ParagraphOne />
       <Quote />
       <Gallery />
-      <Classes />
+      {/* <Classes /> */}
+      <NewClasses />
       <Enroll />
     </>
   )

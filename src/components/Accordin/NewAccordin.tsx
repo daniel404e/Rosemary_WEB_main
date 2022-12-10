@@ -6,6 +6,7 @@ import {
 } from '@material-tailwind/react'
 import { List } from '@/types/header'
 import { useRouter } from 'next/router'
+import { ChevronDownIcon } from '@heroicons/react/24/outline'
 
 function Icon({ id, open }: any) {
   return (
@@ -36,6 +37,9 @@ export default function NewAccordin({ list }: Props) {
   const navigateTo = (path: string) => {
     router.push(path)
   }
+  function classNames(...classes: any) {
+    return classes.filter(Boolean).join(' ')
+  }
   return (
     <Fragment>
       <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
@@ -53,9 +57,15 @@ export default function NewAccordin({ list }: Props) {
                   navigateTo(item.href)
                 }}
                 key={index}
-                className="-m-2 block  border-b-2 ml-2 py-3 p-2 text-sm font-medium text-gray-900 hover:text-gray-600 cursor-pointer"
+                className="-m-2  flex  border-b-2 ml-2 py-3 p-2 text-sm font-medium text-gray-900 hover:text-gray-600 cursor-pointer"
               >
-                {item.name}
+                <item.icon
+                  className={classNames(
+                    open ? 'text-gray-900 rotate-180' : 'text-gray-400',
+                    'ml-2 h-5 w-5 group-hover:text-gray-900 transition-transform'
+                  )}
+                />
+                <span>{item.name}</span>
               </div>
             ))}
         </AccordionBody>
