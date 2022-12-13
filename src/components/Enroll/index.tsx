@@ -8,11 +8,7 @@ const index = () => {
           Enroll Now
         </h1>
         <div className="grid overflow-hidden grid-cols-1 grid-rows-8 md:grid-cols-2 md:grid-rows-4 lg:grid-cols-4 lg:grid-rows-2 gap-1.5">
-          <div
-            className="box p-1 "
-            data-aos="fade-left"
-            data-aos-duration="1000"
-          >
+          <div className="box p-1 ">
             <input
               type="text"
               id="first_name"
@@ -21,11 +17,7 @@ const index = () => {
               required
             />
           </div>
-          <div
-            className="box p-1"
-            data-aos="fade-down"
-            data-aos-duration="1000"
-          >
+          <div className="box p-1">
             <input
               type="text"
               id="first_name"
@@ -34,11 +26,7 @@ const index = () => {
               required
             />
           </div>
-          <div
-            className="box p-1"
-            data-aos="fade-down"
-            data-aos-duration="1000"
-          >
+          <div className="box p-1">
             <input
               type="text"
               id="first_name"
@@ -47,11 +35,7 @@ const index = () => {
               required
             />
           </div>
-          <div
-            className="box p-1"
-            data-aos="fade-right"
-            data-aos-duration="1000"
-          >
+          <div className="box p-1">
             <input
               type="text"
               id="first_name"
@@ -60,11 +44,7 @@ const index = () => {
               required
             />
           </div>
-          <div
-            className="box p-1"
-            data-aos="fade-left"
-            data-aos-duration="1000"
-          >
+          <div className="box p-1">
             <input
               type="text"
               id="first_name"
@@ -73,7 +53,7 @@ const index = () => {
               required
             />
           </div>
-          <div className="box p-1" data-aos="fade-up" data-aos-duration="1000">
+          <div className="box p-1">
             <input
               type="text"
               id="first_name"
@@ -82,7 +62,7 @@ const index = () => {
               required
             />
           </div>
-          <div className="box p-1" data-aos="fade-up" data-aos-duration="1000">
+          <div className="box p-1">
             <input
               type="text"
               id="first_name"
@@ -91,11 +71,7 @@ const index = () => {
               required
             />
           </div>
-          <div
-            className="box p-1"
-            data-aos="fade-right"
-            data-aos-duration="2000"
-          >
+          <div className="box p-1">
             <input
               type="text"
               id="first_name"
@@ -104,11 +80,7 @@ const index = () => {
               required
             />
           </div>
-          <button
-            className="w-fit h-10 rounded-md bg-secondary px-5 text-white mt-4 ml-2 "
-            data-aos="fade-tight"
-            data-aos-duration="2000"
-          >
+          <button className="w-fit h-10 rounded-md bg-secondary px-5 text-white mt-4 ml-2 ">
             Enroll
           </button>
         </div>

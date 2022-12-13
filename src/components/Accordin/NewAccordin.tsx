@@ -57,15 +57,15 @@ export default function NewAccordin({ list }: Props) {
                   navigateTo(item.href)
                 }}
                 key={index}
-                className="-m-2  flex  border-b-2 ml-2 py-3 p-2 text-sm font-medium text-gray-900 hover:text-gray-600 cursor-pointer"
+                className="-m-2 gap-2 group flex  border-b-2 ml-2 py-3 p-2 text-sm font-medium text-gray-900 hover:text-gray-600 cursor-pointer"
               >
                 <item.icon
                   className={classNames(
-                    open ? 'text-gray-900 rotate-180' : 'text-gray-400',
-                    'ml-2 h-5 w-5 group-hover:text-gray-900 transition-transform'
+                    open ? 'text-gray-900' : 'text-gray-400',
+                    'ml-2 h-5 w-5 group-hover:text-primary '
                   )}
                 />
-                <span>{item.name}</span>
+                <span className="group-hover:text-primary">{item.name}</span>
               </div>
             ))}
         </AccordionBody>

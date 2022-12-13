@@ -17,6 +17,7 @@ import useMediaQuery from 'react-responsive'
 
 // const PricingDate =
 import Link from 'next/link'
+import { testimonials } from '@/constants/testimonials'
 const blogPosts = [
   {
     id: 1,
@@ -157,67 +158,37 @@ const NewClasses = () => {
           </p>
         </div>
 
-        <div>
+        <div className="mt-10">
           <CarouselProvider
             naturalSlideWidth={300}
             naturalSlideHeight={
               small ? 400 : medium ? 400 : large ? 400 : Xlarge ? 400 : 400
             }
             step={3}
-            totalSlides={blogPosts.length}
+            totalSlides={testimonials.length}
             visibleSlides={small ? 1 : medium ? 2 : large ? 2 : 3}
             dragEnabled={true}
             touchEnabled={true}
           >
             <Slider>
-              {blogPosts.map((post, index) => {
+              {testimonials.map((post, index) => {
                 return (
                   <Slide index={index} key={index} className="cursor-pointer">
-                    {/* <div
-                      key={index}
-                      className="rounded-2xl shadow  bg-white text-black"
-                    >
-                      <div className="">
-                        <div className="p-3">
-                          <h3 className="text-xl my-4  ">{item.title}</h3>
-
-                          <div className="flex space-x-3 justify-center items-center">
-                            <p className="text-4xl">
-                              {item.title}{' '}
-                              <span className="ml-1 text-sm">ETH</span>
-                            </p>
-                          </div>
-                        </div>
-                        <div className=" text-white">
-                          <Link href="/createToken">
-                            <button className="text-[#0000007f] font-[20px] rounded-b-2xl p-3 w-full bg-[#F3EBA3]">
-                              Create
-                            </button>
-                          </Link>
-                        </div>
-                      </div>
-                    </div> */}
                     <div
-                      key={post.id}
-                      className="flex flex-col  mx-5 rounded-lg shadow-lg overflow-hidden"
+                      key={index}
+                      className="flex flex-col mx-5 min-h-[400px] rounded-lg shadow-lg overflow-hidden"
                     >
-                      <div className="flex-shrink-0">
-                        <img
-                          className="h-48 w-full object-cover"
-                          src={post.imageUrl}
-                          alt=""
-                        />
-                      </div>
                       <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                         <div className="flex-1">
-                          <a href={post.href} className="block mt-2">
-                            <p className="text-xl font-semibold text-gray-900">
-                              {post.title}
+                          <p>{post.name}</p>
+                          <span className="block mt-2">
+                            <p className="text-xl font-medium text-gray-900">
+                              {post.remark}
                             </p>
                             <p className="mt-3 text-base text-gray-500">
-                              {post.preview}
+                              {post.address}
                             </p>
-                          </a>
+                          </span>
                         </div>
                       </div>
                     </div>

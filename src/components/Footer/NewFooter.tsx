@@ -118,7 +118,7 @@ export const NewFooter = () => {
                     post, Tirunelveli - 627007, Tamilnadu.
                   </p>
                 </li>
-                <li className="text-white">
+                <li className="text-primary">
                   Email:
                   <p className="transition-colors duration-300 text-white hover:text-sky-900">
                     rmseoffice@gmail.com
@@ -126,7 +126,7 @@ export const NewFooter = () => {
                     rosemaryschoolofexcellence@gmail.com
                   </p>
                 </li>
-                <li className="text-white">
+                <li className="text-primary">
                   Phone:
                   <p className="transition-colors duration-300 text-white hover:text-sky-900">
                     +92 994 3026313,
