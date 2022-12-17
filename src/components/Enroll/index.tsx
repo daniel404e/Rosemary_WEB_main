@@ -2,7 +2,7 @@ import React from 'react'
 
 const index = () => {
   return (
-    <div className="flex mx-auto justify-center">
+    <div className="flex mx-auto justify-center mt-10">
       <div className=" w-2/3 h-1/4 lg:max-w-6xl">
         <h1 className=" fontText my-4 text-4xl text-center font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl ">
           Enroll Now

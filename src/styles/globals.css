@@ -811,3 +811,35 @@ input[name='panel']:checked ~ .accordion__content {
   /* Get this as close to what height you expect */
   max-height: 50em;
 }
+
+.skeleton {
+  background-color: #a2a2a259;
+  /* background-image: linear-gradient(
+    90deg,
+    rgba(#fff, 0),
+    rgba(#fff, 0.5),
+    rgba(#fff, 0)
+  ); */
+  background-size: 100px 100%;
+  background-repeat: no-repeat;
+  /* background-position: left -100px top 0; */
+  /* animation: shine 1s ease infinite; */
+  animation: shine 2s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes shine {
+  0% {
+    background-color: #dddddd;
+  }
+  50% {
+    background-color: #c4c4c4;
+  }
+  100% {
+    background-color: #dddddd;
+  }
+  /* 100% {
+    transform: rotate(360deg);
+    box-shadow: 0 0 0 50px rgba(255, 255, 255, 0);
+  } */
+}

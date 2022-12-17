@@ -111,7 +111,12 @@ const Studentsclubs = () => {
       <div className="text-center mt-5">
         <Heading first="Students" second="Clubs" third="" />
       </div>
-      <HeadPara title={headObject.title} description={headObject.description} />
+      <div className="max-w-7xl mx-auto">
+        <HeadPara
+          title={headObject.title}
+          description={headObject.description}
+        />
+      </div>
       <Classes />
       <div className="max-w-7xl mx-auto">
         <Hero

@@ -6,7 +6,6 @@ import {
 } from '@material-tailwind/react'
 import { List } from '@/types/header'
 import { useRouter } from 'next/router'
-import { ChevronDownIcon } from '@heroicons/react/24/outline'
 
 function Icon({ id, open }: any) {
   return (

@@ -13,9 +13,5 @@ export const heroRightObject = {
 }
 export const headObject = {
   title: 'Clubs',
-  description: `Live-edge letterpress cliche, salvia fanny pack humblebrag narwhal
-    portland. VHS man braid palo santo hoodie brunch trust fund. Bitters hashtag
-    waistcoat fashion axe chia unicorn. Plaid fixie chambray 90's, slow-carb etsy
-    tumeric. Cray pug you probably havent heard of them hexagon kickstarter craft
-    beer pork chic.`
+  description: `At Rosemary School of Excellence we lay due emphasis on different activities through active participation in various clubs activities. We guide students to discover and create their own understanding. Besides academics, co scholastic activities form an integral part of the school curriculum. This aspect includes wide range of co-curricular activities.`
 }

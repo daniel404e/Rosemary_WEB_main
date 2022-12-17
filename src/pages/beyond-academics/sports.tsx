@@ -1,10 +1,5 @@
 import Heading from '@/components/Heading'
-import HeadPara from '@/components/HeadPara'
-import {
-  ArrowLeftIcon,
-  ArrowRightIcon,
-  ChevronRightIcon
-} from '@heroicons/react/24/outline'
+import { ChevronRightIcon } from '@heroicons/react/24/outline'
 import React from 'react'
 import { sportsData, headDescription } from '../../constants/sportsData'
 

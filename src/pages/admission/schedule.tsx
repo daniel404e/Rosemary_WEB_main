@@ -7,10 +7,7 @@ import {
   InputLabel,
   SubmitButton
 } from '@/components/twin'
-import {
-  ArrowLeftCircleIcon,
-  ArrowRightIcon
-} from '@heroicons/react/24/outline'
+import { ArrowRightIcon } from '@heroicons/react/24/outline'
 
 const Schedule = () => {
   const intialValued = {

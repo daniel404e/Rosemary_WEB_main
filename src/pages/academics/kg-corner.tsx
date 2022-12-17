@@ -1,14 +1,11 @@
 import Heading from '@/components/Heading'
-import { Space } from '@/components/twin'
+import { FlexCenter, Space } from '@/components/twin'
+import { useState } from 'react'
 
 export default function KgCorner() {
   const products = [
     {
       id: 1,
-      name: 'Organize Basic Set (Walnut)',
-      price: '$149',
-      rating: 5,
-      reviewCount: 38,
       imageSrc:
         'https://e53fdc85c3.clvaw-cdnwnd.com/4e130d1de07e170546cf6e7415c51409/200000782-4b4864b487/450/WhatsApp%20Image%202022-03-05%20at%201.35.02%20PM.jpg?ph=e53fdc85c3',
 
@@ -17,10 +14,7 @@ export default function KgCorner() {
     },
     {
       id: 2,
-      name: 'Organize Pen Holder',
-      price: '$15',
-      rating: 5,
-      reviewCount: 18,
+
       imageSrc:
         'https://e53fdc85c3.clvaw-cdnwnd.com/4e130d1de07e170546cf6e7415c51409/200000778-44d4044d42/450/WhatsApp%20Image%202022-03-05%20at%202.03.06%20PM.jpg?ph=e53fdc85c3',
       imageAlt: 'TODO',
@@ -28,10 +22,7 @@ export default function KgCorner() {
     },
     {
       id: 3,
-      name: 'Organize Sticky Note Holder',
-      price: '$15',
-      rating: 5,
-      reviewCount: 14,
+
       imageSrc:
         'https://e53fdc85c3.clvaw-cdnwnd.com/4e130d1de07e170546cf6e7415c51409/200000780-5c0815c082/450/WhatsApp%20Image%202022-03-05%20at%201.53.36%20PM.jpg?ph=e53fdc85c3',
       imageAlt: 'TODO',
@@ -39,10 +30,7 @@ export default function KgCorner() {
     },
     {
       id: 4,
-      name: 'Organize Phone Holder',
-      price: '$15',
-      rating: 4,
-      reviewCount: 21,
+
       imageSrc:
         'https://e53fdc85c3.clvaw-cdnwnd.com/4e130d1de07e170546cf6e7415c51409/200000781-70d7e70d7f/450/IMG20220302114105.jpg?ph=e53fdc85c3',
       imageAlt: 'TODO',
@@ -50,10 +38,7 @@ export default function KgCorner() {
     },
     {
       id: 4,
-      name: 'Organize Phone Holder',
-      price: '$15',
-      rating: 4,
-      reviewCount: 21,
+
       imageSrc:
         'https://e53fdc85c3.clvaw-cdnwnd.com/4e130d1de07e170546cf6e7415c51409/200000779-972ae972af/450/IMG20220303140806.jpg?ph=e53fdc85c3',
       imageAlt: 'TODO',
@@ -61,10 +46,7 @@ export default function KgCorner() {
     },
     {
       id: 4,
-      name: 'Organize Phone Holder',
-      price: '$15',
-      rating: 4,
-      reviewCount: 21,
+
       imageSrc:
         'https://e53fdc85c3.clvaw-cdnwnd.com/4e130d1de07e170546cf6e7415c51409/200000783-87ce587ce6/450/IMG20220301121934.jpg?ph=e53fdc85c3',
       imageAlt: 'TODO',
@@ -72,10 +54,7 @@ export default function KgCorner() {
     },
     {
       id: 4,
-      name: 'Organize Phone Holder',
-      price: '$15',
-      rating: 4,
-      reviewCount: 21,
+
       imageSrc:
         'https://e53fdc85c3.clvaw-cdnwnd.com/4e130d1de07e170546cf6e7415c51409/200000781-70d7e70d7f/450/IMG20220302114105.jpg?ph=e53fdc85c3',
       imageAlt: 'TODO',
@@ -83,10 +62,7 @@ export default function KgCorner() {
     },
     {
       id: 4,
-      name: 'Organize Phone Holder',
-      price: '$15',
-      rating: 4,
-      reviewCount: 21,
+
       imageSrc:
         'https://e53fdc85c3.clvaw-cdnwnd.com/4e130d1de07e170546cf6e7415c51409/200000781-70d7e70d7f/450/IMG20220302114105.jpg?ph=e53fdc85c3',
       imageAlt: 'TODO',
@@ -94,6 +70,11 @@ export default function KgCorner() {
     }
     // More products...
   ]
+
+  const [images, setImages] = useState(products)
+  const loadMoreFunction = () => {
+    setImages([...images, ...products])
+  }
   return (
     <>
       <Heading first={'KG'} second={'Corner'} third={''} />
@@ -185,8 +166,10 @@ export default function KgCorner() {
           </h1>
 
           <div className="-mx-px border-l border-gray-200 grid grid-cols-2 sm:mx-0 md:grid-cols-3 lg:grid-cols-4">
-            {products.map((product) => (
+            {images.map((product) => (
               <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
                 key={product.id}
                 className="group relative p-4 border-r border-b border-gray-200 sm:p-6"
               >
@@ -200,6 +183,14 @@ export default function KgCorner() {
               </div>
             ))}
           </div>
+          <FlexCenter>
+            <button
+              className="border rounded-md p-2 bg-blue-gray-100"
+              onClick={loadMoreFunction}
+            >
+              Load More
+            </button>
+          </FlexCenter>
         </div>
       </div>
     </>

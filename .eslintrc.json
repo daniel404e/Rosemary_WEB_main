@@ -1,10 +1,7 @@
 {
   // Configuration for JavaScript files
-  "extends": [
-    "next/core-web-vitals"
-  ],
+  "extends": ["next/core-web-vitals"],
   "rules": {
-   
     "@typescript-eslint/naming-convention": [
       "warn",
       {
@@ -13,20 +10,16 @@
       }
     ],
     "prettier/prettier": [
-      "error",
+      "warn",
       {
         "singleQuote": true,
         "endOfLine": "auto"
       }
     ],
-    "eqeqeq": [
-      "error"
-    ],
+    "eqeqeq": ["error"],
 
-    "no-alert": [
-      "off"
-    ]
-    
+    "no-alert": ["off"]
+
     // "no-empty-function": [
     //   "error",
     //   {
@@ -37,15 +30,8 @@
   "overrides": [
     // Configuration for TypeScript files
     {
-      "files": [
-        "**/*.ts",
-        "**/*.tsx"
-      ],
-      "plugins": [
-        "@typescript-eslint",
-        "unused-imports",
-        "simple-import-sort"
-      ],
+      "files": ["**/*.ts", "**/*.tsx"],
+      "plugins": ["@typescript-eslint", "unused-imports", "simple-import-sort"],
       "extends": [
         "airbnb-typescript",
         "next/core-web-vitals",
@@ -69,16 +55,15 @@
         "@next/next/no-img-element": "off", // We currently not using next/image because it isn't supported with SSG mode
         "@typescript-eslint/comma-dangle": "off", // Avoid conflict rule between Eslint and Prettier
         // "@typescript-eslint/consistent-type-imports": "error", // Ensure `import type` is used when it's necessary
-        "import/prefer-default-export": "off", // Named export is easier to refactor automatically
-        "@typescript-eslint/no-unused-vars": "off",
+        "import/prefer-default-export": "off" // Named export is easier to refactor automatically
         // "unused-imports/no-unused-imports": "error",
         // "@typescript-eslint/consistent-type-imports": "error",
-        "unused-imports/no-unused-vars": [
-          "off",
-          {
-            "argsIgnorePattern": "^_"
-          }
-        ]
+        // "unused-imports/no-unused-vars": [
+        //   "off",
+        //   {
+        //     "argsIgnorePattern": "^_"
+        //   }
+        // ]
       }
     }
   ]
