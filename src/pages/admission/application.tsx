@@ -1,23 +1,34 @@
 import React from 'react'
 import Heading from '../../components/Heading'
-import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { Formik, Form, Field, ErrorMessage ,getIn} from 'formik'
 import { FlexColCenter } from '@/components/twin'
+import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {ApplicationValidation} from '../../components/Validation/applicationValidation'
 import { InputSet, InputLabel, SubmitButton } from '@/components/twin/index'
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 const Application = () => {
+  function getStyles(errors:any, fieldName:string) {
+    if (getIn(errors, fieldName)) {
+      return {
+        border: '1px solid red'
+      }
+    }
+  }
   const intialValued = {
     studentName: '',
-    dateOfBirth: '',
-    age: '',
+    dateOfBirth: 0,
+    age: 0,
     gradeApply: '',
     sex: '',
-    eamil: '',
+    email: '',
     fatherName: '',
     fatherOccupation: '',
-    fatherContact: '',
+    fatherContact: 0,
     motherName: '',
     motherOccupation: '',
-    motherContact: '',
+    motherContact: 0,
     residentAddress: '',
     parentIncome: '',
     familyAppliction: '',
@@ -27,7 +38,8 @@ const Application = () => {
     changeSchool: '',
     markPerviousExam: '',
     intrestCurricular: '',
-    healthIssue: ''
+    healthIssue: '',
+    checked:''
   }
   const styles =
     'block w-full px-4 py-3 mb-3 shadow-md leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
@@ -41,45 +53,82 @@ const Application = () => {
             <Formik
               enableReinitialize
               initialValues={intialValued}
-              // validationSchema={SinupValdation}
-              onSubmit={(values) => {
-                alert(JSON.stringify(values, null, 2))
+               validationSchema={ApplicationValidation}
+              onSubmit={(values ,actions) => {
+
+                axios({
+                  method: "POST",
+                  url: "https://formspree.io/f/mjvdbkae",
+                  data: values
+                })
+                  .then((response:any) => {
+                    actions.setSubmitting(false);
+                    actions.resetForm();
+                    if(response)
+                    {
+      
+                      toast.error('Server Error', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        });
+                    }
+                    
+                  })
+                  .catch((error:any)=> {
+                    actions.setSubmitting(false);
+                    toast.error('Server Error', {
+                      position: "top-right",
+                      autoClose: 5000,
+                      hideProgressBar: false,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+                      theme: "light",
+                      });
+                  });
               }}
             >
-              {({ handleChange, handleBlur, handleSubmit }) => (
+              {({ handleChange, handleBlur, handleSubmit,errors }) => (
                 <Form onSubmit={handleSubmit} className="w-full">
                   <InputSet>
                     <InputLabel>Student&apos;s Name</InputLabel>
 
-                    <Field name="studentName" className={styles} />
+                    <Field name="studentName" className={styles} style={getStyles(errors, `studentName`)}/>
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="studentName"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>Date of Birth </InputLabel>
 
-                    <Field name="dateOfBirth" type="date" className={styles} />
+                    <Field name="dateOfBirth" type="date" className={styles} style={getStyles(errors, `dateOfBirth`)}/>
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="dateOfBirth"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>age </InputLabel>
 
-                    <Field name="age" className={styles} />
+                    <Field name="age" className={styles} style={getStyles(errors, `age`)} />
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="age"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>Grade Applying For</InputLabel>
@@ -90,7 +139,7 @@ const Application = () => {
                       // value={values.color}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      style={{ display: 'block' }}
+                      style={getStyles(errors, `gradeApply`)}
                     >
                       <option value="" label="Click Here">
                         Click Here{' '}
@@ -114,11 +163,11 @@ const Application = () => {
                       <option value="STD 11" label="STD 11"></option>
                       <option value="STD 12" label="STD 12"></option>
                     </select>
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="gradeApply"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel id="my-radio-group">sex</InputLabel>
@@ -133,6 +182,7 @@ const Application = () => {
                           className={' mr-3'}
                           name="sex"
                           value="male"
+                          style={getStyles(errors, `sex`)}
                         />
                         Male
                       </label>
@@ -142,6 +192,7 @@ const Application = () => {
                           className={' mr-3'}
                           name="sex"
                           value="female"
+                          style={getStyles(errors, `sex`)}
                         />
                         Female
                       </label>
@@ -150,83 +201,83 @@ const Application = () => {
                   <InputSet>
                     <InputLabel>Email </InputLabel>
 
-                    <Field name="email" className={`${styles} `} />
+                    <Field name="email" className={`${styles} `} style={getStyles(errors, `email`)} />
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="email"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>Father Name </InputLabel>
 
-                    <Field name="fatherName" className={`${styles} `} />
+                    <Field name="fatherName" className={`${styles} `} style={getStyles(errors, `fatherName`)}/>
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="fatherName"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>
                       Father Occupation & Educational Qualification
                     </InputLabel>
 
-                    <Field name="fatherOccupation" className={`${styles} `} />
+                    <Field name="fatherOccupation" className={`${styles} `}  style={getStyles(errors, `fatherOccupation`)}/>
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="fatherOccupation"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>Father Contact Number</InputLabel>
 
-                    <Field name="fatherContact" className={`${styles} `} />
+                    <Field name="fatherContact" className={`${styles} `} style={getStyles(errors, `fatherContact`)}/>
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="fatherContact"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>Mother Name </InputLabel>
 
-                    <Field name="motherName" className={`${styles} `} />
+                    <Field name="motherName" className={`${styles} `}  style={getStyles(errors, `motherName`)}/>
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="motherName"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>
                       Mother Occupation & Educational Qualification
                     </InputLabel>
 
-                    <Field name="motherOccupation" className={`${styles} `} />
+                    <Field name="motherOccupation" className={`${styles} `} style={getStyles(errors, `motherOccupation`)}/>
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="motherOccupation"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>Mother Contact Number</InputLabel>
 
-                    <Field name="motherContact" className={`${styles} `} />
+                    <Field name="motherContact" className={`${styles} `} style={getStyles(errors, `motherContact`)}/>
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="motherContact"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>
@@ -237,13 +288,14 @@ const Application = () => {
                       name="residentAddress"
                       type="textarea"
                       className={`${styles} h-24`}
+                      style={getStyles(errors, `residentAddress`)}
                     />
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="residentAddress"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>
@@ -254,13 +306,14 @@ const Application = () => {
                       name="parentIncome"
                       type="textarea"
                       className={`${styles}`}
+                      style={getStyles(errors, `parentIncome`)}
                     />
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="parentIncome"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>
@@ -273,13 +326,14 @@ const Application = () => {
                       type="textarea"
                       component="textarea"
                       className={`${styles} h-36`}
+                      style={getStyles(errors, `familyAppliction`)}
                     />
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="familyAppliction"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>Previous School Name & Address</InputLabel>
@@ -289,13 +343,14 @@ const Application = () => {
                       type="textarea"
                       component="textarea"
                       className={`${styles} h-24`}
+                      style={getStyles(errors, `perviousSchool`)}
                     />
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="perviousSchool"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>Specify The Board</InputLabel>
@@ -306,7 +361,7 @@ const Application = () => {
                       // value={values.color}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      style={{ display: 'block' }}
+                      style={getStyles(errors, `boardSpecify`)}
                     >
                       <option value="" label="Click Here">
                         Click Here{' '}
@@ -321,11 +376,11 @@ const Application = () => {
                       <option value="IGCSE" label="IGCSE"></option>
                       <option value="Other" label="Other"></option>
                     </select>
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="boardSpecify"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>Class Last Studied</InputLabel>
@@ -334,13 +389,14 @@ const Application = () => {
                       name="lastStudy"
                       type="textarea"
                       className={`${styles} `}
+                      style={getStyles(errors, `lastStudy`)}
                     />
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="lastStudy"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel id="my-radio-group">
@@ -357,6 +413,7 @@ const Application = () => {
                           className={' mr-3'}
                           name="changeSchool"
                           value="Transfer"
+                          style={getStyles(errors, `changeSchool`)}
                         />
                         Transfer
                       </label>
@@ -366,6 +423,7 @@ const Application = () => {
                           className={' mr-3'}
                           name="changeSchool"
                           value="Parent Choice"
+                          style={getStyles(errors, `changeSchool`)}
                         />
                         Parent Choice
                       </label>
@@ -381,13 +439,14 @@ const Application = () => {
                       name="markPerviousExam"
                       component="textarea"
                       className={`${styles} h-36`}
+                      style={getStyles(errors, `markPerviousExam`)}
                     />
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="markPerviousExam"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>
@@ -400,13 +459,14 @@ const Application = () => {
                       type="textarea"
                       component="textarea"
                       className={`${styles} h-36`}
+                      style={getStyles(errors, `intrestCurricular`)}
                     />
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="intrestCurricular"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>
@@ -418,16 +478,17 @@ const Application = () => {
                       type="textarea"
                       component="textarea"
                       className={`${styles} h-36`}
+                      style={getStyles(errors, `healthIssue`)}
                     />
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="healthIssue"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
-                    <Field name="checked" className={'w-5'} type="checkbox" />
+                    <Field name="checked" className={'w-5'} type="checkbox"  style={getStyles(errors, `checked`)}/>
                     <span>
                       <InputLabel>
                         I agree that once Fees paid to the School is non
@@ -457,6 +518,20 @@ const Application = () => {
           </FlexColCenter>
         </div>
       </div>
+      <ToastContainer
+    position="top-right"
+    autoClose={5000}
+    hideProgressBar={false}
+    newestOnTop={false}
+    closeOnClick
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+    theme="light"
+    />
+    {/* Same as */}
+    <ToastContainer />
     </div>
   )
 }

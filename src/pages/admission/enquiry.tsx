@@ -1,6 +1,10 @@
-import React from 'react'
+import React ,{useState} from 'react'
 import Heading from '../../components/Heading'
-import { Formik, Form, Field, ErrorMessage } from 'formik'
+import {EnquiryValidation} from '../../components/Validation/enquiryValidation'
+import { Formik, Form, Field, ErrorMessage,getIn } from 'formik'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios'
 import {
   FlexColCenter,
   InputSet,
@@ -10,14 +14,22 @@ import {
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 
 const Enquiry = () => {
+  
   const intialValued = {
     studentName: '',
     fatherName: '',
-    mobileNumber: '',
+    mobileNumber: 0,
     otherDetail: '',
     seekAdmisssion: ''
   }
-
+ 
+  function getStyles(errors:any, fieldName:string) {
+    if (getIn(errors, fieldName)) {
+      return {
+        border: '1px solid red'
+      }
+    }
+  }
   const styles =
     'block w-full md:w-96 px-4 shadow-md py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
   return (
@@ -29,23 +41,61 @@ const Enquiry = () => {
             <Formik
               enableReinitialize
               initialValues={intialValued}
-              // validationSchema={SinupValdation}
-              onSubmit={(values) => {
-                alert(JSON.stringify(values, null, 2))
+                validationSchema={EnquiryValidation}
+              onSubmit={(values,actions) => {
+            
+                axios({
+                  method: "POST",
+                  url: "https://formspree.io/f/xdovnkww",
+                  data: values
+                })
+                  .then((response:any) => {
+                    actions.setSubmitting(false);
+                    actions.resetForm();
+                    if(response)
+                    {
+      
+                      toast.error('Server Error', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        });
+                    }
+                    
+                  })
+                  .catch((error:any)=> {
+                    actions.setSubmitting(false);
+                    toast.error('Server Error', {
+                      position: "top-right",
+                      autoClose: 5000,
+                      hideProgressBar: false,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+                      theme: "light",
+                      });
+                  });
+
               }}
             >
-              {({ handleChange, handleBlur, handleSubmit }) => (
+              {({ handleChange, handleBlur, handleSubmit,errors }) => (
                 <Form onSubmit={handleSubmit}>
                   <InputSet>
                     <InputLabel>Student&apos;s Name</InputLabel>
 
-                    <Field name="studentName" className={styles} />
-
+                    <Field name="studentName" className={styles} style={getStyles(errors, `studentName`)} />
+{/* 
                     <ErrorMessage
                       name="studentName"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>Seeking Admission For</InputLabel>
@@ -55,7 +105,8 @@ const Enquiry = () => {
                       className={`${styles} w-full`}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      style={{ display: 'block' }}
+                      
+                      style={getStyles(errors, `seekAdmisssion`)}
                     >
                       <option value="" label="Click Here">
                         Click Here{' '}
@@ -79,33 +130,33 @@ const Enquiry = () => {
                       <option value="STD 11" label="STD 11"></option>
                       <option value="STD 12" label="STD 12"></option>
                     </select>
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="seekAdmisssion"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>Father&apos;s Name</InputLabel>
-
-                    <Field name="fatherName" className={styles} />
-
+                    <Field name="fatherName" className={styles} style={getStyles(errors, `fatherName`)} />
+{/* 
                     <ErrorMessage
                       name="fatherName"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>Mobile Number </InputLabel>
 
-                    <Field name="mobileNumber" className={styles} />
+                    <Field name="mobileNumber" className={styles}   
+                      style={getStyles(errors, `mobileNumber`)}/>
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="mobileNumber"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>Any Other Details of Enquiry</InputLabel>
@@ -115,13 +166,15 @@ const Enquiry = () => {
                       name="otherDetail"
                       className={`${styles} h-28`}
                       component="textarea"
+                        
+                      style={getStyles(errors, `otherDetail`)}
                     />
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="otherDetail"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <SubmitButton
                     // add group class
@@ -134,6 +187,7 @@ const Enquiry = () => {
                       aria-hidden="true"
                     />
                   </SubmitButton>
+               
                 </Form>
               )}
             </Formik>
@@ -147,6 +201,20 @@ const Enquiry = () => {
           />
         </div>
       </div>
+      <ToastContainer
+    position="top-right"
+    autoClose={5000}
+    hideProgressBar={false}
+    newestOnTop={false}
+    closeOnClick
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+    theme="light"
+    />
+    {/* Same as */}
+    <ToastContainer />
     </div>
   )
 }

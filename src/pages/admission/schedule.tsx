@@ -1,6 +1,10 @@
 import React from 'react'
 import Heading from '../../components/Heading'
-import { Formik, Form, Field, ErrorMessage } from 'formik'
+import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {schduleValidation} from '../../components/Validation/schduleValidation'
+import { Formik, Form, Field, ErrorMessage ,getIn} from 'formik'
 import {
   FlexColCenter,
   InputSet,
@@ -10,12 +14,19 @@ import {
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 
 const Schedule = () => {
+  function getStyles(errors:any, fieldName:string) {
+    if (getIn(errors, fieldName)) {
+      return {
+        border: '1px solid red'
+      }
+    }
+  }
   const intialValued = {
     studentName: '',
-    fatherName: '',
-    mobileNumber: '',
-    otherDetail: '',
-    seekAdmisssion: ''
+    email:'',
+    schedulevisit: '',
+    mobileNumber: 0,
+    additionComment: ''
   }
 
   const styles =
@@ -36,44 +47,82 @@ const Schedule = () => {
             <Formik
               enableReinitialize
               initialValues={intialValued}
-              // validationSchema={SinupValdation}
-              onSubmit={(values) => {
-                alert(JSON.stringify(values, null, 2))
+               validationSchema={schduleValidation}
+              onSubmit={(values,actions) => {
+               
+                axios({
+                  method: "POST",
+                  url: "https://formspree.io/f/xayzwnpl",
+                  data: values
+                })
+                  .then((response:any) => {
+                    actions.setSubmitting(false);
+                    actions.resetForm();
+                    if(response)
+                    {
+      
+                      toast.success('Successfull Submit', {
+                        position: "top-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        });
+                    }
+                    
+                  })
+                  .catch((error:any)=> {
+                    actions.setSubmitting(false);
+                    toast.error('Server Error', {
+                      position: "top-right",
+                      autoClose: 5000,
+                      hideProgressBar: false,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+                      theme: "light",
+                      });
+                  });
+
               }}
             >
-              {({ handleChange, handleBlur, handleSubmit }) => (
+              {({ handleChange, handleBlur, handleSubmit,errors }) => (
                 <Form onSubmit={handleSubmit}>
                   <InputSet>
                     <InputLabel>Name</InputLabel>
 
-                    <Field name="studentName" className={styles} />
+                    <Field name="studentName" className={styles} style={getStyles(errors, `studentName`)}/>
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="studentName"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>Email</InputLabel>
 
-                    <Field name="studentName" className={styles} />
+                    <Field name="email" className={styles} style={getStyles(errors, `email`)}/>
 
-                    <ErrorMessage
-                      name="studentName"
+                    {/* <ErrorMessage
+                      name="email"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>Schedule Visist For</InputLabel>
 
                     <select
-                      name="seekAdmisssion"
+                      name="schedulevisit"
                       className={`${styles} w-full`}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      style={{ display: 'block' }}
+                      style={getStyles(errors, `schedulevisit`)}
                     >
                       <option value="" label="Information">
                         Information
@@ -88,46 +137,47 @@ const Schedule = () => {
 
                       <option value="other" label="Other"></option>
                     </select>
-                    <ErrorMessage
-                      name="seekAdmisssion"
+                    {/* <ErrorMessage
+                      name="schedulevisit"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
 
                   <InputSet>
                     <InputLabel>Mobile Number </InputLabel>
 
-                    <Field name="mobileNumber" className={styles} />
+                    <Field name="mobileNumber" className={styles}  style={getStyles(errors, `mobileNumber`)}/>
 
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="mobileNumber"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
                   <InputSet>
                     <InputLabel>Additional Comments</InputLabel>
 
                     <Field
                       type={'text-area'}
-                      name="otherDetail"
+                      name="additionComment"
                       className={`${styles} h-28`}
                       component="textarea"
+                      style={getStyles(errors, `additionComment`)}
                     />
 
-                    <ErrorMessage
-                      name="otherDetail"
+                    {/* <ErrorMessage
+                      name="additionComment"
                       component="div"
                       className="text-red-600"
-                    />
+                    /> */}
                   </InputSet>
 
                   {/* <SubmitButton type="submit">Submit</SubmitButton> */}
                   <SubmitButton
                     // add group class
                     className="group "
-                    onClick={() => handleSubmit()}
+                    // onClick={() => handleSubmit()}
                   >
                     Submit
                     <ArrowRightIcon
@@ -141,7 +191,22 @@ const Schedule = () => {
           </FlexColCenter>
         </div>
       </div>
+      <ToastContainer
+    position="top-right"
+    autoClose={5000}
+    hideProgressBar={false}
+    newestOnTop={false}
+    closeOnClick
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+    theme="light"
+    />
+    {/* Same as */}
+    <ToastContainer />
     </div>
+    
   )
 }
 
