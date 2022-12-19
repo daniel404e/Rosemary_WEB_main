@@ -1,9 +1,14 @@
 import Heading from '@/components/Heading'
 import { FlexCenter, Space } from '@/components/twin'
 import { useState } from 'react'
-
+import pic1 from '../../images/library/1.jpg'
+import pic2 from '../../images/library/2.jpg'
+import pic3 from '../../images/library/3.jpg'
+import pic4 from '../../images/library/4.jpg'
+import pic5 from '../../images/library/5.jpg'
+import Image from 'next/image'
 export default function KgCorner() {
-  const products = [
+  const products: any = [
     {
       id: 1,
       imageSrc:
@@ -37,7 +42,7 @@ export default function KgCorner() {
       href: '#'
     },
     {
-      id: 4,
+      id: 5,
 
       imageSrc:
         'https://e53fdc85c3.clvaw-cdnwnd.com/4e130d1de07e170546cf6e7415c51409/200000779-972ae972af/450/IMG20220303140806.jpg?ph=e53fdc85c3',
@@ -45,7 +50,7 @@ export default function KgCorner() {
       href: '#'
     },
     {
-      id: 4,
+      id: 6,
 
       imageSrc:
         'https://e53fdc85c3.clvaw-cdnwnd.com/4e130d1de07e170546cf6e7415c51409/200000783-87ce587ce6/450/IMG20220301121934.jpg?ph=e53fdc85c3',
@@ -53,7 +58,7 @@ export default function KgCorner() {
       href: '#'
     },
     {
-      id: 4,
+      id: 7,
 
       imageSrc:
         'https://e53fdc85c3.clvaw-cdnwnd.com/4e130d1de07e170546cf6e7415c51409/200000781-70d7e70d7f/450/IMG20220302114105.jpg?ph=e53fdc85c3',
@@ -61,7 +66,7 @@ export default function KgCorner() {
       href: '#'
     },
     {
-      id: 4,
+      id: 8,
 
       imageSrc:
         'https://e53fdc85c3.clvaw-cdnwnd.com/4e130d1de07e170546cf6e7415c51409/200000781-70d7e70d7f/450/IMG20220302114105.jpg?ph=e53fdc85c3',
@@ -70,10 +75,46 @@ export default function KgCorner() {
     }
     // More products...
   ]
+  const newArrayOfImages = [
+    {
+      id: 9,
 
-  const [images, setImages] = useState(products)
+      imageSrc: pic1,
+      imageAlt: 'TODO',
+      href: '#'
+    },
+    {
+      id: 10,
+
+      imageSrc: pic2,
+      imageAlt: 'TODO',
+      href: '#'
+    },
+    {
+      id: 11,
+
+      imageSrc: pic3,
+      imageAlt: 'TODO',
+      href: '#'
+    },
+    {
+      id: 12,
+
+      imageSrc: pic4,
+      imageAlt: 'TODO',
+      href: '#'
+    },
+    {
+      id: 13,
+
+      imageSrc: pic5,
+      imageAlt: 'TODO',
+      href: '#'
+    }
+  ]
+  const [images, setImages] = useState<any>(products)
   const loadMoreFunction = () => {
-    setImages([...images, ...products])
+    setImages([...images, ...newArrayOfImages])
   }
   return (
     <>
@@ -145,7 +186,7 @@ export default function KgCorner() {
                         </div>
                         <div className="h-64 w-44 overflow-hidden rounded-lg">
                           <img
-                            src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fGtpZHMlMjBzY2hvb2x8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                            src="https://i.ibb.co/fH9f8t1/1.jpg"
                             alt=""
                             className="h-full w-full object-cover object-center"
                           />
@@ -166,7 +207,7 @@ export default function KgCorner() {
           </h1>
 
           <div className="-mx-px border-l border-gray-200 grid grid-cols-2 sm:mx-0 md:grid-cols-3 lg:grid-cols-4">
-            {images.map((product) => (
+            {images.map((product: any) => (
               <div
                 data-aos="fade-up"
                 data-aos-duration="1000"
@@ -174,23 +215,27 @@ export default function KgCorner() {
                 className="group relative p-4 border-r border-b border-gray-200 sm:p-6"
               >
                 <div className="rounded-lg overflow-hidden bg-gray-200 aspect-w-1 aspect-h-1 group-hover:opacity-75">
-                  <img
+                  <Image
                     src={product.imageSrc}
                     alt={product.imageAlt}
+                    width={1000}
+                    height={1000}
                     className="w-full h-full object-center object-cover"
                   />
                 </div>
               </div>
             ))}
           </div>
-          <FlexCenter>
-            <button
-              className="border rounded-md p-2 bg-blue-gray-100"
-              onClick={loadMoreFunction}
-            >
-              Load More
-            </button>
-          </FlexCenter>
+          {images.length !== 13 && (
+            <FlexCenter>
+              <button
+                className="border rounded-md p-2 bg-blue-gray-100"
+                onClick={loadMoreFunction}
+              >
+                Load More
+              </button>
+            </FlexCenter>
+          )}
         </div>
       </div>
     </>
