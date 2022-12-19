@@ -12,6 +12,7 @@ const index = () => {
         border: '1px solid red'
       }
     }
+    return 
   }
   const enrolIntial ={
     childName:'',
@@ -58,8 +59,10 @@ const index = () => {
               
             })
             .catch((error:any)=> {
+              if(error)
+              {
               actions.setSubmitting(false);
-              toast.error('Server Error', {
+              toast.error('Server Error' , {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -69,6 +72,7 @@ const index = () => {
                 progress: undefined,
                 theme: "light",
                 });
+              }
             });
           
        }}

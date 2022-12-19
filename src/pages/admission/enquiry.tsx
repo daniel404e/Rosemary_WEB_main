@@ -1,7 +1,7 @@
-import React ,{useState} from 'react'
+import React  from 'react'
 import Heading from '../../components/Heading'
 import {EnquiryValidation} from '../../components/Validation/enquiryValidation'
-import { Formik, Form, Field, ErrorMessage,getIn } from 'formik'
+import { Formik, Form, Field,getIn } from 'formik'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
@@ -29,6 +29,7 @@ const Enquiry = () => {
         border: '1px solid red'
       }
     }
+    return 
   }
   const styles =
     'block w-full md:w-96 px-4 shadow-md py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
@@ -69,6 +70,8 @@ const Enquiry = () => {
                     
                   })
                   .catch((error:any)=> {
+                    if(error)
+                    {
                     actions.setSubmitting(false);
                     toast.error('Server Error', {
                       position: "top-right",
@@ -80,6 +83,7 @@ const Enquiry = () => {
                       progress: undefined,
                       theme: "light",
                       });
+                    }
                   });
 
               }}

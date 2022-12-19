@@ -15,6 +15,7 @@ const Application = () => {
         border: '1px solid red'
       }
     }
+    return 
   }
   const intialValued = {
     studentName: '',
@@ -81,6 +82,8 @@ const Application = () => {
                     
                   })
                   .catch((error:any)=> {
+                    if(error)
+                    {
                     actions.setSubmitting(false);
                     toast.error('Server Error', {
                       position: "top-right",
@@ -92,6 +95,7 @@ const Application = () => {
                       progress: undefined,
                       theme: "light",
                       });
+                    }
                   });
               }}
             >

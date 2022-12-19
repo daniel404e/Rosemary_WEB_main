@@ -4,7 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {schduleValidation} from '../../components/Validation/schduleValidation'
-import { Formik, Form, Field, ErrorMessage ,getIn} from 'formik'
+import { Formik, Form, Field,getIn} from 'formik'
 import {
   FlexColCenter,
   InputSet,
@@ -20,6 +20,7 @@ const Schedule = () => {
         border: '1px solid red'
       }
     }
+    return 
   }
   const intialValued = {
     studentName: '',
@@ -72,9 +73,11 @@ const Schedule = () => {
                         theme: "light",
                         });
                     }
-                    
+                    return 
                   })
                   .catch((error:any)=> {
+                    if(error)
+                    {
                     actions.setSubmitting(false);
                     toast.error('Server Error', {
                       position: "top-right",
@@ -86,6 +89,7 @@ const Schedule = () => {
                       progress: undefined,
                       theme: "light",
                       });
+                    }
                   });
 
               }}
