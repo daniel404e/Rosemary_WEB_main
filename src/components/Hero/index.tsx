@@ -15,7 +15,7 @@ const Hero = ({ img, head, para }: any) => {
           <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
             <span className="text-primary">{head}</span>
           </h1>
-          <p className="mb-8 leading-relaxed">{para}</p>
+          <p className="mb-8 leading-relaxed text-2xl">{para}</p>
         </div>
       </div>
     </section>

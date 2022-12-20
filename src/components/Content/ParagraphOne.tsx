@@ -27,13 +27,13 @@ const ParagraphOne = () => {
             </h1>
             <p className="paraText mb-6 sm:text-sm  lg:text-lg  text-center font-normal text-white sm:px-16 xl:px-48 ">
               Established in 1981 Rosemary Institutions mark excellenceinall the
-              realms of education. The Sprawling campus locatedinNGO New Colony,
-              Perumalpuram is Uniquely placed intheheart of the city yet offers
-              a serene environment for schooling. We are founded on the core
-              competencies that are pertinent today and will be relevant for
-              years to come. The Rosemary Education Network strives to create
-              modern citizens who are equipped to take on challenges and primed
-              to make global changes
+              realms of education. The Sprawling campus located in NGO New
+              Colony, Perumalpuram is Uniquely placed in the heart of the city
+              yet offers a serene environment for schooling. We are founded on
+              the core competencies that are pertinent today and will be
+              relevant for years to come. The Rosemary Education Network strives
+              to create modern citizens who are equipped to take on challenges
+              and primed to make global changes
             </p>
           </div>
         </div>

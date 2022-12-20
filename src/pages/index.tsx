@@ -2,9 +2,11 @@ import Carousel from '../components/Carousel'
 import ParagraphOne from '../components/Content/ParagraphOne'
 import Enroll from '../components/Enroll'
 import Gallery from '../components/Gallery'
-import Classes from '../components/Classes'
 import Head from 'next/head'
 import Quote from '../components/Content/Quote'
+import CustomArrow from '@/components/Classes/USE'
+// import Testimonials from '@/components/Classes/Testimonials'
+// import SkeletonLoading from '@/components/SkeletonLoading'
 export default function Home() {
   return (
     <>
@@ -26,7 +28,10 @@ export default function Home() {
       <ParagraphOne />
       <Quote />
       <Gallery />
-      <Classes />
+      {/* <NewClasses /> */}
+      {/* <ExploreCarousel /> */}
+      <CustomArrow />
+      {/* <Testimonials /> */}
       <Enroll />
     </>
   )

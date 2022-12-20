@@ -1,12 +1,33 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
-import { XMarkIcon, QueueListIcon } from '@heroicons/react/24/outline'
+import {
+  XMarkIcon,
+  QueueListIcon,
+  BookOpenIcon,
+  BookmarkSquareIcon,
+  ViewfinderCircleIcon,
+  UserPlusIcon,
+  ClipboardDocumentIcon,
+  MagnifyingGlassIcon,
+  NewspaperIcon,
+  PuzzlePieceIcon,
+  RectangleGroupIcon,
+  TicketIcon,
+  EyeIcon,
+  TrophyIcon,
+  CubeTransparentIcon,
+  ComputerDesktopIcon,
+  BuildingLibraryIcon,
+  CogIcon,
+  WifiIcon,
+  DocumentMagnifyingGlassIcon
+} from '@heroicons/react/24/outline'
 import img from '../../images/logo.png'
 import Image from 'next/image'
 import ContactUsHeader from './ContactUsHeader'
-import Accordin from '../Accordin'
 import Dropdown from './Dropdown'
 import { useRouter } from 'next/router'
+import NewAccordin from '../Accordin/NewAccordin'
 const navigation = {
   categories: [
     {
@@ -62,44 +83,96 @@ export default function Example() {
   const aboutusList = {
     name: 'About Us',
     list: [
-      { name: 'Principals corner', href: '/about-us/principals' },
-      { name: 'Philosophy', href: '/about-us/philosophy' },
-      { name: 'Vision', href: '/about-us/vision' }
+      {
+        name: 'Principals corner',
+        href: '/about-us/principals',
+        icon: TrophyIcon
+      },
+      {
+        name: 'Philosophy',
+        href: '/about-us/philosophy',
+        icon: CubeTransparentIcon
+      },
+      { name: 'Vision', href: '/about-us/vision', icon: EyeIcon }
     ]
   }
   const academicsList = {
     name: 'Academics',
     list: [
-      { name: 'Academic', href: '/academics/academic' },
-      { name: 'Curriculum', href: '/academics/curriculum' },
-      { name: 'Spotlight', href: '/academics/spotlight' },
-      { name: 'Books', href: '/academics/books' },
-      { name: 'KG-Corner', href: '/academics/kg-corner' }
+      {
+        name: 'Academic',
+        href: '/academics/academic',
+        icon: BookmarkSquareIcon
+      },
+      {
+        name: 'Curriculum',
+        href: '/academics/curriculum',
+        icon: DocumentMagnifyingGlassIcon
+      },
+      {
+        name: 'Spotlight',
+        href: '/academics/spotlight',
+        icon: ViewfinderCircleIcon
+      },
+      { name: 'Books', href: '/academics/books', icon: BookOpenIcon },
+      { name: 'KG-Corner', href: '/academics/kg-corner', icon: UserPlusIcon }
     ]
   }
   const admissionsList = {
     name: 'Admissions',
     list: [
-      { name: 'Application', href: '/admission/application' },
-      { name: 'Enquiry', href: '/admission/enquiry' },
-      { name: 'Schedule a Visit', href: '/admission/schedule' }
+      {
+        name: 'Application',
+        href: '/admission/application',
+        icon: ClipboardDocumentIcon
+      },
+      {
+        name: 'Enquiry',
+        href: '/admission/enquiry',
+        icon: MagnifyingGlassIcon
+      },
+      {
+        name: 'Schedule a Visit',
+        href: '/admission/schedule',
+        icon: NewspaperIcon
+      }
     ]
   }
   const beyondList = {
     name: 'Beyond Academics',
     list: [
-      { name: 'Sports', href: '/beyond-academics/sports' },
-      { name: 'Students Clubs', href: '/beyond-academics/studentsclubs' },
-      { name: 'Student Senate', href: '/beyond-academics/studentssenate' }
+      {
+        name: 'Sports',
+        href: '/beyond-academics/sports',
+        icon: PuzzlePieceIcon
+      },
+      {
+        name: 'Students Clubs',
+        href: '/beyond-academics/studentsclubs',
+        icon: RectangleGroupIcon
+      },
+      {
+        name: 'Student Senate',
+        href: '/beyond-academics/studentssenate',
+        icon: TicketIcon
+      }
     ]
   } // campus =  computer, library , math , science
   const campusList = {
     name: 'Campus',
     list: [
-      { name: 'Computer Lab', href: '/campus/computer' },
-      { name: 'Library', href: '/campus/library' },
-      { name: 'Math Lab', href: '/campus/math' },
-      { name: 'Science Lab', href: '/campus/science' }
+      {
+        name: 'Computer Lab',
+        href: '/campus/computer',
+        icon: ComputerDesktopIcon
+      },
+      { name: 'Library', href: '/campus/library', icon: BuildingLibraryIcon },
+      { name: 'Math Lab', href: '/campus/math', icon: CogIcon },
+      {
+        name: 'Science Lab',
+        href: '/campus/science',
+        icon: WifiIcon
+      }
     ]
   }
   // create a type interface for aboutusList
@@ -153,20 +226,20 @@ export default function Example() {
                   </div>
                 </Tab.Group>
 
-                <div className="space-y-6 border-t border-gray-200 py-6 px-4">
-                  <Accordin list={aboutusList} close={setOpen} />
+                <div className="space-y-6 border-t border-gray-200 py-3 px-4">
+                  <NewAccordin list={aboutusList} />
                 </div>
-                <div className="space-y-6 border-t border-gray-200 py-6 px-4">
-                  <Accordin list={academicsList} close={setOpen} />
+                <div className="space-y-6 border-t border-gray-200 py-3 px-4">
+                  <NewAccordin list={academicsList} />
                 </div>
-                <div className="space-y-6 border-t border-gray-200 py-6 px-4">
-                  <Accordin list={admissionsList} close={setOpen} />
+                <div className="space-y-6 border-t border-gray-200 py-3 px-4">
+                  <NewAccordin list={admissionsList} />
                 </div>
-                <div className="space-y-6 border-t border-gray-200 py-6 px-4">
-                  <Accordin list={beyondList} close={setOpen} />
+                <div className="space-y-6 border-t border-gray-200 py-3 px-4">
+                  <NewAccordin list={beyondList} />
                 </div>
-                <div className="space-y-6 border-t border-gray-200 py-6 px-4">
-                  <Accordin list={campusList} close={setOpen} />
+                <div className="space-y-6 border-t border-gray-200 py-3 px-4">
+                  <NewAccordin list={campusList} />
                 </div>
               </Dialog.Panel>
             </Transition.Child>

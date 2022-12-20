@@ -1,9 +1,9 @@
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'
 import React, { useState } from 'react'
-import { List } from '../../types/header'
+import { List } from '@/types/header'
 
 import { useRouter } from 'next/router'
-import tw from 'twin.macro'
+
 import { FlexColumn } from '../twin'
 
 interface Props {

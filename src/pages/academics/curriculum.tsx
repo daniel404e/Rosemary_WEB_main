@@ -1,3 +1,4 @@
+import Heading from '@/components/Heading'
 import React from 'react'
 
 const Curriculum = () => {
@@ -54,34 +55,21 @@ const Curriculum = () => {
     }
   ]
   return (
-    <div className="py-10 container mx-auto px-3 lg:px-10">
-      <div className="relative">
-        <div
-          className="border-r-4 border-secondary absolute h-full top-0"
-          style={{ left: '9px' }}
-        ></div>
-        <ul className="list-none m-0 p-0">
-          {data.map((item, index) => (
-            <li key={index} className="mb-5  ">
-              <div className="flex group items-center ">
-                <div className="bg-secondarylight group-hover:bg-primary z-10 rounded-full border-4 border-secondary  h-5 w-5">
-                  <div className="bg-secondary h-1 w-6 items-center  ml-4 mt-1"></div>
-                </div>
-                <div className="flex-1 ml-4 z-10 font-medium">
-                  <div className="order-1 space-y-2 bg-secondary rounded-lg shadow-only transition-ease lg:w-full px-6 py-4">
-                    <h3 className="mb-3 font-bold text-white text-2xl">
-                      {item.title}
-                    </h3>
-                    <hr />
-                    <p className="text-md font-medium leading-snug tracking-wide text-gray-300 text-opacity-100">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+    <div className="max-w-7xl mx-auto ">
+      <Heading first={'Curriculum'} />
+      <div className="ml-4 mt-2">
+        {data.map((value, index) => {
+          return (
+            <div className="sm:ml-2" key={index}>
+              <h1 className="  mb-4 mt-4 text-primary text-xl inline-block transition-all ease duration-200 cursor-pointer border-primary border-b-2 font-medium leading-relaxed tracking-tight">
+                {value.title}
+              </h1>
+              <h5 key={index} className="ml-2 md:w-3/4  text-justify">
+                {value.description}
+              </h5>
+            </div>
+          )
+        })}
       </div>
     </div>
   )
