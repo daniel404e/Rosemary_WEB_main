@@ -1,9 +1,9 @@
-import React  from 'react'
+import React from 'react'
 import Heading from '../../components/Heading'
-import {EnquiryValidation} from '../../components/Validation/enquiryValidation'
-import { Formik, Form, Field,getIn } from 'formik'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { EnquiryValidation } from '../../components/Validation/enquiryValidation'
+import { Formik, Form, Field, getIn } from 'formik'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios'
 import {
   FlexColCenter,
@@ -14,7 +14,6 @@ import {
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 
 const Enquiry = () => {
-  
   const intialValued = {
     studentName: '',
     fatherName: '',
@@ -22,14 +21,14 @@ const Enquiry = () => {
     otherDetail: '',
     seekAdmisssion: ''
   }
- 
-  function getStyles(errors:any, fieldName:string) {
+
+  function getStyles(errors: any, fieldName: string) {
     if (getIn(errors, fieldName)) {
       return {
         border: '1px solid red'
       }
     }
-    return 
+    return
   }
   const styles =
     'block w-full md:w-96 px-4 shadow-md py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
@@ -42,59 +41,66 @@ const Enquiry = () => {
             <Formik
               enableReinitialize
               initialValues={intialValued}
-                validationSchema={EnquiryValidation}
-              onSubmit={(values,actions) => {
-            
+              validationSchema={EnquiryValidation}
+              onSubmit={(values, actions) => {
                 axios({
-                  method: "POST",
-                  url: "https://formspree.io/f/xdovnkww",
+                  method: 'POST',
+                  url: 'https://formspree.io/f/xdovnkww',
                   data: values
                 })
-                  .then((response:any) => {
-                    actions.setSubmitting(false);
-                    actions.resetForm();
-                    if(response)
-                    {
-      
-                      toast.error('Server Error', {
-                        position: "top-right",
+                  .then((response: any) => {
+                    actions.setSubmitting(false)
+                    actions.resetForm()
+                    if (response) {
+                      toast.success('Form Submit', {
+                        position: 'top-right',
                         autoClose: 5000,
                         hideProgressBar: false,
                         closeOnClick: true,
                         pauseOnHover: true,
                         draggable: true,
                         progress: undefined,
-                        theme: "light",
-                        });
+                        theme: 'light'
+                      })
                     }
-                    
                   })
-                  .catch((error:any)=> {
-                    if(error)
-                    {
-                    actions.setSubmitting(false);
-                    toast.error('Server Error', {
-                      position: "top-right",
-                      autoClose: 5000,
-                      hideProgressBar: false,
-                      closeOnClick: true,
-                      pauseOnHover: true,
-                      draggable: true,
-                      progress: undefined,
-                      theme: "light",
-                      });
+                  .catch((error: any) => {
+                    if (error) {
+                      actions.setSubmitting(false)
+                      toast.error('Server Error', {
+                        position: 'top-right',
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: 'light'
+                      })
                     }
-                  });
-
+                  })
               }}
             >
-              {({ handleChange, handleBlur, handleSubmit,errors }) => (
+              {({
+                handleChange,
+                handleBlur,
+                handleSubmit,
+                errors,
+                touched
+              }) => (
                 <Form onSubmit={handleSubmit}>
                   <InputSet>
                     <InputLabel>Student&apos;s Name</InputLabel>
 
-                    <Field name="studentName" className={styles} style={getStyles(errors, `studentName`)} />
-{/* 
+                    <Field
+                      name="studentName"
+                      className={styles}
+                      style={
+                        getStyles(errors, `studentName`) &&
+                        getStyles(touched, `studentName`)
+                      }
+                    />
+                    {/* 
                     <ErrorMessage
                       name="studentName"
                       component="div"
@@ -109,8 +115,10 @@ const Enquiry = () => {
                       className={`${styles} w-full`}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      
-                      style={getStyles(errors, `seekAdmisssion`)}
+                      style={
+                        getStyles(errors, `seekAdmisssion`) &&
+                        getStyles(touched, `seekAdmisssion`)
+                      }
                     >
                       <option value="" label="Click Here">
                         Click Here{' '}
@@ -142,8 +150,15 @@ const Enquiry = () => {
                   </InputSet>
                   <InputSet>
                     <InputLabel>Father&apos;s Name</InputLabel>
-                    <Field name="fatherName" className={styles} style={getStyles(errors, `fatherName`)} />
-{/* 
+                    <Field
+                      name="fatherName"
+                      className={styles}
+                      style={
+                        getStyles(errors, `fatherName`) &&
+                        getStyles(touched, `fatherName`)
+                      }
+                    />
+                    {/* 
                     <ErrorMessage
                       name="fatherName"
                       component="div"
@@ -153,8 +168,14 @@ const Enquiry = () => {
                   <InputSet>
                     <InputLabel>Mobile Number </InputLabel>
 
-                    <Field name="mobileNumber" className={styles}   
-                      style={getStyles(errors, `mobileNumber`)}/>
+                    <Field
+                      name="mobileNumber"
+                      className={styles}
+                      style={
+                        getStyles(errors, `mobileNumber`) &&
+                        getStyles(touched, `mobileNumber`)
+                      }
+                    />
 
                     {/* <ErrorMessage
                       name="mobileNumber"
@@ -170,8 +191,10 @@ const Enquiry = () => {
                       name="otherDetail"
                       className={`${styles} h-28`}
                       component="textarea"
-                        
-                      style={getStyles(errors, `otherDetail`)}
+                      style={
+                        getStyles(errors, `otherDetail`) &&
+                        getStyles(touched, `otherDetail`)
+                      }
                     />
 
                     {/* <ErrorMessage
@@ -191,7 +214,6 @@ const Enquiry = () => {
                       aria-hidden="true"
                     />
                   </SubmitButton>
-               
                 </Form>
               )}
             </Formik>
@@ -206,19 +228,19 @@ const Enquiry = () => {
         </div>
       </div>
       <ToastContainer
-    position="top-right"
-    autoClose={5000}
-    hideProgressBar={false}
-    newestOnTop={false}
-    closeOnClick
-    rtl={false}
-    pauseOnFocusLoss
-    draggable
-    pauseOnHover
-    theme="light"
-    />
-    {/* Same as */}
-    <ToastContainer />
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      {/* Same as */}
+      <ToastContainer />
     </div>
   )
 }

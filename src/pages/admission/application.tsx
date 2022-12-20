@@ -1,21 +1,21 @@
 import React from 'react'
 import Heading from '../../components/Heading'
-import { Formik, Form, Field, ErrorMessage ,getIn} from 'formik'
+import { Formik, Form, Field, ErrorMessage, getIn } from 'formik'
 import { FlexColCenter } from '@/components/twin'
-import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import {ApplicationValidation} from '../../components/Validation/applicationValidation'
+import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { ApplicationValidation } from '../../components/Validation/applicationValidation'
 import { InputSet, InputLabel, SubmitButton } from '@/components/twin/index'
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 const Application = () => {
-  function getStyles(errors:any, fieldName:string) {
+  function getStyles(errors: any, fieldName: string) {
     if (getIn(errors, fieldName)) {
       return {
         border: '1px solid red'
       }
     }
-    return 
+    return
   }
   const intialValued = {
     studentName: '',
@@ -40,7 +40,7 @@ const Application = () => {
     markPerviousExam: '',
     intrestCurricular: '',
     healthIssue: '',
-    checked:''
+    checked: ''
   }
   const styles =
     'block w-full px-4 py-3 mb-3 shadow-md leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
@@ -54,57 +54,65 @@ const Application = () => {
             <Formik
               enableReinitialize
               initialValues={intialValued}
-               validationSchema={ApplicationValidation}
-              onSubmit={(values ,actions) => {
-
+              validationSchema={ApplicationValidation}
+              onSubmit={(values, actions) => {
                 axios({
-                  method: "POST",
-                  url: "https://formspree.io/f/mjvdbkae",
+                  method: 'POST',
+                  url: 'https://formspree.io/f/mjvdbkae',
                   data: values
                 })
-                  .then((response:any) => {
-                    actions.setSubmitting(false);
-                    actions.resetForm();
-                    if(response)
-                    {
-      
-                      toast.error('Server Error', {
-                        position: "top-right",
+                  .then((response: any) => {
+                    actions.setSubmitting(false)
+                    actions.resetForm()
+                    if (response) {
+                      toast.success('Form Submit', {
+                        position: 'top-right',
                         autoClose: 5000,
                         hideProgressBar: false,
                         closeOnClick: true,
                         pauseOnHover: true,
                         draggable: true,
                         progress: undefined,
-                        theme: "light",
-                        });
+                        theme: 'light'
+                      })
                     }
-                    
                   })
-                  .catch((error:any)=> {
-                    if(error)
-                    {
-                    actions.setSubmitting(false);
-                    toast.error('Server Error', {
-                      position: "top-right",
-                      autoClose: 5000,
-                      hideProgressBar: false,
-                      closeOnClick: true,
-                      pauseOnHover: true,
-                      draggable: true,
-                      progress: undefined,
-                      theme: "light",
-                      });
+                  .catch((error: any) => {
+                    if (error) {
+                      actions.setSubmitting(false)
+                      toast.error('Server Error', {
+                        position: 'top-right',
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: 'light'
+                      })
                     }
-                  });
+                  })
               }}
             >
-              {({ handleChange, handleBlur, handleSubmit,errors }) => (
+              {({
+                handleChange,
+                handleBlur,
+                handleSubmit,
+                errors,
+                touched
+              }) => (
                 <Form onSubmit={handleSubmit} className="w-full">
                   <InputSet>
                     <InputLabel>Student&apos;s Name</InputLabel>
 
-                    <Field name="studentName" className={styles} style={getStyles(errors, `studentName`)}/>
+                    <Field
+                      name="studentName"
+                      className={styles}
+                      style={
+                        getStyles(errors, `studentName`) &&
+                        getStyles(touched, `studentName`)
+                      }
+                    />
 
                     {/* <ErrorMessage
                       name="studentName"
@@ -115,7 +123,15 @@ const Application = () => {
                   <InputSet>
                     <InputLabel>Date of Birth </InputLabel>
 
-                    <Field name="dateOfBirth" type="date" className={styles} style={getStyles(errors, `dateOfBirth`)}/>
+                    <Field
+                      name="dateOfBirth"
+                      type="date"
+                      className={styles}
+                      style={
+                        getStyles(errors, `dateOfBirth`) &&
+                        getStyles(touched, `dateOfBirth`)
+                      }
+                    />
 
                     {/* <ErrorMessage
                       name="dateOfBirth"
@@ -126,7 +142,13 @@ const Application = () => {
                   <InputSet>
                     <InputLabel>age </InputLabel>
 
-                    <Field name="age" className={styles} style={getStyles(errors, `age`)} />
+                    <Field
+                      name="age"
+                      className={styles}
+                      style={
+                        getStyles(errors, `age`) && getStyles(touched, `age`)
+                      }
+                    />
 
                     {/* <ErrorMessage
                       name="age"
@@ -143,7 +165,10 @@ const Application = () => {
                       // value={values.color}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      style={getStyles(errors, `gradeApply`)}
+                      style={
+                        getStyles(errors, `gradeApply`) &&
+                        getStyles(touched, `gradeApply`)
+                      }
                     >
                       <option value="" label="Click Here">
                         Click Here{' '}
@@ -186,7 +211,10 @@ const Application = () => {
                           className={' mr-3'}
                           name="sex"
                           value="male"
-                          style={getStyles(errors, `sex`)}
+                          style={
+                            getStyles(errors, `sex`) &&
+                            getStyles(touched, `sex`)
+                          }
                         />
                         Male
                       </label>
@@ -196,7 +224,10 @@ const Application = () => {
                           className={' mr-3'}
                           name="sex"
                           value="female"
-                          style={getStyles(errors, `sex`)}
+                          style={
+                            getStyles(errors, `sex`) &&
+                            getStyles(touched, `sex`)
+                          }
                         />
                         Female
                       </label>
@@ -205,7 +236,14 @@ const Application = () => {
                   <InputSet>
                     <InputLabel>Email </InputLabel>
 
-                    <Field name="email" className={`${styles} `} style={getStyles(errors, `email`)} />
+                    <Field
+                      name="email"
+                      className={`${styles} `}
+                      style={
+                        getStyles(errors, `email`) &&
+                        getStyles(touched, `email`)
+                      }
+                    />
 
                     {/* <ErrorMessage
                       name="email"
@@ -216,7 +254,14 @@ const Application = () => {
                   <InputSet>
                     <InputLabel>Father Name </InputLabel>
 
-                    <Field name="fatherName" className={`${styles} `} style={getStyles(errors, `fatherName`)}/>
+                    <Field
+                      name="fatherName"
+                      className={`${styles} `}
+                      style={
+                        getStyles(errors, `fatherName`) &&
+                        getStyles(touched, `fatherName`)
+                      }
+                    />
 
                     {/* <ErrorMessage
                       name="fatherName"
@@ -229,7 +274,14 @@ const Application = () => {
                       Father Occupation & Educational Qualification
                     </InputLabel>
 
-                    <Field name="fatherOccupation" className={`${styles} `}  style={getStyles(errors, `fatherOccupation`)}/>
+                    <Field
+                      name="fatherOccupation"
+                      className={`${styles} `}
+                      style={
+                        getStyles(errors, `fatherOccupation`) &&
+                        getStyles(touched, `fatherOccupation`)
+                      }
+                    />
 
                     {/* <ErrorMessage
                       name="fatherOccupation"
@@ -240,7 +292,14 @@ const Application = () => {
                   <InputSet>
                     <InputLabel>Father Contact Number</InputLabel>
 
-                    <Field name="fatherContact" className={`${styles} `} style={getStyles(errors, `fatherContact`)}/>
+                    <Field
+                      name="fatherContact"
+                      className={`${styles} `}
+                      style={
+                        getStyles(errors, `fatherContact`) &&
+                        getStyles(touched, `fatherContact`)
+                      }
+                    />
 
                     {/* <ErrorMessage
                       name="fatherContact"
@@ -251,7 +310,14 @@ const Application = () => {
                   <InputSet>
                     <InputLabel>Mother Name </InputLabel>
 
-                    <Field name="motherName" className={`${styles} `}  style={getStyles(errors, `motherName`)}/>
+                    <Field
+                      name="motherName"
+                      className={`${styles} `}
+                      style={
+                        getStyles(errors, `motherName`) &&
+                        getStyles(touched, `motherName`)
+                      }
+                    />
 
                     {/* <ErrorMessage
                       name="motherName"
@@ -264,7 +330,14 @@ const Application = () => {
                       Mother Occupation & Educational Qualification
                     </InputLabel>
 
-                    <Field name="motherOccupation" className={`${styles} `} style={getStyles(errors, `motherOccupation`)}/>
+                    <Field
+                      name="motherOccupation"
+                      className={`${styles} `}
+                      style={
+                        getStyles(errors, `motherOccupation`) &&
+                        getStyles(touched, `motherOccupation`)
+                      }
+                    />
 
                     {/* <ErrorMessage
                       name="motherOccupation"
@@ -275,7 +348,14 @@ const Application = () => {
                   <InputSet>
                     <InputLabel>Mother Contact Number</InputLabel>
 
-                    <Field name="motherContact" className={`${styles} `} style={getStyles(errors, `motherContact`)}/>
+                    <Field
+                      name="motherContact"
+                      className={`${styles} `}
+                      style={
+                        getStyles(errors, `motherContact`) &&
+                        getStyles(touched, `motherContact`)
+                      }
+                    />
 
                     {/* <ErrorMessage
                       name="motherContact"
@@ -292,7 +372,10 @@ const Application = () => {
                       name="residentAddress"
                       type="textarea"
                       className={`${styles} h-24`}
-                      style={getStyles(errors, `residentAddress`)}
+                      style={
+                        getStyles(errors, `residentAddress`) &&
+                        getStyles(touched, `residentAddress`)
+                      }
                     />
 
                     {/* <ErrorMessage
@@ -310,7 +393,10 @@ const Application = () => {
                       name="parentIncome"
                       type="textarea"
                       className={`${styles}`}
-                      style={getStyles(errors, `parentIncome`)}
+                      style={
+                        getStyles(errors, `parentIncome`) &&
+                        getStyles(touched, `parentIncome`)
+                      }
                     />
 
                     {/* <ErrorMessage
@@ -330,7 +416,10 @@ const Application = () => {
                       type="textarea"
                       component="textarea"
                       className={`${styles} h-36`}
-                      style={getStyles(errors, `familyAppliction`)}
+                      style={
+                        getStyles(errors, `familyAppliction`) &&
+                        getStyles(touched, `familyAppliction`)
+                      }
                     />
 
                     {/* <ErrorMessage
@@ -347,7 +436,10 @@ const Application = () => {
                       type="textarea"
                       component="textarea"
                       className={`${styles} h-24`}
-                      style={getStyles(errors, `perviousSchool`)}
+                      style={
+                        getStyles(errors, `perviousSchool`) &&
+                        getStyles(touched, `perviousSchool`)
+                      }
                     />
 
                     {/* <ErrorMessage
@@ -365,7 +457,10 @@ const Application = () => {
                       // value={values.color}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      style={getStyles(errors, `boardSpecify`)}
+                      style={
+                        getStyles(errors, `boardSpecify`) &&
+                        getStyles(touched, `boardSpecify`)
+                      }
                     >
                       <option value="" label="Click Here">
                         Click Here{' '}
@@ -393,7 +488,10 @@ const Application = () => {
                       name="lastStudy"
                       type="textarea"
                       className={`${styles} `}
-                      style={getStyles(errors, `lastStudy`)}
+                      style={
+                        getStyles(errors, `lastStudy`) &&
+                        getStyles(touched, `lastStudy`)
+                      }
                     />
 
                     {/* <ErrorMessage
@@ -417,7 +515,10 @@ const Application = () => {
                           className={' mr-3'}
                           name="changeSchool"
                           value="Transfer"
-                          style={getStyles(errors, `changeSchool`)}
+                          style={
+                            getStyles(errors, `changeSchool`) &&
+                            getStyles(touched, `changeSchool`)
+                          }
                         />
                         Transfer
                       </label>
@@ -427,7 +528,10 @@ const Application = () => {
                           className={' mr-3'}
                           name="changeSchool"
                           value="Parent Choice"
-                          style={getStyles(errors, `changeSchool`)}
+                          style={
+                            getStyles(errors, `changeSchool`) &&
+                            getStyles(touched, `changeSchool`)
+                          }
                         />
                         Parent Choice
                       </label>
@@ -443,7 +547,10 @@ const Application = () => {
                       name="markPerviousExam"
                       component="textarea"
                       className={`${styles} h-36`}
-                      style={getStyles(errors, `markPerviousExam`)}
+                      style={
+                        getStyles(errors, `markPerviousExam`) &&
+                        getStyles(touched, `markPerviousExam`)
+                      }
                     />
 
                     {/* <ErrorMessage
@@ -463,7 +570,10 @@ const Application = () => {
                       type="textarea"
                       component="textarea"
                       className={`${styles} h-36`}
-                      style={getStyles(errors, `intrestCurricular`)}
+                      style={
+                        getStyles(errors, `intrestCurricular`) &&
+                        getStyles(touched, `intrestCurricular`)
+                      }
                     />
 
                     {/* <ErrorMessage
@@ -482,7 +592,10 @@ const Application = () => {
                       type="textarea"
                       component="textarea"
                       className={`${styles} h-36`}
-                      style={getStyles(errors, `healthIssue`)}
+                      style={
+                        getStyles(errors, `healthIssue`) &&
+                        getStyles(touched, `healthIssue`)
+                      }
                     />
 
                     {/* <ErrorMessage
@@ -492,7 +605,15 @@ const Application = () => {
                     /> */}
                   </InputSet>
                   <InputSet>
-                    <Field name="checked" className={'w-5'} type="checkbox"  style={getStyles(errors, `checked`)}/>
+                    <Field
+                      name="checked"
+                      className={'w-5'}
+                      type="checkbox"
+                      style={
+                        getStyles(errors, `checked`) &&
+                        getStyles(touched, `checked`)
+                      }
+                    />
                     <span>
                       <InputLabel>
                         I agree that once Fees paid to the School is non
@@ -523,19 +644,19 @@ const Application = () => {
         </div>
       </div>
       <ToastContainer
-    position="top-right"
-    autoClose={5000}
-    hideProgressBar={false}
-    newestOnTop={false}
-    closeOnClick
-    rtl={false}
-    pauseOnFocusLoss
-    draggable
-    pauseOnHover
-    theme="light"
-    />
-    {/* Same as */}
-    <ToastContainer />
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      {/* Same as */}
+      <ToastContainer />
     </div>
   )
 }

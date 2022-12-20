@@ -1,10 +1,10 @@
 import React from 'react'
 import Heading from '../../components/Heading'
-import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import {schduleValidation} from '../../components/Validation/schduleValidation'
-import { Formik, Form, Field,getIn} from 'formik'
+import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { schduleValidation } from '../../components/Validation/schduleValidation'
+import { Formik, Form, Field, getIn } from 'formik'
 import {
   FlexColCenter,
   InputSet,
@@ -14,17 +14,17 @@ import {
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 
 const Schedule = () => {
-  function getStyles(errors:any, fieldName:string) {
+  function getStyles(errors: any, fieldName: string) {
     if (getIn(errors, fieldName)) {
       return {
         border: '1px solid red'
       }
     }
-    return 
+    return
   }
   const intialValued = {
     studentName: '',
-    email:'',
+    email: '',
     schedulevisit: '',
     mobileNumber: 0,
     additionComment: ''
@@ -48,75 +48,78 @@ const Schedule = () => {
             <Formik
               enableReinitialize
               initialValues={intialValued}
-               validationSchema={schduleValidation}
-              onSubmit={(values,actions) => {
-               
+              validationSchema={schduleValidation}
+              onSubmit={(values, actions) => {
                 axios({
-                  method: "POST",
-                  url: "https://formspree.io/f/xayzwnpl",
+                  method: 'POST',
+                  url: 'https://formspree.io/f/xayzwnpl',
                   data: values
                 })
-                  .then((response:any) => {
-                    actions.setSubmitting(false);
-                    actions.resetForm();
-                    if(response)
-                    {
-      
-                      toast.success('Successfull Submit', {
-                        position: "top-center",
+                  .then((response: any) => {
+                    actions.setSubmitting(false)
+                    actions.resetForm()
+                    if (response) {
+                      toast.success('Form Submit', {
+                        position: 'top-center',
                         autoClose: 5000,
                         hideProgressBar: false,
                         closeOnClick: true,
                         pauseOnHover: true,
                         draggable: true,
                         progress: undefined,
-                        theme: "light",
-                        });
+                        theme: 'light'
+                      })
                     }
-                    return 
+                    return
                   })
-                  .catch((error:any)=> {
-                    if(error)
-                    {
-                    actions.setSubmitting(false);
-                    toast.error('Server Error', {
-                      position: "top-right",
-                      autoClose: 5000,
-                      hideProgressBar: false,
-                      closeOnClick: true,
-                      pauseOnHover: true,
-                      draggable: true,
-                      progress: undefined,
-                      theme: "light",
-                      });
+                  .catch((error: any) => {
+                    if (error) {
+                      actions.setSubmitting(false)
+                      toast.error('Server Error', {
+                        position: 'top-right',
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: 'light'
+                      })
                     }
-                  });
-
+                  })
               }}
             >
-              {({ handleChange, handleBlur, handleSubmit,errors }) => (
+              {({
+                handleChange,
+                handleBlur,
+                handleSubmit,
+                errors,
+                touched
+              }) => (
                 <Form onSubmit={handleSubmit}>
                   <InputSet>
                     <InputLabel>Name</InputLabel>
 
-                    <Field name="studentName" className={styles} style={getStyles(errors, `studentName`)}/>
-
-                    {/* <ErrorMessage
+                    <Field
                       name="studentName"
-                      component="div"
-                      className="text-red-600"
-                    /> */}
+                      className={styles}
+                      style={
+                        getStyles(errors, `studentName`) &&
+                        getStyles(touched, `studentName`)
+                      }
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Email</InputLabel>
 
-                    <Field name="email" className={styles} style={getStyles(errors, `email`)}/>
-
-                    {/* <ErrorMessage
+                    <Field
                       name="email"
-                      component="div"
-                      className="text-red-600"
-                    /> */}
+                      className={styles}
+                      style={
+                        getStyles(errors, `email`) &&
+                        getStyles(touched, `email`)
+                      }
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Schedule Visist For</InputLabel>
@@ -126,7 +129,10 @@ const Schedule = () => {
                       className={`${styles} w-full`}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      style={getStyles(errors, `schedulevisit`)}
+                      style={
+                        getStyles(errors, `schedulevisit`) &&
+                        getStyles(touched, `schedulevisit`)
+                      }
                     >
                       <option value="" label="Information">
                         Information
@@ -141,23 +147,19 @@ const Schedule = () => {
 
                       <option value="other" label="Other"></option>
                     </select>
-                    {/* <ErrorMessage
-                      name="schedulevisit"
-                      component="div"
-                      className="text-red-600"
-                    /> */}
                   </InputSet>
 
                   <InputSet>
                     <InputLabel>Mobile Number </InputLabel>
 
-                    <Field name="mobileNumber" className={styles}  style={getStyles(errors, `mobileNumber`)}/>
-
-                    {/* <ErrorMessage
+                    <Field
                       name="mobileNumber"
-                      component="div"
-                      className="text-red-600"
-                    /> */}
+                      className={styles}
+                      style={
+                        getStyles(errors, `mobileNumber`) &&
+                        getStyles(touched, `mobileNumber`)
+                      }
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Additional Comments</InputLabel>
@@ -167,22 +169,14 @@ const Schedule = () => {
                       name="additionComment"
                       className={`${styles} h-28`}
                       component="textarea"
-                      style={getStyles(errors, `additionComment`)}
+                      style={
+                        getStyles(errors, `additionComment`) &&
+                        getStyles(touched, `additionComment`)
+                      }
                     />
-
-                    {/* <ErrorMessage
-                      name="additionComment"
-                      component="div"
-                      className="text-red-600"
-                    /> */}
                   </InputSet>
 
-                  {/* <SubmitButton type="submit">Submit</SubmitButton> */}
-                  <SubmitButton
-                    // add group class
-                    className="group "
-                    // onClick={() => handleSubmit()}
-                  >
+                  <SubmitButton className="group ">
                     Submit
                     <ArrowRightIcon
                       className="ml-3 -mr-1 h-5 w-5 group-hover:translate-x-2 transition-all ease-in duration-200 "
@@ -196,21 +190,20 @@ const Schedule = () => {
         </div>
       </div>
       <ToastContainer
-    position="top-right"
-    autoClose={5000}
-    hideProgressBar={false}
-    newestOnTop={false}
-    closeOnClick
-    rtl={false}
-    pauseOnFocusLoss
-    draggable
-    pauseOnHover
-    theme="light"
-    />
-    {/* Same as */}
-    <ToastContainer />
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      {/* Same as */}
+      <ToastContainer />
     </div>
-    
   )
 }
 
