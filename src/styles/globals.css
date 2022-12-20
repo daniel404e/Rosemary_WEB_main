@@ -721,10 +721,10 @@ body {
   opacity: 1;
   top: 0;
   left: 0;
-  border-top: 135px solid rgb(221, 175, 148, 0.5);
-  border-left: 135px solid rgb(221, 175, 148, 0.5);
-  border-bottom: 135px solid rgb(221, 175, 148, 0.5);
-  border-right: 135px solid rgb(221, 175, 148, 0.5);
+  border-top: 135px solid #057aff4c;
+  border-left: 135px solid #057aff4c;
+  border-bottom: 135px solid #057aff4c;
+  border-right: 135px solid #057aff4c;
 }
 
 .effect.effect-nine .icons-block {
