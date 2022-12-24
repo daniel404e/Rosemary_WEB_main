@@ -629,7 +629,7 @@ const Application = () => {
                   <SubmitButton
                     // add group class
                     className="group "
-                    onClick={() => handleSubmit()}
+                    // onClick={() => handleSubmit()}
                   >
                     Submit
                     <ArrowRightIcon

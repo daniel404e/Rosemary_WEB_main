@@ -174,7 +174,7 @@ const index = () => {
                     />
                   </div>
                   <button
-                    onClick={() => handleSubmit()}
+                    // onClick={() => handleSubmit()}
                     className="w-fit h-10 rounded-md bg-secondary px-5 text-white mt-4 ml-2 "
                   >
                     Enroll

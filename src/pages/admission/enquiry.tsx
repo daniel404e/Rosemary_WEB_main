@@ -100,8 +100,8 @@ const Enquiry = () => {
                         getStyles(touched, `studentName`)
                       }
                     />
-                    {/* 
-                    <ErrorMessage
+                    
+                    {/* <ErrorMessage
                       name="studentName"
                       component="div"
                       className="text-red-600"
@@ -206,7 +206,7 @@ const Enquiry = () => {
                   <SubmitButton
                     // add group class
                     className="group "
-                    onClick={() => handleSubmit()}
+                    // onClick={() => handleSubmit()}
                   >
                     Submit
                     <ArrowRightIcon
