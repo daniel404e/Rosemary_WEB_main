@@ -3,7 +3,7 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { enrollValidation } from '../../components/Validation/enrollValidation'
-import { Formik, Form, Field, getIn } from 'formik'
+import { Formik, Form, Field, getIn,ErrorMessage } from 'formik'
 
 const index = () => {
   function getStyles(errors: any, fieldName: string) {
@@ -89,6 +89,13 @@ const index = () => {
                       className={styled}
                       placeholder="Name of a Child"
                     />
+                    
+                    <ErrorMessage
+                    
+                      name="childName"
+                      component="div"
+                      className="text-red-600 "
+                    />
                   </div>
                   <div className="box p-1">
                     <Field
@@ -99,6 +106,13 @@ const index = () => {
                       }
                       className={styled}
                       placeholder="DD/MM/YY"
+                    />
+                    
+                    <ErrorMessage
+                    
+                      name="date"
+                      component="div"
+                      className="text-red-600 "
                     />
                   </div>
                   <div className="box p-1">
@@ -112,6 +126,13 @@ const index = () => {
                       className={styled}
                       placeholder="Address"
                     />
+                    
+                    <ErrorMessage
+                    
+                      name="address"
+                      component="div"
+                      className="text-red-600 "
+                    />
                   </div>
                   <div className="box p-1">
                     <Field
@@ -123,6 +144,13 @@ const index = () => {
                       }
                       className={styled}
                       placeholder="Parent (Father / Mother)"
+                    />
+                    
+                    <ErrorMessage
+                    
+                      name="parentName"
+                      component="div"
+                      className="text-red-600 "
                     />
                   </div>
                   <div className="box p-1">
@@ -136,6 +164,13 @@ const index = () => {
                       className={styled}
                       placeholder="Mobile Number"
                     />
+                    
+                    <ErrorMessage
+                    
+                      name="mobileNumber"
+                      component="div"
+                      className="text-red-600 "
+                    />
                   </div>
                   <div className="box p-1">
                     <Field
@@ -147,6 +182,13 @@ const index = () => {
                       }
                       className={styled}
                       placeholder="Email ID"
+                    />
+                    
+                    <ErrorMessage
+                    
+                      name="email"
+                      component="div"
+                      className="text-red-600 "
                     />
                   </div>
                   <div className="box p-1">
@@ -160,6 +202,13 @@ const index = () => {
                       className={styled}
                       placeholder="Grade"
                     />
+                    
+                    <ErrorMessage
+                    
+                      name="grade"
+                      component="div"
+                      className="text-red-600 "
+                    />
                   </div>
                   <div className="box p-1">
                     <Field
@@ -171,6 +220,13 @@ const index = () => {
                       }
                       className={styled}
                       placeholder="Comments"
+                    />
+                    
+                    <ErrorMessage
+                    
+                      name="comment"
+                      component="div"
+                      className="text-red-600 "
                     />
                   </div>
                   <button

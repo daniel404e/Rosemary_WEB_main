@@ -4,7 +4,7 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { schduleValidation } from '../../components/Validation/schduleValidation'
-import { Formik, Form, Field, getIn } from 'formik'
+import { Formik, Form, Field, getIn ,ErrorMessage} from 'formik'
 import {
   FlexColCenter,
   InputSet,
@@ -31,7 +31,7 @@ const Schedule = () => {
   }
 
   const styles =
-    'block w-full md:w-96 px-4 shadow-md  py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
+    'block w-full md:w-96 px-4 shadow-md  py-3  leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
   return (
     <div className="max-w-7xl mx-auto ">
       <Heading first={'Schedule a Visit'} second={''} third={''} />
@@ -97,7 +97,7 @@ const Schedule = () => {
                 touched
               }) => (
                 <Form onSubmit={handleSubmit}>
-                  <InputSet>
+                  <InputSet >
                     <InputLabel>Name</InputLabel>
 
                     <Field
@@ -108,6 +108,12 @@ const Schedule = () => {
                         getStyles(touched, `studentName`)
                       }
                     />
+                    <ErrorMessage
+                    
+                    name="studentName"
+                    component="div"
+                    className="text-red-600 "
+                  />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Email</InputLabel>
@@ -120,6 +126,12 @@ const Schedule = () => {
                         getStyles(touched, `email`)
                       }
                     />
+                    <ErrorMessage
+                    
+                    name="email"
+                    component="div"
+                    className="text-red-600 "
+                  />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Schedule Visist For</InputLabel>
@@ -147,6 +159,12 @@ const Schedule = () => {
 
                       <option value="other" label="Other"></option>
                     </select>
+                    <ErrorMessage
+                    
+                      name="schedulevisit"
+                      component="div"
+                      className="text-red-600 "
+                    />
                   </InputSet>
 
                   <InputSet>
@@ -160,6 +178,12 @@ const Schedule = () => {
                         getStyles(touched, `mobileNumber`)
                       }
                     />
+                    <ErrorMessage
+                    
+                    name="mobileNumber"
+                    component="div"
+                    className="text-red-600 "
+                  />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Additional Comments</InputLabel>
@@ -174,6 +198,12 @@ const Schedule = () => {
                         getStyles(touched, `additionComment`)
                       }
                     />
+                    <ErrorMessage
+                    
+                    name="additionComment"
+                    component="div"
+                    className="text-red-600 "
+                  />
                   </InputSet>
 
                   <SubmitButton className="group ">

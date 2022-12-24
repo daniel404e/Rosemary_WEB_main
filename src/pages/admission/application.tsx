@@ -43,7 +43,7 @@ const Application = () => {
     checked: ''
   }
   const styles =
-    'block w-full px-4 py-3 mb-3 shadow-md leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
+    'block w-full px-4 py-3  shadow-md leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
   return (
     <div className="max-w-7xl mx-auto">
       <Heading first={'Admission'} second={'Application '} third={' Form'} />
@@ -114,11 +114,11 @@ const Application = () => {
                       }
                     />
 
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="studentName"
                       component="div"
                       className="text-red-600"
-                    /> */}
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Date of Birth </InputLabel>
@@ -133,11 +133,11 @@ const Application = () => {
                       }
                     />
 
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="dateOfBirth"
                       component="div"
                       className="text-red-600"
-                    /> */}
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>age </InputLabel>
@@ -150,11 +150,11 @@ const Application = () => {
                       }
                     />
 
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="age"
                       component="div"
                       className="text-red-600"
-                    /> */}
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Grade Applying For</InputLabel>
@@ -192,11 +192,11 @@ const Application = () => {
                       <option value="STD 11" label="STD 11"></option>
                       <option value="STD 12" label="STD 12"></option>
                     </select>
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="gradeApply"
                       component="div"
                       className="text-red-600"
-                    /> */}
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel id="my-radio-group">sex</InputLabel>
@@ -232,6 +232,11 @@ const Application = () => {
                         Female
                       </label>
                     </div>
+                    <ErrorMessage
+                      name="sex"
+                      component="div"
+                      className="text-red-600"
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Email </InputLabel>
@@ -245,11 +250,11 @@ const Application = () => {
                       }
                     />
 
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="email"
                       component="div"
                       className="text-red-600"
-                    /> */}
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Father Name </InputLabel>
@@ -263,11 +268,11 @@ const Application = () => {
                       }
                     />
 
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="fatherName"
                       component="div"
                       className="text-red-600"
-                    /> */}
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>
@@ -283,11 +288,11 @@ const Application = () => {
                       }
                     />
 
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="fatherOccupation"
                       component="div"
                       className="text-red-600"
-                    /> */}
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Father Contact Number</InputLabel>
@@ -301,11 +306,11 @@ const Application = () => {
                       }
                     />
 
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="fatherContact"
                       component="div"
                       className="text-red-600"
-                    /> */}
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Mother Name </InputLabel>
@@ -319,11 +324,11 @@ const Application = () => {
                       }
                     />
 
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="motherName"
                       component="div"
                       className="text-red-600"
-                    /> */}
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>
@@ -339,11 +344,11 @@ const Application = () => {
                       }
                     />
 
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="motherOccupation"
                       component="div"
                       className="text-red-600"
-                    /> */}
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Mother Contact Number</InputLabel>
@@ -357,11 +362,11 @@ const Application = () => {
                       }
                     />
 
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="motherContact"
                       component="div"
                       className="text-red-600"
-                    /> */}
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>
@@ -378,11 +383,11 @@ const Application = () => {
                       }
                     />
 
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="residentAddress"
                       component="div"
                       className="text-red-600"
-                    /> */}
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>
@@ -399,11 +404,11 @@ const Application = () => {
                       }
                     />
 
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="parentIncome"
                       component="div"
                       className="text-red-600"
-                    /> */}
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>
@@ -422,11 +427,11 @@ const Application = () => {
                       }
                     />
 
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="familyAppliction"
                       component="div"
                       className="text-red-600"
-                    /> */}
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Previous School Name & Address</InputLabel>
@@ -442,11 +447,11 @@ const Application = () => {
                       }
                     />
 
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="perviousSchool"
                       component="div"
                       className="text-red-600"
-                    /> */}
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Specify The Board</InputLabel>
@@ -475,11 +480,11 @@ const Application = () => {
                       <option value="IGCSE" label="IGCSE"></option>
                       <option value="Other" label="Other"></option>
                     </select>
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="boardSpecify"
                       component="div"
                       className="text-red-600"
-                    /> */}
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Class Last Studied</InputLabel>
@@ -494,11 +499,11 @@ const Application = () => {
                       }
                     />
 
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="lastStudy"
                       component="div"
                       className="text-red-600"
-                    /> */}
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel id="my-radio-group">
@@ -553,11 +558,11 @@ const Application = () => {
                       }
                     />
 
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="markPerviousExam"
                       component="div"
                       className="text-red-600"
-                    /> */}
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>
@@ -576,11 +581,11 @@ const Application = () => {
                       }
                     />
 
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="intrestCurricular"
                       component="div"
                       className="text-red-600"
-                    /> */}
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>
@@ -598,11 +603,11 @@ const Application = () => {
                       }
                     />
 
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="healthIssue"
                       component="div"
                       className="text-red-600"
-                    /> */}
+                    />
                   </InputSet>
                   <InputSet>
                     <Field

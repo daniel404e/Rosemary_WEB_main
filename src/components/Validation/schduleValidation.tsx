@@ -2,22 +2,20 @@ import * as yup from 'yup'
 
 export const schduleValidation = yup.object({
   studentName: yup
-    .string()
-    .min(10, 'Enter minimum lenght 10')
-    .required('Enter Street Address'),
-  email: yup.string().email().required(),
+  .string()
+  .matches(/^[aA-zZ\s]+$/, '* Only alphabets ')
+  .required('* required'),
+  email: yup.string().email().required('* required'),
   mobileNumber: yup
     .number()
-    .typeError('Enter Number')
-    .positive('Positive Number')
-    .required('Enter Post Code'),
+    .typeError('* Only Number')
+    .positive('* Positive Number')
+    .required('* required'),
   schedulevisit: yup
     .string()
-    .matches(/^[aA-zZ\s]+$/, 'Only alphabets ')
-    .required('Enter country'),
+    .matches(/^[aA-zZ\s]+$/, '* Only alphabets ')
+    .required('* required'),
   additionComment: yup
-    .string()
-    .min(2, 'Enter name')
-    .matches(/^[aA-zZ\s]+$/, 'Only alphabets ')
-    .required('Enter name')
+    .string().matches(/^[aA-zZ\s]+$/, '* Only alphabets ')
+   
 })
