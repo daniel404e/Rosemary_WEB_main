@@ -19,7 +19,7 @@ const Application = () => {
   }
   const intialValued = {
     studentName: '',
-    dateOfBirth: 0,
+    dateOfBirth: '',
     age: 0,
     gradeApply: '',
     sex: '',
@@ -65,16 +65,19 @@ const Application = () => {
                     actions.setSubmitting(false)
                     actions.resetForm()
                     if (response) {
-                      toast.success('Form Submit', {
-                        position: 'top-right',
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: 'light'
-                      })
+                      toast.success(
+                        'thank you for choosing Rosemary, we will get in touch with  you soon',
+                        {
+                          position: 'top-right',
+                          autoClose: 5000,
+                          hideProgressBar: false,
+                          closeOnClick: true,
+                          pauseOnHover: true,
+                          draggable: true,
+                          progress: undefined,
+                          theme: 'light'
+                        }
+                      )
                     }
                   })
                   .catch((error: any) => {
@@ -117,7 +120,7 @@ const Application = () => {
                     <ErrorMessage
                       name="studentName"
                       component="div"
-                      className="text-red-600"
+                      className=" text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -136,7 +139,7 @@ const Application = () => {
                     <ErrorMessage
                       name="dateOfBirth"
                       component="div"
-                      className="text-red-600"
+                      className=" text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -153,7 +156,7 @@ const Application = () => {
                     <ErrorMessage
                       name="age"
                       component="div"
-                      className="text-red-600"
+                      className=" text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -195,7 +198,7 @@ const Application = () => {
                     <ErrorMessage
                       name="gradeApply"
                       component="div"
-                      className="text-red-600"
+                      className=" text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -235,7 +238,7 @@ const Application = () => {
                     <ErrorMessage
                       name="sex"
                       component="div"
-                      className="text-red-600"
+                      className=" text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -253,7 +256,7 @@ const Application = () => {
                     <ErrorMessage
                       name="email"
                       component="div"
-                      className="text-red-600"
+                      className=" text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -271,7 +274,7 @@ const Application = () => {
                     <ErrorMessage
                       name="fatherName"
                       component="div"
-                      className="text-red-600"
+                      className=" text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -291,7 +294,7 @@ const Application = () => {
                     <ErrorMessage
                       name="fatherOccupation"
                       component="div"
-                      className="text-red-600"
+                      className=" text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -309,7 +312,7 @@ const Application = () => {
                     <ErrorMessage
                       name="fatherContact"
                       component="div"
-                      className="text-red-600"
+                      className=" text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -327,7 +330,7 @@ const Application = () => {
                     <ErrorMessage
                       name="motherName"
                       component="div"
-                      className="text-red-600"
+                      className=" text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -347,7 +350,7 @@ const Application = () => {
                     <ErrorMessage
                       name="motherOccupation"
                       component="div"
-                      className="text-red-600"
+                      className=" text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -365,7 +368,7 @@ const Application = () => {
                     <ErrorMessage
                       name="motherContact"
                       component="div"
-                      className="text-red-600"
+                      className=" text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -386,7 +389,7 @@ const Application = () => {
                     <ErrorMessage
                       name="residentAddress"
                       component="div"
-                      className="text-red-600"
+                      className=" text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -407,7 +410,7 @@ const Application = () => {
                     <ErrorMessage
                       name="parentIncome"
                       component="div"
-                      className="text-red-600"
+                      className="text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -430,7 +433,7 @@ const Application = () => {
                     <ErrorMessage
                       name="familyAppliction"
                       component="div"
-                      className="text-red-600"
+                      className="text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -450,7 +453,7 @@ const Application = () => {
                     <ErrorMessage
                       name="perviousSchool"
                       component="div"
-                      className="text-red-600"
+                      className="text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -483,7 +486,7 @@ const Application = () => {
                     <ErrorMessage
                       name="boardSpecify"
                       component="div"
-                      className="text-red-600"
+                      className="text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -502,7 +505,7 @@ const Application = () => {
                     <ErrorMessage
                       name="lastStudy"
                       component="div"
-                      className="text-red-600"
+                      className="text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -561,7 +564,7 @@ const Application = () => {
                     <ErrorMessage
                       name="markPerviousExam"
                       component="div"
-                      className="text-red-600"
+                      className="text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -584,7 +587,7 @@ const Application = () => {
                     <ErrorMessage
                       name="intrestCurricular"
                       component="div"
-                      className="text-red-600"
+                      className="text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -606,7 +609,7 @@ const Application = () => {
                     <ErrorMessage
                       name="healthIssue"
                       component="div"
-                      className="text-red-600"
+                      className="text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -628,7 +631,7 @@ const Application = () => {
                     <ErrorMessage
                       name="checked"
                       component="div"
-                      className="text-red-600"
+                      className="text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <SubmitButton

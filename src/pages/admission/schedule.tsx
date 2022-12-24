@@ -4,7 +4,7 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { schduleValidation } from '../../components/Validation/schduleValidation'
-import { Formik, Form, Field, getIn ,ErrorMessage} from 'formik'
+import { Formik, Form, Field, getIn, ErrorMessage } from 'formik'
 import {
   FlexColCenter,
   InputSet,
@@ -59,16 +59,19 @@ const Schedule = () => {
                     actions.setSubmitting(false)
                     actions.resetForm()
                     if (response) {
-                      toast.success('Form Submit', {
-                        position: 'top-center',
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: 'light'
-                      })
+                      toast.success(
+                        'thank you for choosing Rosemary, we will get in touch with  you soon',
+                        {
+                          position: 'top-center',
+                          autoClose: 5000,
+                          hideProgressBar: false,
+                          closeOnClick: true,
+                          pauseOnHover: true,
+                          draggable: true,
+                          progress: undefined,
+                          theme: 'light'
+                        }
+                      )
                     }
                     return
                   })
@@ -97,7 +100,7 @@ const Schedule = () => {
                 touched
               }) => (
                 <Form onSubmit={handleSubmit}>
-                  <InputSet >
+                  <InputSet>
                     <InputLabel>Name</InputLabel>
 
                     <Field
@@ -109,11 +112,10 @@ const Schedule = () => {
                       }
                     />
                     <ErrorMessage
-                    
-                    name="studentName"
-                    component="div"
-                    className="text-red-600 "
-                  />
+                      name="studentName"
+                      component="div"
+                      className="text-red-600 text-xs font-normal "
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Email</InputLabel>
@@ -127,11 +129,10 @@ const Schedule = () => {
                       }
                     />
                     <ErrorMessage
-                    
-                    name="email"
-                    component="div"
-                    className="text-red-600 "
-                  />
+                      name="email"
+                      component="div"
+                      className="text-red-600 text-xs font-normal "
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Schedule Visist For</InputLabel>
@@ -160,10 +161,9 @@ const Schedule = () => {
                       <option value="other" label="Other"></option>
                     </select>
                     <ErrorMessage
-                    
                       name="schedulevisit"
                       component="div"
-                      className="text-red-600 "
+                      className="text-red-600 text-xs font-normal "
                     />
                   </InputSet>
 
@@ -179,11 +179,10 @@ const Schedule = () => {
                       }
                     />
                     <ErrorMessage
-                    
-                    name="mobileNumber"
-                    component="div"
-                    className="text-red-600 "
-                  />
+                      name="mobileNumber"
+                      component="div"
+                      className="text-red-600 text-xs font-normal "
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Additional Comments</InputLabel>
@@ -199,11 +198,10 @@ const Schedule = () => {
                       }
                     />
                     <ErrorMessage
-                    
-                    name="additionComment"
-                    component="div"
-                    className="text-red-600 "
-                  />
+                      name="additionComment"
+                      component="div"
+                      className="text-red-600 text-xs font-normal "
+                    />
                   </InputSet>
 
                   <SubmitButton className="group ">

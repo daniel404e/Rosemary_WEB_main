@@ -1,7 +1,7 @@
 import React from 'react'
 import Heading from '../../components/Heading'
 import { EnquiryValidation } from '../../components/Validation/enquiryValidation'
-import { Formik, Form, Field, getIn, ErrorMessage} from 'formik'
+import { Formik, Form, Field, getIn, ErrorMessage } from 'formik'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios'
@@ -52,16 +52,19 @@ const Enquiry = () => {
                     actions.setSubmitting(false)
                     actions.resetForm()
                     if (response) {
-                      toast.success('Form Submit', {
-                        position: 'top-right',
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: 'light'
-                      })
+                      toast.success(
+                        'thank you for choosing Rosemary, we will get in touch with  you soon',
+                        {
+                          position: 'top-right',
+                          autoClose: 5000,
+                          hideProgressBar: false,
+                          closeOnClick: true,
+                          pauseOnHover: true,
+                          draggable: true,
+                          progress: undefined,
+                          theme: 'light'
+                        }
+                      )
                     }
                   })
                   .catch((error: any) => {
@@ -102,10 +105,9 @@ const Enquiry = () => {
                     />
 
                     <ErrorMessage
-                    
                       name="studentName"
                       component="div"
-                      className="text-red-600 "
+                      className="text-red-600 text-xs font-normal "
                     />
                   </InputSet>
                   <InputSet>
@@ -146,7 +148,7 @@ const Enquiry = () => {
                     <ErrorMessage
                       name="seekAdmisssion"
                       component="div"
-                      className="text-red-600"
+                      className="text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -159,11 +161,11 @@ const Enquiry = () => {
                         getStyles(touched, `fatherName`)
                       }
                     />
-                    
+
                     <ErrorMessage
                       name="fatherName"
                       component="div"
-                      className="text-red-600"
+                      className="text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -181,7 +183,7 @@ const Enquiry = () => {
                     <ErrorMessage
                       name="mobileNumber"
                       component="div"
-                      className="text-red-600"
+                      className="text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <InputSet>
@@ -201,7 +203,7 @@ const Enquiry = () => {
                     <ErrorMessage
                       name="otherDetail"
                       component="div"
-                      className="text-red-600"
+                      className="text-red-600 text-xs font-normal"
                     />
                   </InputSet>
                   <SubmitButton
