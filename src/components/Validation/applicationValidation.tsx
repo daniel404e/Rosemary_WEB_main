@@ -37,11 +37,7 @@ export const ApplicationValidation = yup.object({
     .string()
     .matches(/^[aA-zZ\s]+$/, '* Invalid format ')
     .required('* Resident address required'),
-  parentIncome: yup
-    .number()
-    .typeError('* Only Number')
-    .positive('* Invalid Number')
-    .required('*parent Income required'),
+  parentIncome: yup.string().required('*parent Income required'),
   familyAppliction: yup.string().matches(/^[aA-zZ\s]+$/, '* Invalid format '),
   perviousSchool: yup.string().matches(/^[aA-zZ\s]+$/, '* Invalid format '),
   lastStudy: yup.string().matches(/^[aA-zZ\s]+$/, '* Invalid format '),

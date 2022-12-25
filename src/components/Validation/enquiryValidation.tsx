@@ -14,6 +14,6 @@ export const EnquiryValidation = yup.object({
     .typeError('* valid Number')
     .positive('* Invalid Number')
     .required(`* Mobile Number required`),
-  otherDetail: yup.string().matches(/^[aA-zZ\s]+$/, '* Invalid format '),
+  otherDetail: yup.string(),
   seekAdmisssion: yup.string().required(`* Admission  required`)
 })

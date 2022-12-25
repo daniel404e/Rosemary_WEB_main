@@ -44,9 +44,9 @@ const Testimonials = () => {
             {testimonials.map((post, index) => (
               <div
                 key={index}
-                className="flex flex-col mx-5 min-h-[400px] rounded-lg shadow-lg overflow-hidden"
+                className="flex flex-col mx-5  rounded-lg shadow-lg overflow-hidden"
               >
-                <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+                <div className="flex-1 bg-white min-h-[400px] p-6 flex flex-col justify-between">
                   <div className="flex-1">
                     <p>{post.fatherName}</p>
                     <span className="block mt-2">

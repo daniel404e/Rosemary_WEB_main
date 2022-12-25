@@ -1,6 +1,10 @@
 import Heading from '@/components/Heading'
+import Image from 'next/image'
 import React from 'react'
-
+import pic1 from '../../images/library/1.jpg'
+import pic2 from '../../images/library/2.jpg'
+import pic3 from '../../images/library/3.jpg'
+import pic5 from '../../images/library/5.jpg'
 const Library = () => {
   return (
     <>
@@ -89,6 +93,48 @@ const Library = () => {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto">
+        <div className="mt-16 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-8">
+          <div>
+            <div className="w-full aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
+              <Image
+                src={pic1}
+                alt="Drawstring top with elastic loop closure and textured interior padding."
+                className="w-full h-full object-center object-cover"
+              />
+            </div>
+          </div>
+          <div>
+            <div className="w-full aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
+              <Image
+                src={pic2}
+                alt="Front zipper pouch with included key ring."
+                className="w-full h-full object-center object-cover"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="mt-16 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-8">
+          <div>
+            <div className="w-full aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
+              <Image
+                src={pic3}
+                alt="Drawstring top with elastic loop closure and textured interior padding."
+                className="w-full h-full object-center object-cover"
+              />
+            </div>
+          </div>
+          <div>
+            <div className="w-full aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
+              <Image
+                src={pic5}
+                alt="Front zipper pouch with included key ring."
+                className="w-full h-full object-center object-cover"
+              />
             </div>
           </div>
         </div>

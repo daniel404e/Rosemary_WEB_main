@@ -222,5 +222,22 @@ export const testimonials = [
         class: 'Grade VI'
       }
     ]
+  },
+  {
+    fatherName: `Mr. J. Glory Selvamano`,
+    remark: `rpwe;j Kd ;Ndw;wk ;. gbg ;gpy; ey;y ftdk;> Ngr ;R jpwikapy ;
+    ey;y Kd ;Ndw;wk ;. vdNt kpFe;j kfpo;r ;rp Mrphpah;fsplk ; ey;y ftdpg;G>
+    vdNt Nuh];Nkhp gs;spf;jd ;wpia njhptpj;J nfhs;fpNwd;. `,
+    date: ` 28.08.2021`,
+    students: [
+      {
+        name: `John`,
+        class: `Grade VIII`
+      },
+      {
+        name: 'Jerin',
+        class: 'Grade VI'
+      }
+    ]
   }
 ]

@@ -7,11 +7,11 @@ import Quote from '../components/Content/Quote'
 import CustomArrow from '@/components/Classes/USE'
 // import Testimonials from '@/components/Classes/Testimonials'
 // import SkeletonLoading from '@/components/SkeletonLoading'
-export default function Home() {
+export default function Rosemary() {
   return (
     <>
       <Head>
-        <title>Home App</title>
+        <title>Rosemary</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -27,11 +27,8 @@ export default function Home() {
       <Carousel />
       <ParagraphOne />
       <Quote />
-      <Gallery />
-      {/* <NewClasses /> */}
-      {/* <ExploreCarousel /> */}
       <CustomArrow />
-      {/* <Testimonials /> */}
+      <Gallery />
       <Enroll />
     </>
   )

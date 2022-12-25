@@ -100,7 +100,7 @@ export default function Example() {
     name: 'Academics',
     list: [
       {
-        name: 'Academic',
+        name: 'Academic team',
         href: '/academics/academic',
         icon: BookmarkSquareIcon
       },

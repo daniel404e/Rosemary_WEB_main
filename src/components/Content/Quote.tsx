@@ -23,8 +23,8 @@ const Quote = () => {
       <figure className="mx-auto max-w-screen-md text-center">
         <blockquote>
           <p className="text-4xl fontText italic font-medium text-gray-900 ">
-            Education is the most powerful weapon which you can use to change
-            the world!{' '}
+            {'"'}Education is the most powerful weapon which you can use to
+            change the world!{'" '}
           </p>
         </blockquote>
         <figcaption className="flex justify-center items-center mt-6 space-x-3">
