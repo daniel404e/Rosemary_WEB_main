@@ -3,7 +3,7 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { enrollValidation } from '../../components/Validation/enrollValidation'
-import { Formik, Form, Field, getIn } from 'formik'
+import { Formik, Form, Field, getIn, ErrorMessage } from 'formik'
 
 const index = () => {
   function getStyles(errors: any, fieldName: string) {
@@ -41,16 +41,19 @@ const index = () => {
               actions.setSubmitting(false)
               actions.resetForm()
               if (response) {
-                toast.success('Form Submit', {
-                  position: 'top-right',
-                  autoClose: 5000,
-                  hideProgressBar: false,
-                  closeOnClick: true,
-                  pauseOnHover: true,
-                  draggable: true,
-                  progress: undefined,
-                  theme: 'light'
-                })
+                toast.success(
+                  'thank you for choosing Rosemary, we will get in touch with  you soon',
+                  {
+                    position: 'top-right',
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'light'
+                  }
+                )
               }
             })
             .catch((error: any) => {
@@ -89,6 +92,12 @@ const index = () => {
                       className={styled}
                       placeholder="Name of a Child"
                     />
+
+                    <ErrorMessage
+                      name="childName"
+                      component="div"
+                      className="text-red-600 text-xs font-normal"
+                    />
                   </div>
                   <div className="box p-1">
                     <Field
@@ -99,6 +108,12 @@ const index = () => {
                       }
                       className={styled}
                       placeholder="DD/MM/YY"
+                    />
+
+                    <ErrorMessage
+                      name="date"
+                      component="div"
+                      className="text-red-600 text-xs font-normal"
                     />
                   </div>
                   <div className="box p-1">
@@ -112,6 +127,12 @@ const index = () => {
                       className={styled}
                       placeholder="Address"
                     />
+
+                    <ErrorMessage
+                      name="address"
+                      component="div"
+                      className="text-red-600 text-xs font-normal "
+                    />
                   </div>
                   <div className="box p-1">
                     <Field
@@ -123,6 +144,12 @@ const index = () => {
                       }
                       className={styled}
                       placeholder="Parent (Father / Mother)"
+                    />
+
+                    <ErrorMessage
+                      name="parentName"
+                      component="div"
+                      className="text-red-600 text-xs font-normal"
                     />
                   </div>
                   <div className="box p-1">
@@ -136,6 +163,12 @@ const index = () => {
                       className={styled}
                       placeholder="Mobile Number"
                     />
+
+                    <ErrorMessage
+                      name="mobileNumber"
+                      component="div"
+                      className="text-red-600 text-xs font-normal"
+                    />
                   </div>
                   <div className="box p-1">
                     <Field
@@ -147,6 +180,12 @@ const index = () => {
                       }
                       className={styled}
                       placeholder="Email ID"
+                    />
+
+                    <ErrorMessage
+                      name="email"
+                      component="div"
+                      className="text-red-600 text-xs font-normal"
                     />
                   </div>
                   <div className="box p-1">
@@ -160,6 +199,12 @@ const index = () => {
                       className={styled}
                       placeholder="Grade"
                     />
+
+                    <ErrorMessage
+                      name="grade"
+                      component="div"
+                      className="text-red-600 text-xs font-normal"
+                    />
                   </div>
                   <div className="box p-1">
                     <Field
@@ -172,9 +217,15 @@ const index = () => {
                       className={styled}
                       placeholder="Comments"
                     />
+
+                    <ErrorMessage
+                      name="comment"
+                      component="div"
+                      className="text-red-600 text-xs font-normal"
+                    />
                   </div>
                   <button
-                    onClick={() => handleSubmit()}
+                    // onClick={() => handleSubmit()}
                     className="w-fit h-10 rounded-md bg-secondary px-5 text-white mt-4 ml-2 "
                   >
                     Enroll

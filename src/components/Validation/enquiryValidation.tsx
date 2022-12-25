@@ -3,24 +3,17 @@ import * as yup from 'yup'
 export const EnquiryValidation = yup.object({
   studentName: yup
     .string()
-    .min(5, 'Enter minimum lenght 10')
-    .required('Enter Street Address'),
+    .matches(/^[aA-zZ\s]+$/, '* Invalid format ')
+    .required('* Student Name required'),
   fatherName: yup
     .string()
-    .matches(/^[aA-zZ\s]+$/, 'Only alphabets ')
-    .required('Enter City'),
+    .matches(/^[aA-zZ\s]+$/, '* Invalid format ')
+    .required('* Father Name required'),
   mobileNumber: yup
     .number()
-    .typeError('Enter Number')
-    .positive('Positive Number')
-    .required('Enter Post Code'),
-  otherDetail: yup
-    .string()
-    .matches(/^[aA-zZ\s]+$/, 'Only alphabets ')
-    .required('Enter country'),
-  seekAdmisssion: yup
-    .string()
-    .min(2, 'Enter name')
-    .matches(/^[aA-zZ\s]+$/, 'Only alphabets ')
-    .required('Enter name')
+    .typeError('* valid Number')
+    .positive('* Invalid Number')
+    .required(`* Mobile Number required`),
+  otherDetail: yup.string().matches(/^[aA-zZ\s]+$/, '* Invalid format '),
+  seekAdmisssion: yup.string().required(`* Admission  required`)
 })

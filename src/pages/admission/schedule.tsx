@@ -4,7 +4,7 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { schduleValidation } from '../../components/Validation/schduleValidation'
-import { Formik, Form, Field, getIn } from 'formik'
+import { Formik, Form, Field, getIn, ErrorMessage } from 'formik'
 import {
   FlexColCenter,
   InputSet,
@@ -31,7 +31,7 @@ const Schedule = () => {
   }
 
   const styles =
-    'block w-full md:w-96 px-4 shadow-md  py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
+    'block w-full md:w-96 px-4 shadow-md  py-3  leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
   return (
     <div className="max-w-7xl mx-auto ">
       <Heading first={'Schedule a Visit'} second={''} third={''} />
@@ -59,16 +59,19 @@ const Schedule = () => {
                     actions.setSubmitting(false)
                     actions.resetForm()
                     if (response) {
-                      toast.success('Form Submit', {
-                        position: 'top-center',
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: 'light'
-                      })
+                      toast.success(
+                        'thank you for choosing Rosemary, we will get in touch with  you soon',
+                        {
+                          position: 'top-center',
+                          autoClose: 5000,
+                          hideProgressBar: false,
+                          closeOnClick: true,
+                          pauseOnHover: true,
+                          draggable: true,
+                          progress: undefined,
+                          theme: 'light'
+                        }
+                      )
                     }
                     return
                   })
@@ -108,6 +111,11 @@ const Schedule = () => {
                         getStyles(touched, `studentName`)
                       }
                     />
+                    <ErrorMessage
+                      name="studentName"
+                      component="div"
+                      className="text-red-600 text-xs font-normal "
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Email</InputLabel>
@@ -119,6 +127,11 @@ const Schedule = () => {
                         getStyles(errors, `email`) &&
                         getStyles(touched, `email`)
                       }
+                    />
+                    <ErrorMessage
+                      name="email"
+                      component="div"
+                      className="text-red-600 text-xs font-normal "
                     />
                   </InputSet>
                   <InputSet>
@@ -147,6 +160,11 @@ const Schedule = () => {
 
                       <option value="other" label="Other"></option>
                     </select>
+                    <ErrorMessage
+                      name="schedulevisit"
+                      component="div"
+                      className="text-red-600 text-xs font-normal "
+                    />
                   </InputSet>
 
                   <InputSet>
@@ -159,6 +177,11 @@ const Schedule = () => {
                         getStyles(errors, `mobileNumber`) &&
                         getStyles(touched, `mobileNumber`)
                       }
+                    />
+                    <ErrorMessage
+                      name="mobileNumber"
+                      component="div"
+                      className="text-red-600 text-xs font-normal "
                     />
                   </InputSet>
                   <InputSet>
@@ -173,6 +196,11 @@ const Schedule = () => {
                         getStyles(errors, `additionComment`) &&
                         getStyles(touched, `additionComment`)
                       }
+                    />
+                    <ErrorMessage
+                      name="additionComment"
+                      component="div"
+                      className="text-red-600 text-xs font-normal "
                     />
                   </InputSet>
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import Heading from '../../components/Heading'
 import { EnquiryValidation } from '../../components/Validation/enquiryValidation'
-import { Formik, Form, Field, getIn } from 'formik'
+import { Formik, Form, Field, getIn, ErrorMessage } from 'formik'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios'
@@ -31,7 +31,7 @@ const Enquiry = () => {
     return
   }
   const styles =
-    'block w-full md:w-96 px-4 shadow-md py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
+    'block w-full md:w-96 px-4 shadow-md py-3   leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white'
   return (
     <div className="max-w-7xl mx-auto ">
       <Heading first={'Admission '} second={'Enquiry '} third={' Form'} />
@@ -52,16 +52,19 @@ const Enquiry = () => {
                     actions.setSubmitting(false)
                     actions.resetForm()
                     if (response) {
-                      toast.success('Form Submit', {
-                        position: 'top-right',
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: 'light'
-                      })
+                      toast.success(
+                        'thank you for choosing Rosemary, we will get in touch with  you soon',
+                        {
+                          position: 'top-right',
+                          autoClose: 5000,
+                          hideProgressBar: false,
+                          closeOnClick: true,
+                          pauseOnHover: true,
+                          draggable: true,
+                          progress: undefined,
+                          theme: 'light'
+                        }
+                      )
                     }
                   })
                   .catch((error: any) => {
@@ -100,12 +103,12 @@ const Enquiry = () => {
                         getStyles(touched, `studentName`)
                       }
                     />
-                    {/* 
+
                     <ErrorMessage
                       name="studentName"
                       component="div"
-                      className="text-red-600"
-                    /> */}
+                      className="text-red-600 text-xs font-normal "
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Seeking Admission For</InputLabel>
@@ -142,11 +145,11 @@ const Enquiry = () => {
                       <option value="STD 11" label="STD 11"></option>
                       <option value="STD 12" label="STD 12"></option>
                     </select>
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="seekAdmisssion"
                       component="div"
-                      className="text-red-600"
-                    /> */}
+                      className="text-red-600 text-xs font-normal"
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Father&apos;s Name</InputLabel>
@@ -158,12 +161,12 @@ const Enquiry = () => {
                         getStyles(touched, `fatherName`)
                       }
                     />
-                    {/* 
+
                     <ErrorMessage
                       name="fatherName"
                       component="div"
-                      className="text-red-600"
-                    /> */}
+                      className="text-red-600 text-xs font-normal"
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Mobile Number </InputLabel>
@@ -177,11 +180,11 @@ const Enquiry = () => {
                       }
                     />
 
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="mobileNumber"
                       component="div"
-                      className="text-red-600"
-                    /> */}
+                      className="text-red-600 text-xs font-normal"
+                    />
                   </InputSet>
                   <InputSet>
                     <InputLabel>Any Other Details of Enquiry</InputLabel>
@@ -197,16 +200,16 @@ const Enquiry = () => {
                       }
                     />
 
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="otherDetail"
                       component="div"
-                      className="text-red-600"
-                    /> */}
+                      className="text-red-600 text-xs font-normal"
+                    />
                   </InputSet>
                   <SubmitButton
                     // add group class
                     className="group "
-                    onClick={() => handleSubmit()}
+                    // onClick={() => handleSubmit()}
                   >
                     Submit
                     <ArrowRightIcon

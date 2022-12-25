@@ -3,29 +3,26 @@ import * as yup from 'yup'
 export const enrollValidation = yup.object({
   childName: yup
     .string()
-    .matches(/^[aA-zZ\s]+$/, 'Only alphabets ')
-    .required(),
-  date: yup.date().required(),
+    .matches(/^[aA-zZ\s]+$/, 'Invalid format ')
+    .required('* Name required'),
+  date: yup.date().max(new Date()).required('* Invalid date'),
   address: yup
     .string()
-    .matches(/^[aA-zZ\s]+$/, 'Only alphabets ')
-    .required(),
+    .matches(/^[aA-zZ\s]+$/, 'Invalid format ')
+    .required('* Address required'),
   parentName: yup
     .string()
-    .matches(/^[aA-zZ\s]+$/, 'Only alphabets ')
-    .required(),
+    .matches(/^[aA-zZ\s]+$/, 'Invalid format ')
+    .required('* Parent Name required'),
   mobileNumber: yup
     .number()
-    .typeError('Enter Number')
-    .positive('Positive Number')
-    .required('Enter Post Code'),
-  email: yup.string().email().required(),
+    .typeError('* Only Number')
+    .positive('* Invalid Number')
+    .required('* Mobile Number required'),
+  email: yup.string().email().required('* Invalid email'),
   grade: yup
     .string()
-    .matches(/^[aA-zZ\s]+$/, 'Only alphabets ')
-    .required(),
-  comment: yup
-    .string()
-    .matches(/^[aA-zZ\s]+$/, 'Only alphabets ')
-    .required()
+    .matches(/^[aA-zZ\s]+$/, '* Invalid format ')
+    .required('* Grade Required'),
+  comment: yup.string().matches(/^[aA-zZ\s]+$/, 'Invalid format ')
 })
