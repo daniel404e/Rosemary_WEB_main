@@ -6,7 +6,7 @@ export const enrollValidation = yup.object({
     .matches(/^[aA-zZ\s]+$/, 'Invalid format ')
     .required('* Name required'),
   date: yup.date().max(new Date()).required('* Invalid date'),
-  address: yup.required('* Address required'),
+  address: yup.string().required('* Address required'),
   parentName: yup
     .string()
     .matches(/^[aA-zZ\s]+$/, 'Invalid format ')
@@ -17,6 +17,6 @@ export const enrollValidation = yup.object({
     .positive('* Invalid Number')
     .required('* Mobile Number required'),
   email: yup.string().email().required('* Invalid email'),
-  grade: yup.required('* Grade Required'),
+  grade: yup.string().required('* Grade Required'),
   comment: yup.string().matches(/^[aA-zZ\s]+$/, 'Invalid format ')
 })
