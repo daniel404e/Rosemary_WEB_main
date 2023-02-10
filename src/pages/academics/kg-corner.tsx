@@ -186,7 +186,7 @@ export default function KgCorner() {
                         </div>
                         <div className="h-64 w-44 overflow-hidden rounded-lg">
                           <img
-                            src="https://i.ibb.co/fH9f8t1/1.jpg"
+                            src="http://i.ibb.co/fH9f8t1/1.jpg"
                             alt=""
                             className="h-full w-full object-cover object-center"
                           />

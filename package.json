@@ -1,6 +1,9 @@
 {
-  "name": "starter",
-  "version": "0.1.0",
+   
+  "name": "hostinger-react",
+  "homepage": "http://rosemaryschool.org",
+  "version": "1.0.0",
+  "description": "my react application",
   "private": true,
   "scripts": {
     "dev": "next dev",
