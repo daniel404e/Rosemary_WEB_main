@@ -1,10 +1,10 @@
 import Heading from '@/components/Heading'
 import Image from 'next/image'
 import React from 'react'
-import pic1 from '../../images/library/1.jpg'
-import pic2 from '../../images/library/2.jpg'
-import pic3 from '../../images/library/3.jpg'
-import pic5 from '../../images/library/5.jpg'
+const pic1 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/library/1.jpg'
+const pic2 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/library/2.jpg'
+const pic3 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/library/3.jpg'
+const pic5 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/library/5.jpg'
 const Library = () => {
   return (
     <>
@@ -101,7 +101,7 @@ const Library = () => {
         <div className="mt-16 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-8">
           <div>
             <div className="w-full aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
-              <Image
+              <img
                 src={pic1}
                 alt="Drawstring top with elastic loop closure and textured interior padding."
                 className="w-full h-full object-center object-cover"
@@ -110,7 +110,7 @@ const Library = () => {
           </div>
           <div>
             <div className="w-full aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
-              <Image
+              <img
                 src={pic2}
                 alt="Front zipper pouch with included key ring."
                 className="w-full h-full object-center object-cover"
@@ -121,7 +121,7 @@ const Library = () => {
         <div className="mt-16 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-8">
           <div>
             <div className="w-full aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
-              <Image
+              <img
                 src={pic3}
                 alt="Drawstring top with elastic loop closure and textured interior padding."
                 className="w-full h-full object-center object-cover"
@@ -130,7 +130,7 @@ const Library = () => {
           </div>
           <div>
             <div className="w-full aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
-              <Image
+              <img
                 src={pic5}
                 alt="Front zipper pouch with included key ring."
                 className="w-full h-full object-center object-cover"

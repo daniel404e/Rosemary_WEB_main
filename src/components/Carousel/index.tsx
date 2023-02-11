@@ -1,19 +1,23 @@
+/* eslint-disable */
+// prettier-ignore
 import Image from 'next/image'
 import React from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import pic1 from '../../images/carousel/1.jpg'
-import pic2 from '../../images/carousel/2.jpg'
-import pic3 from '../../images/carousel/3.jpg'
-import pic4 from '../../images/carousel/4.png'
-import pic5 from '../../images/carousel/5.jpg'
-import pic6 from '../../images/carousel/6.jpg'
-import pic7 from '../../images/carousel/7.png'
-import pic8 from '../../images/carousel/8.jpg'
-import pic9 from '../../images/carousel/9.jpg'
-import pic10 from '../../images/carousel/10.png'
+const pic1 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/carousel/1.jpg'
+const pic2 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/carousel/2.jpg'
+const pic3 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/carousel/3.jpg'
+const pic4 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/carousel/4.png'
+const pic5 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/carousel/5.jpg'
+const pic6 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/carousel/6.jpg'
+const pic7 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/carousel/7.png'
+const pic8 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/carousel/8.jpg'
+const pic9 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/carousel/9.jpg'
+const pic10 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/carousel/10.png'
 
-const index = () => {
+//from aws server using cloudfront
+
+function index(): JSX.Element {
   return (
     <div className="">
       <Carousel

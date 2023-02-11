@@ -1,13 +1,14 @@
 import React from 'react'
-import pic1 from '../../images/gallery/1.jpg'
-import pic2 from '../../images/gallery/2.jpg'
-import pic3 from '../../images/gallery/3.jpg'
-import pic4 from '../../images/gallery/4.jpg'
-import pic5 from '../../images/gallery/5.jpg'
-import pic6 from '../../images/gallery/6.jpg'
-import pic7 from '../../images/gallery/7.jpg'
-import pic8 from '../../images/gallery/8.jpg'
-import pic9 from '../../images/gallery/9.jpg'
+
+const pic2 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/gallery/2.jpg'
+const pic3 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/gallery/3.jpg'
+const pic4 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/gallery/4.jpg'
+const pic1 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/gallery/1.jpg'
+const pic5 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/gallery/5.jpg'
+const pic6 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/gallery/6.jpg'
+const pic7 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/gallery/7.jpg'
+const pic8 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/gallery/8.jpg'
+const pic9 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/gallery/9.jpg'
 
 import Image from 'next/image'
 const Gallery = () => {
