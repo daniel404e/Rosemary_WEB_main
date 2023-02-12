@@ -6,19 +6,19 @@ import { testimonials } from '@/constants/testimonials'
 const CustomArrow = () => {
   const settings = {
     dots: true,
-    // infinite: true,
+    infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     pauseOnHover: false,
-    className: 'center',
+    //className: 'center',
     centerMode: true,
     centerPadding: '0',
     adaptiveHeight: true,
     autoplaySpeed: 4000,
     swipeToSlide: true,
-    arrows: true,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,
