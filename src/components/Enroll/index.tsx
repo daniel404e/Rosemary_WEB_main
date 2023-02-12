@@ -77,9 +77,20 @@ const index = () => {
           <Form onSubmit={handleSubmit}>
             <div className="flex mx-auto justify-center mt-10">
               <div className=" w-2/3 h-1/4 lg:max-w-6xl">
-                <h1 className=" fontText my-4 text-4xl text-center font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl ">
-                  Enroll Now
+                <h1 className=" gradientfor21centuary fontText my-4 text-4xl text-center font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl ">
+                  ~Enroll Now~
                 </h1>
+                <p
+                  className="text-center"
+                  style={{
+                    fontFamily: 'inherit',
+                    color: 'GrayText',
+                    marginBottom: '20px'
+                  }}
+                >
+                  Enroll now to upgrade your kids future 🌱
+                </p>
+
                 <div className="grid overflow-hidden grid-cols-1 grid-rows-8 md:grid-cols-2 md:grid-rows-4 lg:grid-cols-4 lg:grid-rows-2 gap-1.5">
                   <div className="box p-1 ">
                     <Field

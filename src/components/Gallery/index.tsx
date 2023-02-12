@@ -37,10 +37,15 @@ const Gallery = () => {
       className="wrapper-full tab-container effectTab-header"
       id="style_9"
     >
-      <h1 className=" fontText my-4 text-2xl text-center font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-4xl ">
-        A 21st CENTURY INSTITUTION
+      <h1 className=" gradientfor21centuary fontText my-4 text-2xl text-center font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-4xl ">
+        ~A 21st CENTURY INSTITUTION~
       </h1>
-      <p className="text-center">ACADEMICS & BEYOND</p>
+      <p
+        className="text-center"
+        style={{ fontFamily: 'inherit', color: 'GrayText' }}
+      >
+        ACADEMICS and BEYOND 🌟
+      </p>
       <div className="wrapper tab-item">
         <div className="custom-row">
           <div className="column-12 column-xs-12 tab">
@@ -64,7 +69,11 @@ const Gallery = () => {
                       />
                       <div className="tab-text">
                         {/* <h2>Three column 4</h2> */}
-                        <p>{item.title}</p>
+                        <p
+                          style={{ fontFamily: 'bliss', fontSize: 'xx-large' }}
+                        >
+                          {item.title}
+                        </p>
                       </div>
                     </div>
                   </div>

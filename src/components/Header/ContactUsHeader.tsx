@@ -28,7 +28,7 @@ export default function ContactUsHeader() {
                 <PhoneIcon className="h-6 w-6 text-white" aria-hidden="true" />
               </span>
               <div className="ml-1 truncate font-medium text-white">
-                <span className="inline">+91 99430 26313</span>
+                <span className="inline">0462 2901215</span>
               </div>
             </div>
           </div>

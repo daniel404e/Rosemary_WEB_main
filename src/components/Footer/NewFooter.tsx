@@ -129,11 +129,11 @@ export const NewFooter = () => {
                 <li className="text-primary">
                   Phone:
                   <p className="transition-colors duration-300 text-white hover:text-sky-900">
-                    +92 994 3026313,
+                    0462 2901215,
                     <br />
-                    +92 994 3026311,
+                    0462 2915601,
                     <br />
-                    0462 2901215
+                    0462 2915602
                   </p>
                 </li>
               </ul>

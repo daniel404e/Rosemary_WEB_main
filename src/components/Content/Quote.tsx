@@ -30,7 +30,7 @@ const Quote = () => {
         <figcaption className="flex justify-center items-center mt-6 space-x-3">
           <div className="flex items-center divide-x-2 divide-gray-500 ">
             <cite className="pr-3 font-medium text-gray-900">
-              NELSON MANDELA
+              ~NELSON MANDELA
             </cite>
           </div>
         </figcaption>

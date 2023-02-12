@@ -46,11 +46,11 @@ const CustomArrow = () => {
     <div className="max-w-7xl mx-auto">
       {' '}
       <div className="text-center mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
-        <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
-          Testimonials
+        <p className="gradientfor21centuary mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
+          ~Testimonials~
         </p>
         <p className="mt-5 mx-auto max-w-prose text-xl text-gray-500">
-          Why choose Rosemary school of excellence
+          Why choose Rosemary school of excellence 👇
         </p>
       </div>
       <Slider {...settings}>
