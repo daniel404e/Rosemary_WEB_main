@@ -13,16 +13,16 @@ const ParagraphOne = () => {
                 to{' '}
               </span>
               <span data-aos="fade-up" data-aos-duration="1400">
-                Rosemary{' '}
+                ROSEMARY{' '}
               </span>
               <span data-aos="fade-up" data-aos-duration="1800">
-                School{' '}
+                SCHOOL{' '}
               </span>
               <span data-aos="fade-up" data-aos-duration="2200">
-                of{' '}
+                OF{' '}
               </span>
               <span data-aos="fade-up" data-aos-duration="2600">
-                excellence{' '}
+                EXCELLENCE{' '}
               </span>
             </h1>
             <p className="paraText mb-6 sm:text-sm  lg:text-lg  text-center font-normal text-white sm:px-16 xl:px-48 ">
