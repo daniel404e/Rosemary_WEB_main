@@ -64,6 +64,18 @@ a {
   -webkit-background-clip: text;
 }
 
+.slick-slide.slick-center {
+  transform: scale(1.2);
+}
+
+.slick-slide.slick-center img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slick-center {
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -683,7 +695,7 @@ body {
 }
 
 .effect.effect-nine .tab-text h2 {
-  font-family: bliss;
+  font-family: Oswald;
   transform: scale3d(0.9, 0.9, 1);
   transition: all 0.5s ease-in-out;
   -webkit-transform: scale3d(0.9, 0.9, 1);
@@ -795,7 +807,7 @@ body {
 @media (min-width: 576px) and (max-width: 767px) {
   .tab .effect .tab-text h2 {
     font-size: 1.3rem !important;
-    font-family: bliss;
+    font-family: Oswald;
   }
   .effect.effect-two p.description {
     bottom: 5.8em;
