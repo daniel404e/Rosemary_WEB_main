@@ -1,5 +1,5 @@
 import Heading from '@/components/Heading'
-import Image from 'next/image'
+
 import React from 'react'
 const pic1 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/library/1.jpg'
 const pic2 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/library/2.jpg'

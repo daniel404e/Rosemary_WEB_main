@@ -6,7 +6,7 @@ import { sportsData, headDescription } from '../../constants/sportsData'
 //import img2 from '../../images/sports/2.png'
 const img1 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/sports/1.png'
 const img2 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/sports/2.png'
-import Image from 'next/image'
+
 const Sports = () => {
   return (
     <>

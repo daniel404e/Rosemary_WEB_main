@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const pic2 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/gallery/2.jpg'
 const pic3 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/gallery/3.jpg'

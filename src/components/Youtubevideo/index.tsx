@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const Ytplayer = () => {
   const [width23, setWidth2] = React.useState(0)
@@ -37,7 +37,6 @@ const Ytplayer = () => {
           <iframe
             src="https://www.youtube.com/embed/exlI09hfxcE?controls=0&amp;start=24&rel=0"
             title="YouTube video player"
-            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             className="responsive-iframe"
             style={{

@@ -68,8 +68,8 @@ const Payfees = () => {
             }}
             onClick={() => {
               setCount(termfeeurl)
-              document.getElementById('myIframe1').src =
-                document.getElementById('myIframe1').src
+              // document.getElementById('myIframe1').src =
+              //   document.getElementById('myIframe1').src
             }}
           >
             Pay Term Fees
@@ -86,8 +86,8 @@ const Payfees = () => {
             }}
             onClick={() => {
               setCount(otherfeeurl)
-              document.getElementById('myIframe1').src =
-                document.getElementById('myIframe1').src
+              // document.getElementById('myIframe1').src =
+              //   document.getElementById('myIframe1').src
             }}
           >
             Pay Other Fees
