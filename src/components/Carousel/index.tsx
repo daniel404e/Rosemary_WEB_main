@@ -25,8 +25,9 @@ function index(): JSX.Element {
         showThumbs={false}
         showStatus={false}
         autoPlay={true}
-        showIndicators={false}
+        showIndicators={true}
         showArrows={true}
+        interval={4000}
         preventMovementUntilSwipeScrollTolerance={true}
       >
         <div className="sm:h-[888px] md:h-auto desktop:h-[888px] text-black imgdata">
