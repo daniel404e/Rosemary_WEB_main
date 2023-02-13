@@ -2,6 +2,7 @@ import Carousel from '../components/Carousel'
 import ParagraphOne from '../components/Content/ParagraphOne'
 import Enroll from '../components/Enroll'
 import Gallery from '../components/Gallery'
+import Youtubeplayer from '../components/Youtubevideo'
 import Head from 'next/head'
 import Quote from '../components/Content/Quote'
 import CustomArrow from '@/components/Classes/USE'
@@ -29,6 +30,7 @@ export default function Rosemary() {
       <Quote />
       <CustomArrow />
       <Gallery />
+      <Youtubeplayer />
       <Enroll />
     </>
   )

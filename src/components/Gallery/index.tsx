@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const pic2 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/gallery/2.jpg'
 const pic3 = 'https://d1tvl7ljkwrklc.cloudfront.net/images/gallery/3.jpg'
@@ -36,6 +36,7 @@ const Gallery = () => {
     <section
       className="wrapper-full tab-container effectTab-header"
       id="style_9"
+      style={{ marginTop: '20px' }}
     >
       <h1 className=" gradientfor21centuary fontText my-4 text-2xl text-center font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-4xl ">
         ~A 21st CENTURY INSTITUTION~
